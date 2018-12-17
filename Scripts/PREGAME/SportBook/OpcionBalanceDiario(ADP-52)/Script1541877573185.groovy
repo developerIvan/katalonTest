@@ -39,6 +39,7 @@ TestObject wagerAmountLinkObj = new TestObject('WagerBalanceAmountLink')
 if(GlobalVariable.individualTestCase == true){
    WebUI.callTestCase(findTestCase('PREGAME/SportBook/Transacciones(ADP-53)'), [:], FailureHandling.STOP_ON_FAILURE)
 }
+//Ejemplo dsdsfsd
 //Test Comment
 WebUI.click(findTestObject('Repositorio Sportbook/MiCuenta(ADP-50)/button_BALANCE DIARIO'))
 
