@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>default</name>
+   <tag></tag>
+   <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>betAmountResult</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Identificador de la apuesta para localizar elementos en la página</description>
+      <initValue>''</initValue>
+      <name>wagerId</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>wagerDesc</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Almacena el estado del aapuesta (won, lost etc) </description>
+      <initValue>''</initValue>
+      <name>wagerStatus</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>alamcena la fehca de la transacción</description>
+      <initValue>''</initValue>
+      <name>wagerDate</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>alamcena el monto de la transacción para localizar elementos en el balance diario</description>
+      <initValue>''</initValue>
+      <name>wagerAmount</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Alamcena el texto, segun el idioma, para localizar el monto pagado</description>
+      <initValue>''</initValue>
+      <name>transWagerAmountLoc</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Guarda la etiqueta del estado de la apuesta para ser usado como localizador</description>
+      <initValue>''</initValue>
+      <name>wagerStatusLabel</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Siver para definir si los test cases invocan los test cases necesarios de forma separada, ejemplo  Transacciones MenuMiCuenta</description>
+      <initValue>false</initValue>
+      <name>individualTestCase</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('PreGameTestData').getValue(6, 1)</initValue>
+      <name>siteType</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>false</initValue>
+      <name>mobileBrowser</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

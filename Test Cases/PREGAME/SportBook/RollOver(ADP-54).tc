@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que las opciones de RollOver esten presentes ADP-54</description>
+   <name>RollOver(ADP-54)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8420f730-6c1d-4214-be30-c75e993e4159</testCaseGuid>
+</TestCaseEntity>
