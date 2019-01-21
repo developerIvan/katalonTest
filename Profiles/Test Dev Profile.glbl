@@ -59,4 +59,24 @@
       <initValue>false</initValue>
       <name>mobileBrowser</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el execl</description>
+      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\PermisosTestData.xlsx'</initValue>
+      <name>permisosExcelRuta</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>false</initValue>
+      <name>usuarioLogeado</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\LineasYapuestasTestData.xlsx'</initValue>
+      <name>lineasExcelRuta</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('eng') : 'ODDSTOWIN', ('esp') : 'PROPOSICIONES']</initValue>
+      <name>oddDescpirtion</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

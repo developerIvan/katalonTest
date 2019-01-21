@@ -7,7 +7,15 @@
     RollOver 
 
 
-ADP-49</description>
+ADP-49
+
+Precondiciones:
+El usuario de pruba tenga haliltado los siguientes permisos en customer maintenance según el ambiente:
+-Pregame
+-Live
+-Casino
+-Horses
+-EGames</description>
    <name>MenuMiCuenta(ADP-50)</name>
    <tag></tag>
    <comment></comment>

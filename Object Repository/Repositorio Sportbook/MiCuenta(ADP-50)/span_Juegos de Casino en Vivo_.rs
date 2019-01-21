@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>div_Caballos</name>
+   <name>span_Juegos de Casino en Vivo_</name>
    <tag></tag>
-   <elementGuidId>083514a7-9dd1-4f95-8aad-29a601f7dce0</elementGuidId>
+   <elementGuidId>ac8abe87-5928-4ddf-83c8-5dbc95f2fa03</elementGuidId>
    <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,51 +11,56 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>div</value>
+      <value>span</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>mainMenuContent ellipsis</value>
+      <value>circle</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>text</name>
-      <type>Main</type>
-      <value>Caballos</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;navbar&quot;)/ul[@class=&quot;nav navbar-nav&quot;]/li[@class=&quot;mainMenu&quot;]/a[1]/div[@class=&quot;mainMenuLi&quot;]/div[@class=&quot;mainMenuContent ellipsis&quot;]</value>
+      <value>id(&quot;navbar&quot;)/ul[@class=&quot;nav navbar-nav&quot;]/li[@id=&quot;divMenuLiveDealer&quot;]/a[@class=&quot;linkHeader&quot;]/div[@class=&quot;mainMenuLi&quot;]/div[@class=&quot;mainMenuContent ellipsis&quot;]/span[@class=&quot;circle&quot;]</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//div[@id='navbar']/ul/li[4]/a/div/div</value>
+      <value>//li[@id='divMenuLiveDealer']/a/div/div/span</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='En Vivo'])[1]/following::div[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Juegos de Casino en Vivo'])[1]/span[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Deportes'])[1]/following::div[4]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Casino'])[4]/following::span[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Contest'])[1]/preceding::span[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='E-Sports'])[1]/preceding::span[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//li[4]/a/div/div</value>
+      <value>//li[7]/a/div/div/span</value>
    </webElementXpaths>
 </WebElementEntity>
