@@ -14,7 +14,7 @@
       <guid>99135957-7d10-4a89-a915-b16f937f00cb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/PREGAME/SportBook/MenuMiCuenta(ADP-50)</testCaseId>
+      <testCaseId>Test Cases/NEW PREGAME/SportBook/MenuMiCuenta(ADP-50)</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -26,19 +26,19 @@
       <guid>964b3155-c055-4992-aa19-cb6844873681</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/PREGAME/SportBook/Transacciones(ADP-53)</testCaseId>
+      <testCaseId>Test Cases/NEW PREGAME/SportBook/Transacciones(ADP-53)</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>29aa2471-09cf-4fdf-91ef-7a312e82bcc6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/PREGAME/SportBook/OpcionBalanceDiario(ADP-52)</testCaseId>
+      <testCaseId>Test Cases/NEW PREGAME/SportBook/OpcionBalanceDiario(ADP-52)</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>3cae278e-7792-4609-b3fc-3f39a8db7880</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/PREGAME/SportBook/OpcionReportes(ADP-51)</testCaseId>
+      <testCaseId>Test Cases/NEW PREGAME/SportBook/OpcionReportes(ADP-51)</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>

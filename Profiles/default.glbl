@@ -46,7 +46,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Siver para definir si los test cases invocan los test cases necesarios de forma separada, ejemplo  Transacciones MenuMiCuenta</description>
-      <initValue>true</initValue>
+      <initValue>false</initValue>
       <name>individualTestCase</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -60,9 +60,9 @@
       <name>mobileBrowser</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description>Define la ruta absoluta para cargar el execl</description>
-      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\PermisosTestData.xlsx'</initValue>
-      <name>permisosExcelRuta</name>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de casino</description>
+      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\PermisosTestDataCasino.xlsx'</initValue>
+      <name>permisosExcelRutaCasino</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -78,5 +78,35 @@
       <description></description>
       <initValue>[('English') : 'ODDSTOWIN', ('Español') : 'PROPOSICIONES']</initValue>
       <name>oddDescpirtion</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de horses</description>
+      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\PermisosTestDataHorses.xlsx'</initValue>
+      <name>permisosExcelRutaHorses</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de live</description>
+      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\PermisosTestDataLive.xlsx'</initValue>
+      <name>permisosExcelRutaLive</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de sportbooks</description>
+      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\PermisosTestDataSportbook.xlsx'</initValue>
+      <name>permisosExcelRutaSportbook</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[('English') : 'Confirm', ('Español') : 'Confirmar']</initValue>
+      <name>buttonDescMap</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('PreGameTestData').getValue(3, 1)</initValue>
+      <name>pregameSite</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>false</initValue>
+      <name>pregameSiteEsVisible</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

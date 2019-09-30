@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Abre el navegador para ir al sitio de site</description>
+   <name>Abrir Pregame Site</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>45196d3b-a225-408c-8cf5-c450e353e2ff</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('PreGameTestData').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>393d30d8-744e-4beb-a7b3-6c47ed58efeb</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+</TestCaseEntity>

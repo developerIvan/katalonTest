@@ -6,53 +6,57 @@
    <elementGuidId>94075f13-0607-4fe1-9be6-9c2f34301500</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value>id(&quot;logIn&quot;)[count(. | //a[@href = '#' and @id = 'logIn' and @class = 'btn btn-primary btn-sm navbar-btn' and @data-toggle = 'modal' and @data-target = '#modalLogin']) = count(//a[@href = '#' and @id = 'logIn' and @class = 'btn btn-primary btn-sm navbar-btn' and @data-toggle = 'modal' and @data-target = '#modalLogin'])]</value>
+         <key>CSS</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
          <value>//a[@id='logIn']</value>
       </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>id(&quot;logIn&quot;)</value>
+      </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>href</name>
       <type>Main</type>
       <value>#</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
       <value>logIn</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
       <value>btn btn-primary btn-sm navbar-btn</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>data-toggle</name>
       <type>Main</type>
       <value>modal</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>data-target</name>
       <type>Main</type>

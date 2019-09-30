@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Se encarga de cargar los límites del Agente de pruebas</description>
+   <name>Agent_LimistLoadData</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4e978791-f609-4b23-bea7-1860e8e4e878</testCaseGuid>
+   <variable>
+      <defaultValue>'T10000'</defaultValue>
+      <description>Define el agente a buscar </description>
+      <id>86bc2e1c-cc6e-42c4-97a4-e6238dd88d5b</id>
+      <masked>true</masked>
+      <name>agent</name>
+   </variable>
+</TestCaseEntity>

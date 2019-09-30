@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Precondicion:
-El usuario de pruebas tenga el permiso sportbook habilitado en Customer Maintenace</description>
-   <name>ValidarPermisoSportBook</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>8d03441c-5156-4199-9044-480b3a58e420</testCaseGuid>
-</TestCaseEntity>

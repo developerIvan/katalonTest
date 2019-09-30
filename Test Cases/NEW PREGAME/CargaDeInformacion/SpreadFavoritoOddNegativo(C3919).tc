@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Selcciona un spread favorito pero con precio negativo.</description>
+   <name>SpreadFavoritoOddNegativo(C3919)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fb1e63bb-d14e-403e-80e6-68cce8b58dc0</testCaseGuid>
+</TestCaseEntity>

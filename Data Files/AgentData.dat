@@ -6,11 +6,11 @@
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
    <dataFileGUID>7c9ea834-c2c5-4bbc-90e1-d35f8967648c</dataFileGUID>
-   <dataSourceUrl>../TestData/AgentData.xlsx</dataSourceUrl>
+   <dataSourceUrl>../../../../QAAutomatizacion/Proyectos/TestData/Customer Maintenance/Agent/AgentData.xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>true</isInternalPath>
    <query></query>
    <secureUserAccount>false</secureUserAccount>
-   <sheetName></sheetName>
+   <sheetName>Agents</sheetName>
    <usingGlobalDBSetting>false</usingGlobalDBSetting>
 </DataFileEntity>

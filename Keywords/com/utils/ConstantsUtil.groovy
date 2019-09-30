@@ -27,6 +27,11 @@ public class ConstantsUtil {
 	}
 
 	@Keyword
+	def String getXPathSelectorId(){
+		return "xpath";
+	}
+
+	@Keyword
 	def ConditionType getEqualsConditionType(){
 		return ConditionType.EQUALS;
 	}
@@ -48,5 +53,15 @@ public class ConstantsUtil {
 	@Keyword
 	def String getHalfLinePoint(){
 		return '½';
+	}
+
+	@Keyword
+	def String getFailedStatus(){
+		return 'Fallido';
+	}
+
+	@Keyword
+	def String getsuccessStatus(){
+		return 'Exitoso';
 	}
 }

@@ -48,14 +48,14 @@ public class ExcelsUtils {
 	//Crea el objecto workbook, el cual se encargara de almacena en memoria las hojas de l excel a leer o escribir
 	@Keyword
 	def static createReadXSSFWorkbook(){
-		KeywordUtil.logInfo("input file create  Read "+inputFile)
+		//KeywordUtil.logInfo("input file create  Read "+inputFile)
 		workbook =  new XSSFWorkbook(inputFile);
 	}
 
 	//Define el objeto sheet utilizando el indice o número de pagina, el cual se encargara de almacena en memoria las celdas del excel a leer o escribir
 	@Keyword
 	def static loadXSSFSheet(int pos){
-		KeywordUtil.logInfo("sheet load "+workbook)
+		//KeywordUtil.logInfo("sheet load "+workbook)
 		sheet = workbook.getSheetAt(pos);
 	}
 
