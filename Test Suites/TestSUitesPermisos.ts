@@ -32,6 +32,6 @@
       <guid>a2b0b735-17e4-462b-a96b-0f642d3dacf8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/NEW PREGAME/2. Login/2_1 Validacion Boton Login/2.1.2 Password/2.1.2.1 Permiso Correcto/ValidarPermisoSportBook(C3900)</testCaseId>
+      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.2 Password/2.1.2.1 Permiso Correcto/ValidarPermisoSportBook(C3900)</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
