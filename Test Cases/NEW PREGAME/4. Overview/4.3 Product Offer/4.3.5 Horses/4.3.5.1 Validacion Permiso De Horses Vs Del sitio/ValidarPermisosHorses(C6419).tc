@@ -2,7 +2,7 @@
 <TestCaseEntity>
    <description>Precondicion:
 El usuario de pruebas tenga el permiso Horses este  habilitado en Customer Maintenace</description>
-   <name>ValidarPermisosHorses(C3902)</name>
+   <name>ValidarPermisosHorses(C6419)</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>fed0e417-65a0-4da4-b10d-c60b0e47d0a5</testCaseGuid>
