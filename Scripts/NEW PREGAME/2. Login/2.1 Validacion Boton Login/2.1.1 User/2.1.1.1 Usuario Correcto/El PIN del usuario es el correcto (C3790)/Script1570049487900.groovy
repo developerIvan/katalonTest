@@ -23,7 +23,7 @@ String userPassword = findTestData('PreGameTestData').getValue(2, 1)
 
 //Si el usuario no ha ingresado al sitio llamará a la función de login
 if (!(GlobalVariable.usuarioLogeado)) {
-    WebUI.callTestCase(findTestCase('NEW PREGAME/SportBook/Login_Successfull'), [('url') : url, ('loginUser') : userName
+    WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/JugadorIngresaAPregame(C6414)'), [('url') : url, ('loginUser') : userName
             , ('loginPassword') : userPassword], FailureHandling.STOP_ON_FAILURE)
 
     GlobalVariable.usuarioLogeado = true

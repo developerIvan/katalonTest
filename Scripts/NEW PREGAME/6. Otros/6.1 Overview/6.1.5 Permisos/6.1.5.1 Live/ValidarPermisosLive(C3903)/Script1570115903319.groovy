@@ -15,19 +15,20 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
 import java.lang.AssertionError;
-KeywordLogger log = new KeywordLogger()
 import com.kms.katalon.core.exception.StepFailedException;
+KeywordLogger log = new KeywordLogger()
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.testobject.TestObjectProperty
+
 //Carga del excel
-CustomKeywords.'com.utils.ExcelsUtils.loadFileInputStream'(GlobalVariable.permisosExcelRutaHorses)
+CustomKeywords.'com.utils.ExcelsUtils.loadFileInputStream'(GlobalVariable.permisosExcelRutaLive)
 
 //Abre archivo lectura
 CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
 
 //Selecciona la hoja del execl
-CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'('Horses')
+CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'('Live')
 
 String url = CustomKeywords.'com.utils.ExcelsUtils.getColumValue'(1, 1)
 
@@ -36,6 +37,12 @@ String userName = CustomKeywords.'com.utils.ExcelsUtils.getColumValue'(1, 2)
 String userPassword = CustomKeywords.'com.utils.ExcelsUtils.getColumValue'(1, 3)
 
 String startHour = CustomKeywords.'com.utils.DateUtil.getHours'()
+
+//Registro fecha incio de la prueba
+CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.DateUtil.getDate'())
+
+//Registro  hora  incio de la prueba
+CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, startHour)
 
 final String FAILED_STATUS = CustomKeywords.'com.utils.ConstantsUtil.getFailedStatus'();
 
@@ -47,13 +54,6 @@ final ConditionType equalsCondType = CustomKeywords.'com.utils.ConstantsUtil.get
 
 final String textContentAtribute = CustomKeywords.'com.utils.ConstantsUtil.getHtmlTextContentAtt'()
 
-//Registro fecha incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.DateUtil.getDate'())
-
-//Registro  hora  incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, startHour)
-
-//TestObject enlaceHorsesObj = null;
 try{
 	if (!(GlobalVariable.usuarioLogeado)) {
 		WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/JugadorIngresaAPregame(C6414)'), [('url') : url, ('loginUser') : userName, ('loginPassword') : userPassword],
@@ -71,18 +71,16 @@ try{
 	//Guarda Version del browser
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 9, CustomKeywords.'mycompany.GetTestingConfig.getBrowserAndVersion'())
 
-	//a[data-lnk="horseStatus"] .mainMenuLi div
-	//WebUI.verifyElementVisible(findTestObject('Repositorio Sportbook/Permisos/Horses/div_Caballos'))
+	//WebUI.verifyElementVisible(findTestObject('Repositorio Sportbook/Permisos/Live/div_En Vivo'))
 
-	String permisoHorses =  CustomKeywords.'com.utils.AutomationUtils.getObjectAttribute'('Enlace horses Obj', textContentAtribute, new TestObjectProperty(CSS_SELECTOR, equalsCondType, "a[data-lnk='horseStatus'] .mainMenuLi div"),4);
+	String permisoLive = CustomKeywords.'com.utils.AutomationUtils.getObjectAttribute'('Enlace live Obj', textContentAtribute, new TestObjectProperty(CSS_SELECTOR, equalsCondType, "#live_link .mainMenuLi div"),4);
 
-	assert permisoHorses != null && !permisoHorses.isEmpty();
+	assert !permisoLive.equals(null)&&!permisoLive.isEmpty();
 	//Guarda permito otorgado
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, permisoHorses)
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, permisoLive)
 
 	//Guarda hora final
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7, CustomKeywords.'com.utils.DateUtil.getHours'())
-
 
 	//Guarda fecha final
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.DateUtil.getDate'())
@@ -91,22 +89,21 @@ try{
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 12, SUCCESS_STATUS)
 
 	//Guara descripci?n de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 13, 'Permiso Horses es correctamente accesible para el usuario')
-
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 13, 'Permiso Live es correctamente accesible para el usuario')
 
 }catch(StepFailedException step){
 	//Guara estado de la prueba
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 12, FAILED_STATUS)
 	//Guara descripci?n de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 13, 'Validaci\u00f3n de permiso fallida por incumplimiento de verifaicaci\u00f3n de elementos en la p\u00e1gina')
-	throw  new AssertionError('Error en la prueba horses debido a que hay un paso que no se cumplio',step);
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 13,  'Validaci\u00f3n de permiso fallida por incumplimiento de verifaicaci\u00f3n de elementos en la p\u00e1gina')
+	throw  new AssertionError('Error en la prueba live debido a que hay un paso que no se cumplio',step);
 
 }catch(Exception ex){
 	//Guara estado de la prueba
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 12, FAILED_STATUS)
-	//Guarda descripci?n de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 13, 'Validaci\u00f3n de permiso fallida causado por excepci\u00f3n inesperada')
-	throw  new AssertionError('Error en la prueba horses ',ex);
+	//Guara descripci?n de la prueba
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 13, 'Validacion de permiso fallida causado por excepci\u00f3n inesperada')
+	throw  new AssertionError('Error en la prueba live ',ex);
 }finally{
 	//Guarda hora final
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7, CustomKeywords.'com.utils.DateUtil.getHours'())
@@ -118,7 +115,7 @@ try{
 	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()
 
 	//Abre  archivo de escritua
-	CustomKeywords.'com.utils.ExcelsUtils.loadFileOutputStream'(GlobalVariable.permisosExcelRutaHorses)
+	CustomKeywords.'com.utils.ExcelsUtils.loadFileOutputStream'(GlobalVariable.permisosExcelRutaLive)
 
 	//escribe informacion en la hoja del exec
 	CustomKeywords.'com.utils.ExcelsUtils.writeOutputExcelSheet'()
@@ -126,3 +123,4 @@ try{
 	//Cierra  archivo de escritua
 	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()
 }
+

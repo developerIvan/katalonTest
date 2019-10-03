@@ -57,15 +57,15 @@ public class AutomationUtils {
 
 	@Keyword
 	def String getObjectAttribute(String objectName,String htmlAttibute,String type,String searchCriteria, int waitTime){
-		
+
 		TestObject object = new TestObject(objectName!=null && !objectName.isEmpty()?objectName:" Object");
-		
+
 		object.addProperty(returnObjectPropretyType(type,searchCriteria) );
 		WebUI.waitForElementVisible(object , waitTime);
-	     WebUI.waitForElementClickable(object , waitTime);
+		WebUI.waitForElementClickable(object , waitTime);
 		return WebUI.getAttribute(object, htmlAttibute, FailureHandling.STOP_ON_FAILURE)
 	}
-	
+
 	@Keyword
 	def String getObjectAttribute(TestObject object,String htmlAttibute,int waitTime){
 		int retryCount = 1;
@@ -127,27 +127,43 @@ public class AutomationUtils {
 
 
 	@Keyword
-	def TestObjectProperty returnObjectPropretyType(String type,String searchCriteria){
+	def TestObjectProperty returnObjectPropretyType(String selectorType,String searchLocator){
 		TestObjectProperty testOjbPropertyType = null;
 
-		switch(type.toString().toUpperCase()){
+		switch(selectorType.toString().toUpperCase()){
 			case "CSS":
-				testOjbPropertyType = new TestObjectProperty( "css", ConditionType.EQUALS, searchCriteria);
+				testOjbPropertyType = new TestObjectProperty( "css", ConditionType.EQUALS, searchLocator);
 				break;
 			case "XPATH":
-				testOjbPropertyType = new TestObjectProperty( "xpath", ConditionType.CONTAINS, searchCriteria);
+				testOjbPropertyType = new TestObjectProperty( "xpath", ConditionType.CONTAINS, searchLocator);
 				break;
 			case "NAME":
-				testOjbPropertyType = new TestObjectProperty( "name", ConditionType.CONTAINS, searchCriteria);
+				testOjbPropertyType = new TestObjectProperty( "name", ConditionType.CONTAINS, searchLocator);
 				break;
-				default:
-				testOjbPropertyType = new TestObjectProperty("Empty Property "+type+" "+searchCriteria);
+			default:
+				testOjbPropertyType = new TestObjectProperty("Empty Property "+selectorType+" "+searchLocator);
 				break;
 		}
 
 		return testOjbPropertyType;
 	}
 
+	@Keyword
+	def TestObject findTestObject(String testObjectId,String type,String searchCriteria,int waitTime){
+		try{
+			TestObject object = new TestObject(testObjectId);
+			object.addProperty(returnObjectPropretyType(type,searchCriteria));
+
+			WebUI.waitForElementPresent(object,waitTime);
+			WebUI.waitForElementVisible(object,waitTime);
+			return object;
+		}catch(com.kms.katalon.core.exception.StepFailedException step){
+			KeywordUtil.logger.logError(step.getMessage());
+			return NullTestObject;
+		}
+	}
+
+	
 	@Keyword
 	def TestObject findTestObject(String testObjectId,TestObjectProperty objProperty,int waitTime){
 		try{
@@ -162,7 +178,6 @@ public class AutomationUtils {
 			return NullTestObject;
 		}
 	}
-
 	@Keyword
 	def void clickMultiElements(By bySelector,int waitTime){
 		WebDriver driver = DriverFactory.getWebDriver();
