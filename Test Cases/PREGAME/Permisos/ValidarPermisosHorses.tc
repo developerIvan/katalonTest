@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Precondicion:
-El usuario de pruebas tenga el permiso Horses este  habilitado en Customer Maintenace</description>
-   <name>ValidarPermisosHorses</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>fed0e417-65a0-4da4-b10d-c60b0e47d0a5</testCaseGuid>
-</TestCaseEntity>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Revisa si se visualiza correctamente el balance del jugador por los días. ADP-52</description>
-   <name>OpcionBalanceDiario(ADP-52)</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>f6afa40e-c602-4594-b808-4b5672901187</testCaseGuid>
-</TestCaseEntity>

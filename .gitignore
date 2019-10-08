@@ -3,3 +3,14 @@
 /.settings/
 /.classpath
 .svn/
+
+*.html
+*.csv
+*.log
+*.uuid
+JUnit_Report.xml
+*.png
+*.log.lck
+execution.properties
+*.meta
+*.project

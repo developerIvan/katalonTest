@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>span_641.28</name>
+   <tag></tag>
+   <elementGuidId>326e64ae-7991-4e75-ac82-320ee65c49bb</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='infoAccount']/div/div/div[2]/div/span</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>id(&quot;infoAccount&quot;)/div[@class=&quot;row&quot;]/div[@class=&quot;section wrapInfoAccount&quot;]/div[@class=&quot;col-md-12 col-sm-12 col-sx-12&quot;]/div[@class=&quot;col-md-3 col-sm-4 col-xs-6 info&quot;]/span[@class=&quot;AvailableBalance&quot;][count(. | //span[@class = 'AvailableBalance' and (text() = '641.28' or . = '641.28')]) = count(//span[@class = 'AvailableBalance' and (text() = '641.28' or . = '641.28')])]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>AvailableBalance</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>641.28</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;infoAccount&quot;)/div[@class=&quot;row&quot;]/div[@class=&quot;section wrapInfoAccount&quot;]/div[@class=&quot;col-md-12 col-sm-12 col-sx-12&quot;]/div[@class=&quot;col-md-3 col-sm-4 col-xs-6 info&quot;]/span[@class=&quot;AvailableBalance&quot;]</value>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <value>//div[@id='infoAccount']/div/div/div[2]/div/span</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='SHA2001'])[2]/following::span[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <value>//div[2]/div/span</value>
+   </webElementXpaths>
+</WebElementEntity>
