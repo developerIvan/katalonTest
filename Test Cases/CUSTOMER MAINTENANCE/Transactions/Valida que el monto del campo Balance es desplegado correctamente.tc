@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Valida que el monto del campo Balance es desplegado correctamente</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ff86a9e3-29a9-4da6-8aa8-a1a47036340f</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c059a07b-f755-457c-862c-fb7315e644b8</id>
+      <masked>false</masked>
+      <name>result2</name>
+   </variable>
+   <variable>
+      <defaultValue>'http://sup-lobby.bminc.eu/pages/lobby'</defaultValue>
+      <description></description>
+      <id>0d048a22-ba9c-4913-bc5a-9a0b7fb38700</id>
+      <masked>false</masked>
+      <name>Url_Balance</name>
+   </variable>
+   <variable>
+      <defaultValue>'jmatamoros'</defaultValue>
+      <description></description>
+      <id>9b8109e0-f2bc-421d-9600-d7266b7033c2</id>
+      <masked>false</masked>
+      <name>UserId_Balance</name>
+   </variable>
+   <variable>
+      <defaultValue>'jmatamoros123'</defaultValue>
+      <description></description>
+      <id>1407715d-2cb2-4de4-ab36-be54e6cd5512</id>
+      <masked>true</masked>
+      <name>Password_Balance</name>
+   </variable>
+   <variable>
+      <defaultValue>'SHA2001'</defaultValue>
+      <description></description>
+      <id>4f3745b3-5789-40cd-8f34-7d2834a9c3a1</id>
+      <masked>false</masked>
+      <name>PlayerPin</name>
+   </variable>
+</TestCaseEntity>

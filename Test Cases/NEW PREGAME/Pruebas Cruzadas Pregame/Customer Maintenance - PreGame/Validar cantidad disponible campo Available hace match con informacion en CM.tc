@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Validar cantidad disponible campo Available hace match con informacion en CM</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f0b44f82-0f0c-49f2-a29b-2b1bd4a6decc</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b994ba36-93e2-4b72-b258-cc14bdfef09e</id>
+      <masked>false</masked>
+      <name>result1</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>a482eb3f-29a4-4e1d-b56c-df8f2ae28dd6</id>
+      <masked>false</masked>
+      <name>result2</name>
+   </variable>
+   <variable>
+      <defaultValue>'http://www.jueguelo.com/index/home'</defaultValue>
+      <description></description>
+      <id>b9c7c4cd-b777-492a-9c09-73eaa9b0812a</id>
+      <masked>false</masked>
+      <name>Url_Available</name>
+   </variable>
+   <variable>
+      <defaultValue>'SHA2001'</defaultValue>
+      <description></description>
+      <id>6d43efca-58de-408b-b6f0-3038e5962ceb</id>
+      <masked>false</masked>
+      <name>UserId_Available</name>
+   </variable>
+   <variable>
+      <defaultValue>'123'</defaultValue>
+      <description></description>
+      <id>ae53b799-21e2-4b67-9f28-679859d39e17</id>
+      <masked>true</masked>
+      <name>Password_Available</name>
+   </variable>
+</TestCaseEntity>

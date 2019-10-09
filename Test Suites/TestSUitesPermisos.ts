@@ -14,13 +14,13 @@
       <guid>4ae34b17-411a-4ac1-9db9-77d699766a2a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.6 Casino/4.3.6.1 Validacion Permiso Del Casino Vs Del sitio/ValidarPermisosCasino(C6418)</testCaseId>
+      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.6 Casino/4.3.6.1 Validacion Permiso Del Casino Vs Del sitio/Usuario tiene permiso Casino(C6418)</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>813c1474-4143-4904-a2a8-94e718d7653d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.5 Horses/4.3.5.1 Validacion Permiso De Horses Vs Del sitio/ValidarPermisosHorses(C6419)</testCaseId>
+      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.5 Horses/4.3.5.1 Validacion Permiso De Horses Vs Del sitio/Usuario tiene permiso Horses(C6419)</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>bbb0e285-34ef-4720-923e-ebc532e2b8ee</guid>
@@ -32,6 +32,6 @@
       <guid>a2b0b735-17e4-462b-a96b-0f642d3dacf8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.1 Validacion Deportes En Menu Vs CM Restricciones/4.3.1.1 Validacion de acceso a pregame/ValidarPermisoSportBook(C3900)</testCaseId>
+      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.1 Validacion Deportes En Menu Vs CM Restricciones/4.3.1.1 Validacion de acceso a pregame/Usuario tiene permiso Overview(C3900)</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

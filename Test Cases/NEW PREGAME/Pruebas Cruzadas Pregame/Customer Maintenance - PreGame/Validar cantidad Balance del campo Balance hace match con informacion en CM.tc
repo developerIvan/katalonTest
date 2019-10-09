@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Validar cantidad Balance del campo Balance hace match con informacion en CM</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ec7f5aff-5fb0-4ad7-82bc-ae774205e191</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>9fe154f6-91db-4cde-bc8b-991c573b8973</id>
+      <masked>false</masked>
+      <name>result1</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>2bbfd418-7f29-4e1d-918d-3a3e94e58841</id>
+      <masked>false</masked>
+      <name>result2</name>
+   </variable>
+   <variable>
+      <defaultValue>'http://www.jueguelo.com/index/home'</defaultValue>
+      <description></description>
+      <id>f438b9a8-527d-4299-a999-f54b575444b9</id>
+      <masked>false</masked>
+      <name>Url_Balance</name>
+   </variable>
+   <variable>
+      <defaultValue>'SHA2001'</defaultValue>
+      <description></description>
+      <id>76a12ae0-0545-4f44-8f61-b84afd042b84</id>
+      <masked>false</masked>
+      <name>UserId_Balance</name>
+   </variable>
+   <variable>
+      <defaultValue>'123'</defaultValue>
+      <description></description>
+      <id>17d6c79b-c050-4950-98d3-666915787707</id>
+      <masked>true</masked>
+      <name>Password_Balance</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Prepara la data del Login de Customer Maintenance.</description>
+   <name>PrepareDataLoginPreGameBalance</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b44f515f-a29f-45bf-b684-46ac6d94d684</testCaseGuid>
+</TestCaseEntity>

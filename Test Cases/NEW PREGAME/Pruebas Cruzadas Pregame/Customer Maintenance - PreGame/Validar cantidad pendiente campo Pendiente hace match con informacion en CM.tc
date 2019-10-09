@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Validar cantidad pendiente campo Pendiente hace match con informacion en CM</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>969f1adb-9ae1-4b32-b342-77f596fb0f19</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>4b2aca5d-11cf-4538-be6a-3cafb7f3a816</id>
+      <masked>false</masked>
+      <name>result1</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>acbaf922-3c5d-42ea-90f7-2ec8ff9c8676</id>
+      <masked>false</masked>
+      <name>result2</name>
+   </variable>
+   <variable>
+      <defaultValue>'http://www.jueguelo.com/index/home'</defaultValue>
+      <description></description>
+      <id>38a80b47-0ca4-4317-a226-f2775c8f88e2</id>
+      <masked>false</masked>
+      <name>Url_Pendient</name>
+   </variable>
+   <variable>
+      <defaultValue>'SHA2001'</defaultValue>
+      <description></description>
+      <id>b0ae1c97-9ff3-4fd3-8d6d-b4e04ef33e86</id>
+      <masked>false</masked>
+      <name>UserId_Pendient</name>
+   </variable>
+   <variable>
+      <defaultValue>'123'</defaultValue>
+      <description></description>
+      <id>a0885f52-b7b4-4572-ac46-f10718946ed4</id>
+      <masked>false</masked>
+      <name>Password_Pendient</name>
+   </variable>
+</TestCaseEntity>

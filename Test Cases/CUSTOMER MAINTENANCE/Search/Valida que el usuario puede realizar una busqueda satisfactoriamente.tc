@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Valida que el usuario puede realizar una busqueda satisfactoriamente</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4f7c64c4-df26-42e2-bc7a-cee0d64940d6</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>04853302-9f89-4ffe-8942-e553d8f5bb8c</id>
+      <masked>false</masked>
+      <name>result2</name>
+   </variable>
+   <variable>
+      <defaultValue>'http://lobby.bminc.eu/index.php/pages/login'</defaultValue>
+      <description></description>
+      <id>88fcc29e-a69f-44dd-af10-6de1275e1078</id>
+      <masked>false</masked>
+      <name>Url_Search</name>
+   </variable>
+   <variable>
+      <defaultValue>'hsierra'</defaultValue>
+      <description></description>
+      <id>f6d789d4-e8b5-4b06-9c3c-c7ebdff94e65</id>
+      <masked>false</masked>
+      <name>UserId_Search</name>
+   </variable>
+   <variable>
+      <defaultValue>'Cachetes02'</defaultValue>
+      <description></description>
+      <id>6dbaa097-cb8a-4145-abb0-8ce1c7a5fa7a</id>
+      <masked>true</masked>
+      <name>Password_Search</name>
+   </variable>
+</TestCaseEntity>

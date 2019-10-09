@@ -61,7 +61,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Define la ruta absoluta para cargar el excel para el permiso de casino</description>
-      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\PermisosTestDataCasino.xlsx'</initValue>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataCasino.xlsx'</initValue>
       <name>permisosExcelRutaCasino</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -81,7 +81,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Define la ruta absoluta para cargar el excel para el permiso de horses</description>
-      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\PermisosTestDataHorses.xlsx'</initValue>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataHorses.xlsx'</initValue>
       <name>permisosExcelRutaHorses</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -91,7 +91,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Define la ruta absoluta para cargar el excel para el permiso de sportbooks</description>
-      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\PermisosTestDataSportbook.xlsx'</initValue>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataSportbook.xlsx'</initValue>
       <name>permisosExcelRutaSportbook</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

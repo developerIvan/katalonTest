@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Total_Cost_To_Buy_Middle_Point_FootballBuy</name>
+   <tag></tag>
+   <elementGuidId>03522b69-c718-4b4e-ad16-49596d8e3d62</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id=&quot;NFLSpreadBuyCostTotal&quot;]</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;NFLSpreadBuyCostTotal&quot;]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;NFLSpreadBuyCostTotal&quot;]</value>
+   </webElementProperties>
+</WebElementEntity>

@@ -6,7 +6,7 @@
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
    <dataFileGUID>7c9ea834-c2c5-4bbc-90e1-d35f8967648c</dataFileGUID>
-   <dataSourceUrl>../../../../QAAutomatizacion/Proyectos/TestData/Customer Maintenance/Agent/AgentData.xlsx</dataSourceUrl>
+   <dataSourceUrl>Data Files/TestData/AgentData.xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>true</isInternalPath>
    <query></query>

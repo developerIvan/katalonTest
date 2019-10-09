@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Valida que la opcion Transactions se despliega correctamente</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2e621fca-6b01-4c9f-a9de-c7526618d005</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>8a0e9ece-912a-49cc-b0e3-8794b0d8fae3</id>
+      <masked>false</masked>
+      <name>result2</name>
+   </variable>
+   <variable>
+      <defaultValue>'http://lobby.bminc.eu/index.php/pages/login'</defaultValue>
+      <description></description>
+      <id>da5eba8e-5d7f-42be-88ce-4d95aa0c38a2</id>
+      <masked>false</masked>
+      <name>Url_Tranasactions</name>
+   </variable>
+   <variable>
+      <defaultValue>'hsierra'</defaultValue>
+      <description></description>
+      <id>7c4c680e-50db-4aed-acfe-7acdb66a586b</id>
+      <masked>false</masked>
+      <name>UserId_Tranasactions</name>
+   </variable>
+   <variable>
+      <defaultValue>'Cachetes02'</defaultValue>
+      <description></description>
+      <id>b9ee33ac-15bc-4cd8-9599-3780d39962ed</id>
+      <masked>true</masked>
+      <name>Password_Tranasactions</name>
+   </variable>
+</TestCaseEntity>
