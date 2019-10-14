@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Consultar Pending de Customer Maintenance</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1b1e313d-e4db-4f81-8fcf-4f0c3a2a3a33</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>157fc2d2-14fb-4945-b047-2c62d78c750a</id>
+      <masked>false</masked>
+      <name>result2</name>
+   </variable>
+   <variable>
+      <defaultValue>'SHA2001'</defaultValue>
+      <description></description>
+      <id>5f49389c-5015-434a-bd9e-24bbfcdcebe6</id>
+      <masked>false</masked>
+      <name>PlayerPin</name>
+   </variable>
+</TestCaseEntity>

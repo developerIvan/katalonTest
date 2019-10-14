@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Balance hace match con informacion en CM(C3777)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ec7f5aff-5fb0-4ad7-82bc-ae774205e191</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>9fe154f6-91db-4cde-bc8b-991c573b8973</id>
+      <masked>false</masked>
+      <name>result1</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>2bbfd418-7f29-4e1d-918d-3a3e94e58841</id>
+      <masked>false</masked>
+      <name>result2</name>
+   </variable>
+</TestCaseEntity>

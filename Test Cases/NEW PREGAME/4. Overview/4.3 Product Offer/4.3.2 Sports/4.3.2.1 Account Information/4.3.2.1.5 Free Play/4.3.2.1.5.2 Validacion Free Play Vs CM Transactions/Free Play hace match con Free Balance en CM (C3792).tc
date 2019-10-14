@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Free Play hace match con Free Balance en CM (C3792)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>67a38c50-5ce8-408d-a270-fb501577dfb5</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e335c1dd-1074-4ab7-908f-8550267cb7e3</id>
+      <masked>false</masked>
+      <name>result1</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>017f0e11-260a-4a8e-86c8-eb2b769d1ffd</id>
+      <masked>false</masked>
+      <name>result2</name>
+   </variable>
+   <variable>
+      <defaultValue>'http://www.jueguelo.com/index/home'</defaultValue>
+      <description></description>
+      <id>13808c1d-346f-485e-a56d-d58c43f5b180</id>
+      <masked>false</masked>
+      <name>Url_FreePlay</name>
+   </variable>
+   <variable>
+      <defaultValue>'SHA2001'</defaultValue>
+      <description></description>
+      <id>a1c4d7b2-3738-4361-a5d0-9688a91b0a52</id>
+      <masked>false</masked>
+      <name>UserId_FreePlay</name>
+   </variable>
+   <variable>
+      <defaultValue>'123'</defaultValue>
+      <description></description>
+      <id>905566be-9fd9-419f-bc29-1306a9293204</id>
+      <masked>true</masked>
+      <name>Password_FreePlay</name>
+   </variable>
+</TestCaseEntity>

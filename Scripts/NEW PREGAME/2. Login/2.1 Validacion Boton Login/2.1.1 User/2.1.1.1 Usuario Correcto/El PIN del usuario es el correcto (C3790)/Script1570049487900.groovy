@@ -13,18 +13,16 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+String url = GlobalVariable.pregameUrl
 
+String userName = GlobalVariable.customerPIN
 
-String url = findTestData('PreGameTestData').getValue(3, 1)
-
-String userName = findTestData('PreGameTestData').getValue(1, 1)
-
-String userPassword = findTestData('PreGameTestData').getValue(2, 1)
+String userPassword = GlobalVariable.customerPassword
 
 //Si el usuario no ha ingresado al sitio llamará a la función de login
 if (!(GlobalVariable.usuarioLogeado)) {
-    WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Jugador logra ingresar a Overview (C6414)'), [('url') : url, ('loginUser') : userName
-            , ('loginPassword') : userPassword], FailureHandling.STOP_ON_FAILURE)
+    WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Jugador logra ingresar a Overview (C6414)'), 
+        [('url') : url, ('loginUser') : userName, ('loginPassword') : userPassword], FailureHandling.STOP_ON_FAILURE)
 
     GlobalVariable.usuarioLogeado = true
 }
@@ -33,7 +31,5 @@ if (!(GlobalVariable.usuarioLogeado)) {
 String userPin = CustomKeywords.'com.utils.AutomationUtils.getObjectAttribute'('User Pin', 'textContent', 'css', '.CustomerID', 
     2)
 
-assert userName.equals(userPin)
-
-
+assert userName.equalsIgnoreCase(userPin)
 

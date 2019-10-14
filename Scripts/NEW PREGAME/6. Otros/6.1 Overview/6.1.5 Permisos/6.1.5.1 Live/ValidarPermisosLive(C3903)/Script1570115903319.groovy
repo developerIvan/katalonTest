@@ -30,11 +30,11 @@ CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
 //Selecciona la hoja del execl
 CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'('Live')
 
-String url = CustomKeywords.'com.utils.ExcelsUtils.getColumValue'(1, 1)
+String url = GlobalVariable.pregameUrl;
 
-String userName = CustomKeywords.'com.utils.ExcelsUtils.getColumValue'(1, 2)
+String userName = GlobalVariable.customerPIN;
 
-String userPassword = CustomKeywords.'com.utils.ExcelsUtils.getColumValue'(1, 3)
+String userPassword = GlobalVariable.customerPassword;
 
 String startHour = CustomKeywords.'com.utils.DateUtil.getHours'()
 
@@ -61,6 +61,16 @@ try{
 
 		GlobalVariable.usuarioLogeado = true;
 	}
+
+
+	//Guarda url o dirrecion del sitio según el ambiente
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,1,url);
+
+	//Guarda pin del jugador que se usó para la prueba
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,2,userName);
+
+	//Guarda password del jugador que se usó para la prueba
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,3,userPassword);
 
 	//Guarda Sistema operativo
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 8, CustomKeywords.'mycompany.GetTestingConfig.getOperatingSystem'())
@@ -105,6 +115,14 @@ try{
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 13, 'Validacion de permiso fallida causado por excepci\u00f3n inesperada')
 	throw  new AssertionError('Error en la prueba live ',ex);
 }finally{
+	//Guarda url o dirrecion del sitio según el ambiente
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,1,url);
+
+	//Guarda pin del jugador que se usó para la prueba
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,2,userName);
+
+	//Guarda password del jugador que se usó para la prueba
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,3,userPassword);
 	//Guarda hora final
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7, CustomKeywords.'com.utils.DateUtil.getHours'())
 

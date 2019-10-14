@@ -5,59 +5,9 @@
    <tag></tag>
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>betAmountResult</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>Identificador de la apuesta para localizar elementos en la página</description>
-      <initValue>''</initValue>
-      <name>wagerId</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>wagerDesc</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>Almacena el estado del aapuesta (won, lost etc) </description>
-      <initValue>''</initValue>
-      <name>wagerStatus</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>alamcena la fehca de la transacción</description>
-      <initValue>''</initValue>
-      <name>wagerDate</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>alamcena el monto de la transacción para localizar elementos en el balance diario</description>
-      <initValue>''</initValue>
-      <name>wagerAmount</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>Alamcena el texto, segun el idioma, para localizar el monto pagado</description>
-      <initValue>''</initValue>
-      <name>transWagerAmountLoc</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description>Guarda la etiqueta del estado de la apuesta para ser usado como localizador</description>
-      <initValue>''</initValue>
-      <name>wagerStatusLabel</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
       <description>Siver para definir si los test cases invocan los test cases necesarios de forma separada, ejemplo  Transacciones MenuMiCuenta</description>
-      <initValue>false</initValue>
+      <initValue>true</initValue>
       <name>individualTestCase</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>findTestData('PreGameTestData').getValue(6, 1)</initValue>
-      <name>siteType</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>false</initValue>
-      <name>mobileBrowser</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Define la ruta absoluta para cargar el excel para el permiso de casino</description>
@@ -71,13 +21,8 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\LineasYapuestasTestData.xlsx'</initValue>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\LineasYapuestasTestData.xlsx'</initValue>
       <name>lineasExcelRuta</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>[('English') : 'ODDSTOWIN', ('Español') : 'PROPOSICIONES']</initValue>
-      <name>oddDescpirtion</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Define la ruta absoluta para cargar el excel para el permiso de horses</description>
@@ -86,27 +31,42 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Define la ruta absoluta para cargar el excel para el permiso de live</description>
-      <initValue>'C:\\\\QAAutomatizacion\\\\Proyectos\\\\TestData\\\\PermisosTestDataLive.xlsx'</initValue>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataLive.xlsx'</initValue>
       <name>permisosExcelRutaLive</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Define la ruta absoluta para cargar el excel para el permiso de sportbooks</description>
-      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataSportbook.xlsx'</initValue>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\\\PermisosTestDataSportbook.xlsx'</initValue>
       <name>permisosExcelRutaSportbook</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
-      <initValue>[('English') : 'Confirm', ('Español') : 'Confirmar']</initValue>
-      <name>buttonDescMap</name>
+      <description>Carga el pin del jugador para la prueba</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaSoporte').getValue(5, 1)</initValue>
+      <name>customerPIN</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('PreGameTestData').getValue(3, 1)</initValue>
-      <name>pregameSite</name>
+      <initValue>findTestData('Perfiles/DatosDePruebaSoporte').getValue(1, 1)</initValue>
+      <name>pregameUrl</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>false</initValue>
-      <name>pregameSiteEsVisible</name>
+      <initValue>findTestData('Perfiles/DatosDePruebaSoporte').getValue(6, 1)</initValue>
+      <name>customerPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Url para ir al sitio de lobby he ingresar al customer maintenace</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaSoporte').getValue(2, 1)</initValue>
+      <name>lobbyUrl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>usuario para ingresar al lobby</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaSoporte').getValue(3, 1)</initValue>
+      <name>lobbyUser</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Password para ingresar al lobby</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaSoporte').getValue(4, 1)</initValue>
+      <name>lobbyPassword</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

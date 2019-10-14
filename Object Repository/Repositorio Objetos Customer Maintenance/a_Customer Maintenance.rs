@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>BASIC</key>
-         <value>'//a[contains(text(),&quot;Customer Maintenance&quot;)]'
+         <value>//a[contains(text(),&quot;Customer Maintenance&quot;)]
 </value>
       </entry>
    </selectorCollection>

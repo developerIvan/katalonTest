@@ -75,7 +75,7 @@ public class AutomationUtils {
 				WebUI.waitForElementVisible(object , waitTime)
 
 				WebUI.waitForElementClickable(object , waitTime)
-				WebUI.click(object);
+				//WebUI.click(object);
 
 				objectAttribute = WebUI.getAttribute(object, htmlAttibute, FailureHandling.STOP_ON_FAILURE);
 				retryCount = 3;
@@ -163,7 +163,7 @@ public class AutomationUtils {
 		}
 	}
 
-	
+
 	@Keyword
 	def TestObject findTestObject(String testObjectId,TestObjectProperty objProperty,int waitTime){
 		try{

@@ -33,9 +33,10 @@ newPassword = findTestData('ChangePasswordTestCaseData').getValue(2, 1)
 
 oldPassword = findTestData('ChangePasswordTestCaseData').getValue(1, 1)
 
-WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Jugador logra ingresar a Overview (C6414)'), [('url') : findTestData('PreGameTestData').getValue(3, 
-            1), ('loginUser') : findTestData('ChangePasswordTestCaseData').getValue(3, 1), ('loginPassword') : findTestData(
-            'ChangePasswordTestCaseData').getValue(1, 1)], FailureHandling.STOP_ON_FAILURE)
+pregameSite = findTestData('Perfiles/DatosDePruebaSoporte').getValue(1, 1);
+WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Jugador logra ingresar a Overview (C6414)'), 
+    [('url') : pregameSite, ('loginUser') : findTestData('ChangePasswordTestCaseData').getValue(
+            3, 1), ('loginPassword') : findTestData('ChangePasswordTestCaseData').getValue(1, 1)], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.waitForPageLoad(4)
 
@@ -95,12 +96,13 @@ WebUI.waitForElementVisible(findTestObject('Repositorio Objectos Pagina Lobby/a_
 
 WebUI.click(findTestObject('Repositorio Objectos Pagina Lobby/a_Customer Maintenance Pre-Pro'))
 
-WebUI.waitForElementVisible(findTestObject('Repositorio Objectos Pagina Customer Maintenance/input_Save changes_globalcusto'), 2)
+WebUI.waitForElementVisible(findTestObject('Repositorio Objectos Pagina Customer Maintenance/input_Save changes_globalcusto'), 
+    2)
 
 WebUI.delay(2)
 
-WebUI.setText(findTestObject('Repositorio Objectos Pagina Customer Maintenance/input_Save changes_globalcusto'), findTestData('ChangePasswordTestCaseData').getValue(
-        3, 1))
+WebUI.setText(findTestObject('Repositorio Objectos Pagina Customer Maintenance/input_Save changes_globalcusto'), findTestData(
+        'ChangePasswordTestCaseData').getValue(3, 1))
 
 WebUI.delay(2)
 
@@ -108,8 +110,8 @@ WebUI.click(findTestObject('Repositorio Objectos Pagina Customer Maintenance/but
 
 WebUI.delay(2)
 
-WebUI.waitForElementAttributeValue(findTestObject('Repositorio Objectos Pagina Customer Maintenance/input_Password_pass'), 'value', findTestData(
-        'ChangePasswordTestCaseData').getValue(2, 1), 2)
+WebUI.waitForElementAttributeValue(findTestObject('Repositorio Objectos Pagina Customer Maintenance/input_Password_pass'), 
+    'value', findTestData('ChangePasswordTestCaseData').getValue(2, 1), 2)
 
 custMaintenancePassword = findTestObject('Repositorio Objectos Pagina Customer Maintenance/input_Password_pass')
 
@@ -117,9 +119,9 @@ actualPassword = WebUI.getAttribute(custMaintenancePassword, 'value', FailureHan
 
 WebUI.verifyEqual(actualPassword.toString(), newPassword)
 
-WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Jugador logra ingresar a Overview (C6414)'), [('url') : findTestData('PreGameTestData').getValue(3, 
-            1), ('loginUser') : findTestData('ChangePasswordTestCaseData').getValue(3, 1), ('loginPassword') : actualPassword], 
-    FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Jugador logra ingresar a Overview (C6414)'), 
+    [('url') : pregameSite, ('loginUser') : findTestData('ChangePasswordTestCaseData').getValue(
+            3, 1), ('loginPassword') : actualPassword], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.closeBrowser()
 

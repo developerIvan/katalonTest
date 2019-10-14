@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Consultar Dsiponible de Customer Maintenance</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a2700731-1958-4989-b81c-cc2bebfe2941</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>034d9f99-b4a1-4ad9-b2d0-e6c3670ff627</id>
+      <masked>false</masked>
+      <name>result2</name>
+   </variable>
+   <variable>
+      <defaultValue>'SHA2001'</defaultValue>
+      <description></description>
+      <id>7eb5ac96-f1bd-4ba4-b62c-d6ff29e21dde</id>
+      <masked>false</masked>
+      <name>PlayerPin</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>Produccion</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description>Siver para definir si los test cases invocan los test cases necesarios de forma separada, ejemplo  Transacciones MenuMiCuenta</description>
+      <initValue>true</initValue>
+      <name>individualTestCase</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de casino</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataCasino.xlsx'</initValue>
+      <name>permisosExcelRutaCasino</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>false</initValue>
+      <name>usuarioLogeado</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\LineasYapuestasTestData.xlsx'</initValue>
+      <name>lineasExcelRuta</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de horses</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataHorses.xlsx'</initValue>
+      <name>permisosExcelRutaHorses</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de live</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataLive.xlsx'</initValue>
+      <name>permisosExcelRutaLive</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de sportbooks</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\\\PermisosTestDataSportbook.xlsx'</initValue>
+      <name>permisosExcelRutaSportbook</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Carga el pin del jugador para la prueba</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(5, 1)</initValue>
+      <name>customerPIN</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(1, 1)</initValue>
+      <name>pregameUrl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(6, 1)</initValue>
+      <name>customerPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Url para ir al sitio de lobby he ingresar al customer maintenace</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(2, 1)</initValue>
+      <name>lobbyUrl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>usuario para ingresar al lobby</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(3, 1)</initValue>
+      <name>lobbyUser</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Password para ingresar al lobby</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(4, 1)</initValue>
+      <name>lobbyPassword</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>
