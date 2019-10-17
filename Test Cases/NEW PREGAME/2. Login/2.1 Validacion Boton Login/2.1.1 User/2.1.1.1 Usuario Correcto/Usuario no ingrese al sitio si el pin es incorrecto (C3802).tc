@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que, si el usuario ingresa la contraseña correcta ,pero su pin es incorrecto, el sistema no debe permitir que pueda ingresar al sitio.</description>
+   <name>Usuario no ingrese al sitio si el pin es incorrecto (C3802)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bf60ea9f-1f1d-4ce5-ad97-0d0c217d2439</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>9d09f186-297e-4d9a-accd-1bc680ab1114</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>a1af9de8-a4bf-4acd-8c11-53fbfdec6431</id>
+      <masked>false</masked>
+      <name>loginUser</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>36dd5dc2-7a0c-4b5e-98ac-43e4202bedc3</id>
+      <masked>false</masked>
+      <name>loginPassword</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.invalidCustomerPIN</defaultValue>
+      <description></description>
+      <id>1dddd112-ead4-4131-b0c4-802518462efc</id>
+      <masked>false</masked>
+      <name>invalidPin</name>
+   </variable>
+</TestCaseEntity>

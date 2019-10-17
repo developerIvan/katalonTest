@@ -6,11 +6,11 @@
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
    <dataFileGUID>213bfaa7-939c-4848-80ca-79de1b72130a</dataFileGUID>
-   <dataSourceUrl>C:\PROYECTOS\QAPregameNuevo\Data Files\Perfiles\DatosdeEntradaPruebasProyectos.xls</dataSourceUrl>
+   <dataSourceUrl>C:\PROYECTOS\QAPregameNuevo\Data Files\Perfiles\DatosdePrueba.xls</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>false</isInternalPath>
    <query></query>
    <secureUserAccount>false</secureUserAccount>
-   <sheetName>Sheet1</sheetName>
+   <sheetName>Proyectos</sheetName>
    <usingGlobalDBSetting>false</usingGlobalDBSetting>
 </DataFileEntity>

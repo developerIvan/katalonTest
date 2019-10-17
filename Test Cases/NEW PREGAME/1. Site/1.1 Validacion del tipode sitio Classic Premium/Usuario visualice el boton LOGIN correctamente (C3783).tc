@@ -6,7 +6,7 @@
    <comment></comment>
    <testCaseGuid>45196d3b-a225-408c-8cf5-c450e353e2ff</testCaseGuid>
    <variable>
-      <defaultValue>findTestData('PreGameTestData').getValue(3, 1)</defaultValue>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
       <description></description>
       <id>393d30d8-744e-4beb-a7b3-6c47ed58efeb</id>
       <masked>false</masked>

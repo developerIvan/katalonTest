@@ -165,7 +165,7 @@ try {
 
 	WebUI.delay(2)
 
-	cmFreBalance = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.1 Account Information/4.3.2.1.5 Free Play/4.3.2.1.5.2 Validacion Free Play Vs CM Transactions/Campo Free Balance es desplegado correctamente(C3791)'),
+	cmFreBalance = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.1 Account Information/4.3.2.1.5 Free Play/4.3.2.1.5.2 Validacion Free Play Vs CM Transactions/Consultar Free Balance de Customer Maintenace'),
 			       [('PlayerPin'): UserId_FreePlay], FailureHandling.STOP_ON_FAILURE)
 
 	cmFreBalance =  cmFreBalance!=null&&!cmFreBalance.isEmpty()?cmFreBalance.trim():'';

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que el sistema no permita que el usuario ingrese al sitio si no define su PIN, aunque el password sea el correcto.</description>
+   <name>Usuario no ingrese si el pin no es ingresado (C3810)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ff641502-9cf9-4323-a5a0-cd365846a1d8</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>9d09f186-297e-4d9a-accd-1bc680ab1114</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>a1af9de8-a4bf-4acd-8c11-53fbfdec6431</id>
+      <masked>false</masked>
+      <name>loginUser</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>36dd5dc2-7a0c-4b5e-98ac-43e4202bedc3</id>
+      <masked>false</masked>
+      <name>loginPassword</name>
+   </variable>
+</TestCaseEntity>

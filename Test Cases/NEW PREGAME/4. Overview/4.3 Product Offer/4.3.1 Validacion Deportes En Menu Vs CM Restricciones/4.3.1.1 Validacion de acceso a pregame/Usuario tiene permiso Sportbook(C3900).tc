@@ -2,7 +2,7 @@
 <TestCaseEntity>
    <description>Precondicion:
 El usuario de pruebas tenga el permiso sportbook habilitado en Customer Maintenace</description>
-   <name>Usuario tiene permiso Overview(C3900)</name>
+   <name>Usuario tiene permiso Sportbook(C3900)</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>8d03441c-5156-4199-9044-480b3a58e420</testCaseGuid>

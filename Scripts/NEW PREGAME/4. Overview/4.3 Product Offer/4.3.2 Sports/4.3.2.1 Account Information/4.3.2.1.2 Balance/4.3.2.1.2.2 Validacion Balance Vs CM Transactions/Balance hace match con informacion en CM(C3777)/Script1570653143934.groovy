@@ -32,13 +32,6 @@ import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
 import java.util.Calendar as Calendar
 import java.util.Date as Date
 import java.text.SimpleDateFormat as SimpleDateFormat
-import java.io.FileInputStream as FileInputStream
-import java.io.FileNotFoundException as FileNotFoundException
-import java.io.IOException as IOException
-import org.apache.poi.xssf.usermodel.XSSFCell as XSSFCell
-import org.apache.poi.xssf.usermodel.XSSFRow as XSSFRow
-import org.apache.poi.xssf.usermodel.XSSFSheet as XSSFSheet
-import org.apache.poi.xssf.usermodel.XSSFWorkbook as XSSFWorkbook
 import java.lang.String as String
 import bminc.eu.exceptions.BalanceException as BalanceException
 import java.lang.AssertionError as AssertionError
@@ -137,13 +130,7 @@ try {
 	WebUI.waitForElementNotVisible(findTestObject('Repositorio Objetos Proyecto Premium/InitModal'), 4);
 
 	WebUI.waitForElementNotPresent(findTestObject('Repositorio Objetos Proyecto Premium/InitModal'), 4);
-/*
-	WebUI.waitForElementClickable(findTestObject('Repositorio Objetos Proyecto Premium/div_MY ACCOUNT'), 4)
 
-	WebUI.delay(2)
-
-	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/div_MY ACCOUNT'))
-*/
 	WebUI.delay(2)
 
 	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/span_-358.72'))

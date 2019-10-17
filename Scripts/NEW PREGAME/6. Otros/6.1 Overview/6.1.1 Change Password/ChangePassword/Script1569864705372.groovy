@@ -34,7 +34,7 @@ newPassword = findTestData('ChangePasswordTestCaseData').getValue(2, 1)
 oldPassword = findTestData('ChangePasswordTestCaseData').getValue(1, 1)
 
 pregameSite = findTestData('Perfiles/DatosDePruebaSoporte').getValue(1, 1);
-WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Jugador logra ingresar a Overview (C6414)'), 
+WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.3 Validacion Inet Target/2.1.3.1 Inet Target Correcto/Jugador logra ingresar a Overview (C6414)'), 
     [('url') : pregameSite, ('loginUser') : findTestData('ChangePasswordTestCaseData').getValue(
             3, 1), ('loginPassword') : findTestData('ChangePasswordTestCaseData').getValue(1, 1)], FailureHandling.STOP_ON_FAILURE)
 
@@ -119,7 +119,7 @@ actualPassword = WebUI.getAttribute(custMaintenancePassword, 'value', FailureHan
 
 WebUI.verifyEqual(actualPassword.toString(), newPassword)
 
-WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Jugador logra ingresar a Overview (C6414)'), 
+WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.3 Validacion Inet Target/2.1.3.1 Inet Target Correcto/Jugador logra ingresar a Overview (C6414)'), 
     [('url') : pregameSite, ('loginUser') : findTestData('ChangePasswordTestCaseData').getValue(
             3, 1), ('loginPassword') : actualPassword], FailureHandling.STOP_ON_FAILURE)
 

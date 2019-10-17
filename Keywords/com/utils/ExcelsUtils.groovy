@@ -21,7 +21,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.apache.poi.xssf.usermodel.XSSFSheet as XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook as XSSFWorkbook
-
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import internal.GlobalVariable
 
 public class ExcelsUtils {
@@ -55,7 +55,7 @@ public class ExcelsUtils {
 	//Define el objeto sheet utilizando el indice o número de pagina, el cual se encargara de almacena en memoria las celdas del excel a leer o escribir
 	@Keyword
 	def static loadXSSFSheet(int pos){
-		//KeywordUtil.logInfo("sheet load "+workbook)
+		//
 		sheet = workbook.getSheetAt(pos);
 	}
 
@@ -69,6 +69,7 @@ public class ExcelsUtils {
 	@Keyword
 	def static loadXSSFSheet(String sheetName){
 		sheet = workbook.getSheet(sheetName);
+		
 	}
 
 	//
@@ -79,7 +80,8 @@ public class ExcelsUtils {
 
 	//Establece el valor en una columna en especifico
 	def static setColumValue(String value,int rowPos,int cellPos){
-		sheet.getRow(rowPos).createCell(cellPos).setCellValue(value);
+		XSSFRow row = sheet.getRow(rowPos)!=null?sheet.getRow(rowPos):sheet.createRow(rowPos);
+		row.createCell(cellPos).setCellValue(value);
 	}
 
 	//Almacena la información en el archvio  de excel

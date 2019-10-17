@@ -69,4 +69,14 @@
       <initValue>findTestData('Perfiles/DatosDePruebaSoporte').getValue(4, 1)</initValue>
       <name>lobbyPassword</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta donde está ubicado el archivo excel para los reportes</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\Reports\\TestResults.xlsx'</initValue>
+      <name>excelReportFileLocation</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Valida si el el navegador ya cargo la página de pregame para que no vuleva a hacerlo en casos de 2 o mas casosd e prueba que requieran de este sitio </description>
+      <initValue>false</initValue>
+      <name>pregameSiteEsVisible</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -19,8 +19,10 @@ WebUI.navigateToUrl(url)
 
 WebUI.maximizeWindow()
 
-GlobalVariable.pregameUrl = true;
+
 
 TestObject loginButton = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("login", "css", "#logIn", 2);
 
 assert !loginButton.equals(CustomKeywords.'com.utils.AutomationUtils.getNullObject'());
+
+GlobalVariable.pregameSiteEsVisible = true;

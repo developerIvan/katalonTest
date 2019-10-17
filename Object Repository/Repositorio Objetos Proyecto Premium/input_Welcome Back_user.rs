@@ -6,15 +6,19 @@
    <elementGuidId>4eb32f7d-ee21-4b11-96b6-6604b6270d30</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>CSS</key>
+         <value>#user</value>
+      </entry>
+      <entry>
          <key>XPATH</key>
          <value>//input[@id='user']</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value>id(&quot;user&quot;)[count(. | //input[@name = 'user' and @id = 'user' and @placeholder = 'Pin or Email' and @type = 'text']) = count(//input[@name = 'user' and @id = 'user' and @placeholder = 'Pin or Email' and @type = 'text'])]</value>
+         <value>id(&quot;user&quot;)[count(. | //input[@id = 'user' and @type = 'text']) = count(//input[@id = 'user' and @type = 'text'])]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -31,7 +35,7 @@
       <value>form-control</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
@@ -45,7 +49,7 @@
       <value>user</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>placeholder</name>
       <type>Main</type>
@@ -69,36 +73,42 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
+      <type>Main</type>
       <value>//input[@id='user']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
+      <type>Main</type>
       <value>//div[@id='frmLogin']/div/input</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Welcome Back!'])[1]/following::input[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Atenciòn'])[1]/following::input[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
+      <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='The username, pin or password is incorrect'])[1]/preceding::input[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
+      <type>Main</type>
       <value>//div[2]/div/div[2]/div/div/input</value>
    </webElementXpaths>
 </WebElementEntity>

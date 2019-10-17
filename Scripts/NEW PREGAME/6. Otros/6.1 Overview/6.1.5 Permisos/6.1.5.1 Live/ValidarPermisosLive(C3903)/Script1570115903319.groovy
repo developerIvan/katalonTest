@@ -56,7 +56,7 @@ final String textContentAtribute = CustomKeywords.'com.utils.ConstantsUtil.getHt
 
 try{
 	if (!(GlobalVariable.usuarioLogeado)) {
-		WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Jugador logra ingresar a Overview (C6414)'), [('url') : url, ('loginUser') : userName, ('loginPassword') : userPassword],
+		WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.3 Validacion Inet Target/2.1.3.1 Inet Target Correcto/Jugador logra ingresar a Overview (C6414)'), [('url') : url, ('loginUser') : userName, ('loginPassword') : userPassword],
 		FailureHandling.STOP_ON_FAILURE)
 
 		GlobalVariable.usuarioLogeado = true;

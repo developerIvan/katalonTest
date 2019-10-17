@@ -6,7 +6,7 @@
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description>Siver para definir si los test cases invocan los test cases necesarios de forma separada, ejemplo  Transacciones MenuMiCuenta</description>
-      <initValue>true</initValue>
+      <initValue>false</initValue>
       <name>individualTestCase</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -68,5 +68,15 @@
       <description>Password para ingresar al lobby</description>
       <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(4, 1)</initValue>
       <name>lobbyPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Alamcena un pin invalido para las pruebas</description>
+      <initValue>findTestData('TestData/Datos de Entrada/2.1.1.1 Usuario Correcto').getValue(1, 1)</initValue>
+      <name>invalidCustomerPIN</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Alamacena el esperado mensaje de error esperado en caso de que las credenciales sean erroneas</description>
+      <initValue>findTestData('TestData/Datos de Entrada/2.1.1.1 Usuario Correcto').getValue(3, 1)</initValue>
+      <name>mensajeUsuarioInvalido</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
