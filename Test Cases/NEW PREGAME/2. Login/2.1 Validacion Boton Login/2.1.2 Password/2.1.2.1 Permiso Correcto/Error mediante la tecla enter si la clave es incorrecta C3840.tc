@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que se muestre un mensaje de error cuando el usuario ingresa un contraseña invalida y/o presiona la tecla &lt;Enter> para ingresar a la aplicación.</description>
+   <name>Error mediante la tecla enter si la clave es incorrecta C3840</name>
+   <tag>C3840</tag>
+   <comment></comment>
+   <testCaseGuid>62cda2f3-5a24-4801-b1be-ff63be1b2292</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>9d09f186-297e-4d9a-accd-1bc680ab1114</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>a1af9de8-a4bf-4acd-8c11-53fbfdec6431</id>
+      <masked>false</masked>
+      <name>loginUser</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.invalidCustomerPassword</defaultValue>
+      <description></description>
+      <id>36dd5dc2-7a0c-4b5e-98ac-43e4202bedc3</id>
+      <masked>false</masked>
+      <name>loginInvalidPassword</name>
+   </variable>
+</TestCaseEntity>

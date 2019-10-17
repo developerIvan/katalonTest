@@ -30,10 +30,10 @@ CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
 CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'('Horses')
 
 //Registro fecha incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.DateUtil.getDate'())
+CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.ReportHelper.getDate'())
 
 //Registro  hora  incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, CustomKeywords.'com.utils.DateUtil.getHours'())
+CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, CustomKeywords.'com.utils.ReportHelper.getHours'())
 
 //--------------Variables ---------------------------------//
 String url = GlobalVariable.pregameUrl;
@@ -83,11 +83,11 @@ try{
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, permisoHorses)
 
 	//Guarda hora final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7, CustomKeywords.'com.utils.DateUtil.getHours'())
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7, CustomKeywords.'com.utils.ReportHelper.getHours'())
 
 
 	//Guarda fecha final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.DateUtil.getDate'())
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.ReportHelper.getDate'())
 
 	//Guara estado de la prueba
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 12, SUCCESS_STATUS)
@@ -120,10 +120,10 @@ try{
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,3,userPassword);
 
 	//Guarda hora final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7, CustomKeywords.'com.utils.DateUtil.getHours'())
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7, CustomKeywords.'com.utils.ReportHelper.getHours'())
 
 	//Guarda fecha final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.DateUtil.getDate'())
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.ReportHelper.getDate'())
 
 	//Cierra archivo de lectura
 	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()

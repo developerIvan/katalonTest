@@ -22,6 +22,8 @@ import org.openqa.selenium.WebDriver as WebDriver
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import internal.GlobalVariable
+import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class AutomationUtils {
 
@@ -192,5 +194,11 @@ public class AutomationUtils {
 				}
 			}
 		}
+	}
+
+	@Keyword
+	def createSnapshop(String testCaseId){
+		String screenshotname =testCaseId+"_"+LocalTime.now().toString().replace(":","-").replace(".","-");
+		WebUI.takeScreenshot("C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\Screenshots\\2.2.1 Usuario Correcto\\"+screenshotname+".png")
 	}
 }

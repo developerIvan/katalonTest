@@ -11,7 +11,7 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>b45aa7c0-fa75-44ba-ac2f-cda58b044d79</testSuiteGuid>
    <testCaseLink>
-      <guid>551612be-0c7d-4975-94dd-256035a04402</guid>
+      <guid>1f94af75-fa16-493d-b3f1-2e7bf29f9677</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Usuario no ingrese al sitio si el pin es incorrecto (C3802)</testCaseId>
@@ -41,10 +41,10 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>2a14e292-4f2f-4f8b-b0d4-224cd091bf2d</guid>
+      <guid>dd3a4236-9ff9-4142-b7b0-21e6027478b1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Usuario no ingrese si el pin no es ingresado (C3810)</testCaseId>
+      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/El jugador ingrese al sitio meditante la tecla enter (C3841)</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>

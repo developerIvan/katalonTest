@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Consultar Dsiponible de Customer Maintenance</name>
+   <name>Consultar Disponible de CM</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>a2700731-1958-4989-b81c-cc2bebfe2941</testCaseGuid>

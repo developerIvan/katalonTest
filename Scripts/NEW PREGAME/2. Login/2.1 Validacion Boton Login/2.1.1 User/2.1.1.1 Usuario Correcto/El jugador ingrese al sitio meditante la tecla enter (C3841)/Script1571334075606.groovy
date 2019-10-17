@@ -24,12 +24,16 @@ import java.util.Date as Date
 import java.text.SimpleDateFormat as SimpleDateFormat
 import org.openqa.selenium.Keys as Keys
 
+//Define si guardar un screenshot en caso de ser necesario 
+boolean tomarInstantanea = false;
+
 String OsName = CustomKeywords.'mycompany.GetTestingConfig.getOperatingSystem'()
 
 SimpleDateFormat format = new SimpleDateFormat('dd/MM/YYYY')
 
 SimpleDateFormat timeFormat = new SimpleDateFormat('H:mm:ss')
 
+String testcaseId = 'C3841';
 //Carga del excel
 CustomKeywords.'com.utils.ExcelsUtils.loadFileInputStream'(GlobalVariable.excelReportFileLocation)
 
@@ -37,13 +41,13 @@ CustomKeywords.'com.utils.ExcelsUtils.loadFileInputStream'(GlobalVariable.excelR
 CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
 
 //Selecciona la hoja del execl
-CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'('C3841')
+CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'(testcaseId)
 
 //Registro fecha incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 3, CustomKeywords.'com.utils.DateUtil.getDate'())
+CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 3, CustomKeywords.'com.utils.ReportHelper.getDate'())
 
 //Registro  hora  incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.DateUtil.getHours'())
+CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.ReportHelper.getHours'())
 
 if (GlobalVariable.pregameSiteEsVisible == false) {
     WebUI.callTestCase(findTestCase('NEW PREGAME/1. Site/1.1 Validacion del tipode sitio Classic Premium/Usuario visualice el boton LOGIN correctamente (C3783)'), 
@@ -74,8 +78,6 @@ String CSS_SELECTOR = CustomKeywords.'com.utils.ConstantsUtil.getCSSSelectorId'(
 String XPATH_SELECTOR = CustomKeywords.'com.utils.ConstantsUtil.getXPathSelectorId'()
 
 try {
-    WebUI.delay(2)
-
     TestObject loginButton = CustomKeywords.'com.utils.AutomationUtils.clickAndReturnObject'(null, 'Login Button ', new TestObjectProperty(
         XPATH_SELECTOR, equalsCondType, 'id(\'logIn\')'), 2)
 
@@ -91,41 +93,50 @@ try {
 
     WebUI.sendKeys(userPasswordInput, loginPassword)
 
-    //entar al sitio con enter
-	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/button_Enter'), Keys.chord(Keys.ENTER))
-	/*/
-    String overviewButton = CustomKeywords.'com.utils.AutomationUtils.getObjectAttribute'(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/Overview Button'), 
-        'innerText', 2)
+    if (!(BrowserNameVersion.toString().contains('Firefox'))) {
+        WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/button_Enter'), Keys.chord(Keys.ENTER)) //Debido a un bug en el navegador de firefox, la prueba usará click en lugar de enter 
+    } else {
+        WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/button_Enter'))
+    }
+    
+    // WebUI.delay(4)
+    WebUI.waitForElementPresent(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/Overview Button'), 8)
 
-    WebUI.waitForElementPresent(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/Overview Button'), 2)*/
+    //valida que el usuario logró entrar al sitio
+	
+	
+    assert WebUI.getUrl().toString().contains('sportbook')
 
-	WebUI.waitForPageLoad(8);
-	//valida que el usuario ogró entrar al sitio 
-	CharSequence currentURL =WebUI.getUrl();
-    assert currentURL.toString().contains("sportbook");
-
-    //Result passed .contains('sportbook');
     //Guara estado de la prueba
     CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, 'Exitoso')
 
     CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, 'El jugador logró ingresar al sitio de pregame con la tecla enter')
-
-   
 }
 catch (com.kms.katalon.core.exception.StepFailedException stepE) {
-    String errorCode = '-01'
+    String errorCode = '-09'
+	
 
+     tomarInstantanea = true;
     KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + stepE.getMessage())
 
     CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, 'Fallido')
 
     CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, 'El jugador no logró ingresar al sitio de pregame con la tecla enter debido a un paso de la prueba o elmento de la página que no está visible. Favor revisar el log de katalon')
 
-    throw new LoginException('Paso de la prueba login no completado', stepE, errorCode)
-} 
-catch (Exception e) {
-    String errorCode = '-99'
+    throw new LoginException('Paso de la prueba  no completado', stepE, errorCode)
+}catch(java.lang.AssertionError asserError){
+    String errorCode = '-10'
+	tomarInstantanea = true;
+	KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + asserError.getMessage())
 
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, 'Fallido')
+
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, 'El jugador no logró ingresar al sitio de pregame con la tecla enter, la pagina esperada debería tener el domino o sección sportbook pero actualmente es: '+WebUI.getUrl().toString())
+ 
+	throw new LoginException('Ingreso mediante la tecla enter fallido', asserError, errorCode)
+}catch (Exception e) {
+    String errorCode = '-99'
+	tomarInstantanea = true;
     KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + e.getMessage())
 
     CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, 'Fallido')
@@ -135,10 +146,16 @@ catch (Exception e) {
     throw new LoginException('Login Test Case fallido', e, errorCode)
 } 
 finally { 
-    //Cierra el navegador si la prueba se ejecuto de forma individual
-    if (GlobalVariable.individualTestCase == true) {
-        WebUI.closeBrowser()
+    //Cierra el navegador si la prueba se ejecuto de forma individual y no hubo errores
+    if (GlobalVariable.individualTestCase == true)  {
+        if(tomarInstantanea == true){
+		 CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(testcaseId)
+        }
+		WebUI.closeBrowser(); //solo cierrra la ventana de login	
+		
     }
+
+	
     
     //Guarda url o dirrecion del sitio según el ambiente
     CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 0, url)
@@ -150,10 +167,10 @@ finally {
     CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 2, loginPassword)
 
     //Guarda hora final
-    CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.DateUtil.getHours'())
+    CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.ReportHelper.getHours'())
 
     //Guarda fecha final
-    CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, CustomKeywords.'com.utils.DateUtil.getDate'())
+    CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, CustomKeywords.'com.utils.ReportHelper.getDate'())
 
     //Cierra archivo de lectura para permitir la escritura
     CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()

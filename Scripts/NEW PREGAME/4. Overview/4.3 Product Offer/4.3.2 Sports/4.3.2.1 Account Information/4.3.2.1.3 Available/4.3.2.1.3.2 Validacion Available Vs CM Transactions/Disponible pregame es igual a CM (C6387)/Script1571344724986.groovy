@@ -32,31 +32,37 @@ import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
 import java.util.Calendar as Calendar
 import java.util.Date as Date
 import java.text.SimpleDateFormat as SimpleDateFormat
+import java.io.FileInputStream as FileInputStream
+import java.io.FileNotFoundException as FileNotFoundException
+import java.io.IOException as IOException
+import org.apache.poi.xssf.usermodel.XSSFCell as XSSFCell
+import org.apache.poi.xssf.usermodel.XSSFRow as XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet as XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook as XSSFWorkbook
 import java.lang.String as String
-import bminc.eu.exceptions.BalanceException as BalanceException
+import bminc.eu.exceptions.DisponibleException as DisponibleException
 import java.lang.AssertionError as AssertionError
 
 KeywordLogger log = new KeywordLogger()
 
 String OsName = CustomKeywords.'mycompany.GetTestingConfig.getOperatingSystem'()
 
-SimpleDateFormat format = new SimpleDateFormat('dd/MM/YYYY')
+SimpleDateFormat format = new SimpleDateFormat("dd/MM/YYYY")
 
-SimpleDateFormat timeFormat = new SimpleDateFormat('H:mm:ss')
+SimpleDateFormat timeFormat = new SimpleDateFormat("H:mm:ss")
 
 Calendar cal = Calendar.getInstance()
 
 Date DateTimeToday = cal.getTime()
 
-def Url_Balance = GlobalVariable.pregameUrl
+def Url_Available = GlobalVariable.pregameUrl
 
-def UserId_Balance = GlobalVariable.customerPIN
+def UserId_Available = GlobalVariable.customerPIN
 
-def Password_Balance = GlobalVariable.customerPassword
+def Password_Available =  GlobalVariable.customerPassword
 
-def String rutaExcel = 'C:/PROYECTOS/QAPregameNuevo/Data Files/TestData/Balance hace match con informacion en CM (C3777).xlsx';
-
-WebUI.openBrowser(Url_Balance)
+//import com.kms.katalon.core.testobject.CoditionType as ConditionType
+WebUI.openBrowser(Url_Available)
 
 CharSequence BrowserNameVersion = CustomKeywords.'mycompany.GetTestingConfig.getBrowserAndVersion'()
 
@@ -64,6 +70,7 @@ String ScreenResolution = CustomKeywords.'mycompany.GetTestingConfig.getScreenRe
 
 
 WebUI.maximizeWindow();
+def String rutaExcel = 'C:/PROYECTOS/QAPregameNuevo/Data Files/TestData/Available hace match con informacion en CM (C6387).xlsx';
 
 
 //Carga del excel
@@ -76,40 +83,36 @@ CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
 CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'(0)
 
 //Registro fecha incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 3, CustomKeywords.'com.utils.DateUtil.getDate'())
+CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 3, CustomKeywords.'com.utils.ReportHelper.getDate'())
 
 //Registro  hora  incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.DateUtil.getHours'())
+CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.ReportHelper.getHours'())
 
 //Guarda Version del browser
 CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 8, CustomKeywords.'mycompany.GetTestingConfig.getBrowserAndVersion'())
 
-
 //Guarda Version del sistema operativo
 CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7,OsName)
 
-
-//Guarda Version del sistema operativo
+//Guarda resolucion de la ventana
 CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 9, ScreenResolution)
 
-String pregameBalance = ''
+String pregameDisponible = ''
 
-String cmBalance = ''
-try {
-	WebDriver driver = DriverFactory.getWebDriver()
+String cmDisponible = ''
+try{
+//	WebDriver driver = DriverFactory.getWebDriver()
 
 	//WebDriver driver = new FirefoxDriver()
-	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/a_Login'), 3)
-
 	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/a_Login'))
 
 	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), 2)
 
-	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), UserId_Balance)
+	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), UserId_Available)
 
 	WebUI.delay(2)
 
-	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_password'), Password_Balance)
+	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_password'), Password_Available)
 
 	WebUI.delay(2)
 
@@ -118,7 +121,7 @@ try {
 	WebUI.waitForPageLoad(5)
 
 	switch (WebUI.verifyElementNotPresent(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/a_Enter'),
-	10, FailureHandling.CONTINUE_ON_FAILURE)) {
+		10, FailureHandling.CONTINUE_ON_FAILURE)) {
 		case 'true':
 			break
 		case 'false':
@@ -127,101 +130,101 @@ try {
 			break
 	}
 
-	WebUI.waitForElementNotVisible(findTestObject('Repositorio Objetos Proyecto Premium/InitModal'), 4);
+	WebUI.delay(2)
 
-	WebUI.waitForElementNotPresent(findTestObject('Repositorio Objetos Proyecto Premium/InitModal'), 4);
+	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/li_Disponible 641.28'))
 
 	WebUI.delay(2)
 
-	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/span_-358.72'))
+	//'Get text of span_641.28'
+	pregameDisponible = WebUI.getText(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/li_Disponible 641.28'))
 
-	WebUI.delay(2)
+	//WebUI.delay(2)
 
-	//'Get text of div_Pending 0'
-	pregameBalance = WebUI.getText(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/span_-358.72'))
-
-	WebUI.delay(2)
-
-	if (pregameBalance == '') {
-		pregameBalance = pregameBalance.replace('', '0')
+	if (pregameDisponible.contains('Available')) {
+		pregameDisponible = pregameDisponible.replace('Available:', '')
+	} else {
+		pregameDisponible = pregameDisponible.replace('Disponible:', '')
 	}
 
-	pregameBalance = pregameBalance.trim()
+	if (pregameDisponible == '') {
+		pregameDisponible = pregameDisponible.replace('', '0')
+	}
+
+	pregameDisponible = pregameDisponible.trim().replace(',', '')
 
 	WebUI.delay(2)
 
-	cmBalance = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.1 Account Information/4.3.2.1.2 Balance/4.3.2.1.2.2 Validacion Balance Vs CM Transactions/Consultar Balance de customer Maintenance'),
-			[('PlayerPin'): UserId_Balance], FailureHandling.STOP_ON_FAILURE)
-
-	cmBalance =  cmBalance!=null&&!cmBalance.isEmpty()?cmBalance.trim():'';
-
-	assert cmBalance.equals(pregameBalance);
-
+	cmDisponible = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.1 Account Information/4.3.2.1.3 Available/4.3.2.1.3.2 Validacion Available Vs CM Transactions/Consultar Disponible de CM'),
+				   [('PlayerPin'): UserId_Available], FailureHandling.STOP_ON_FAILURE)
+	
+	cmDisponible=  cmDisponible!=null&&!cmDisponible.isEmpty()?cmDisponible.trim():'';
+	
+	assert cmDisponible.equals(pregameDisponible);
+		
 	//WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/div_Balance -358.72'))
 	WebUI.closeBrowser(FailureHandling.STOP_ON_FAILURE)
 
 
 	//Result passed
-	//Guara estado de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, "Exitoso")
+		CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, "Exitoso")
+
+	//Descripcion Exito en test case de validar Disponible
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, "El valor del campo Disponible de pregame Si es igual al valor del campo Disponible de Customer Maintenance")
+}catch(DisponibleException dis){
 	
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, "El valor del campo Balance de pregame Si es igual al valor del campo Balance de Customer Maintenance")
-
-}catch (BalanceException bal) {
-
-	//Guara estado de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, "Fallido")
-
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, 'El valor del Balance de pregame no es igual al de Customer Maintenance')
-	throw new AssertionError('Error en la prueba por excepcion en el Balance', bal);
-
-}catch (com.kms.katalon.core.exception.StepFailedException stepFailedEx) {
 	//Result fallido
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, "Fallido")
 
 	//Descripcion error en test case de validar balance
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, 'Error debido a que el valor del Balance de pregame es diferente al valor Balance en Customer Maintenance')
-	throw new AssertionError('Error en la prueba', stepFailedEx);
-
-}catch(Exception e) {
-
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, "El valor del Disponible de pregame no es igual al valor Disponible de Customer Maintenance")
+	throw new AssertionError('Error en la prueba por excepcion en el Disponible',dis);
+	
+}catch(com.kms.katalon.core.exception.StepFailedException stepFailedEx){
 	//Result fallido
-	//sheet.getRow(1).createCell(10).setCellValue('Fallido');
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, "Fallido")
 
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, 'Error debido a que el valor del Balance de pregame es diferente al valor Balance en Customer Maintenance')
-	throw new AssertionError('Error en la prueba', e)
+	//Descripcion error en test case de validar balance
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, "Error debido a que el valor disponible de pregame es diferente al valor disponible en Customer Maintenace")
+	throw new AssertionError('Error en la prueba',stepFailedEx);
+
+}catch(Exception e){
+
+	//Result fallido
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, "Fallido")
+
+	//Descripcion error en test case de validar balance
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, "Error inesperado, revisar en log o bitacoras")
+	throw new AssertionError('Error en la prueba',e);
 }
-finally {
+finally{
 	//Guarda url o dirrecion del sitio según el ambiente
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,0,Url_Balance);
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,0,Url_Available);
 
 	//Guarda pin del jugador que se usó para la prueba
-   CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,1,UserId_Balance);
+   CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,1,UserId_Available);
 
    //Guarda password del jugador que se usó para la prueba
-   CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,2,Password_Balance);
+   CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,2,Password_Available);
+	
 	
 	//Guarda hora final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.DateUtil.getHours'())
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.ReportHelper.getHours'())
 
 	//Guarda fecha final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, CustomKeywords.'com.utils.DateUtil.getDate'())
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, CustomKeywords.'com.utils.ReportHelper.getDate'())
 
 	
 	//Cierra archivo de lectura para permitir la escritura
 	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()
 	
-
-	
 	//Abre  archivo de escritua
 	CustomKeywords.'com.utils.ExcelsUtils.loadFileOutputStream'(rutaExcel)
 
+	
 	//escribe informacion en la hoja del exec
 	CustomKeywords.'com.utils.ExcelsUtils.writeOutputExcelSheet'()
 
 	//Cierra  archivo de escritua
 	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()
-
 }
-

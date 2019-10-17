@@ -96,10 +96,10 @@ CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
 CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'(0)
 
 //Registro fecha incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 3, CustomKeywords.'com.utils.DateUtil.getDate'())
+CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 3, CustomKeywords.'com.utils.ReportHelper.getDate'())
 
 //Registro  hora  incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.DateUtil.getHours'())
+CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.ReportHelper.getHours'())
 
 //Guarda Version del browser
 CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 8, CustomKeywords.'mycompany.GetTestingConfig.getBrowserAndVersion'())
@@ -237,10 +237,10 @@ try{
 	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,2,Password_Pendient);
 	
 	//Guarda hora final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.DateUtil.getHours'())
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.ReportHelper.getHours'())
 
 	//Guarda fecha final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, CustomKeywords.'com.utils.DateUtil.getDate'())
+	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, CustomKeywords.'com.utils.ReportHelper.getDate'())
 
 
 	//Cierra archivo de lectura para permitir la escritura

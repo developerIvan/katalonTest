@@ -14,6 +14,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 
+def loginResult = ['errorMgs': '', 'userId':'', 'password': '']
+
 WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), 2)
 
 	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), userPin)
@@ -24,4 +26,10 @@ WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium
 
 	String actualErrorMessage = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/Div_LoginError'), 'innerText')
 	
-	return actualErrorMessage;
+	loginResult.errorMgs = actualErrorMessage;
+	
+	loginResult.userId = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), "value");
+	
+	loginResult.password = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_password'), "value");
+	
+	return loginResult;

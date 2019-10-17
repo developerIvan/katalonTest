@@ -79,4 +79,9 @@
       <initValue>false</initValue>
       <name>pregameSiteEsVisible</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Almacena la clave incorrecta de usuario apra la prueba</description>
+      <initValue>findTestData('TestData/Datos de Entrada/2.1.2.1 Permiso Correcto').getValue(1, 1)</initValue>
+      <name>invalidCustomerPassword</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
