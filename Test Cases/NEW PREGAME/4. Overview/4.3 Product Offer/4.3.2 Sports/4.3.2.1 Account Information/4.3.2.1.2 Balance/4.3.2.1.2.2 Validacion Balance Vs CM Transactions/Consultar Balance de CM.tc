@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Consultar Pending de Customer Maintenance</name>
+   <name>Consultar Balance de CM</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>1b1e313d-e4db-4f81-8fcf-4f0c3a2a3a33</testCaseGuid>
+   <testCaseGuid>ff86a9e3-29a9-4da6-8aa8-a1a47036340f</testCaseGuid>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>157fc2d2-14fb-4945-b047-2c62d78c750a</id>
+      <id>c059a07b-f755-457c-862c-fb7315e644b8</id>
       <masked>false</masked>
       <name>result2</name>
    </variable>
    <variable>
       <defaultValue>'SHA2001'</defaultValue>
       <description></description>
-      <id>5f49389c-5015-434a-bd9e-24bbfcdcebe6</id>
+      <id>4f3745b3-5789-40cd-8f34-7d2834a9c3a1</id>
       <masked>false</masked>
       <name>PlayerPin</name>
    </variable>

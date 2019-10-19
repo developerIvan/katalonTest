@@ -150,7 +150,7 @@ try {
 
 	WebUI.delay(2)
 
-	cmBalance = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.1 Account Information/4.3.2.1.2 Balance/4.3.2.1.2.2 Validacion Balance Vs CM Transactions/Consultar Balance de customer Maintenance'),
+	cmBalance = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.1 Account Information/4.3.2.1.2 Balance/4.3.2.1.2.2 Validacion Balance Vs CM Transactions/Consultar Balance de CM'),
 			[('PlayerPin'): UserId_Balance], FailureHandling.STOP_ON_FAILURE)
 
 	cmBalance =  cmBalance!=null&&!cmBalance.isEmpty()?cmBalance.trim():'';

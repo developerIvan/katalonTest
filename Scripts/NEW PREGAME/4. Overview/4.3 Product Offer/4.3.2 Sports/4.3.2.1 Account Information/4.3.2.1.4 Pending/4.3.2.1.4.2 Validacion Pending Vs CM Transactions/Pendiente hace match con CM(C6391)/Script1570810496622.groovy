@@ -182,7 +182,7 @@ try{
 
 	WebUI.delay(2)
 
-	cmPendiente = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.1 Account Information/4.3.2.1.4 Pending/4.3.2.1.4.2 Validacion Pending Vs CM Transactions/Consultar Pending de Customer Maintenance'),
+	cmPendiente = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.1 Account Information/4.3.2.1.4 Pending/4.3.2.1.4.2 Validacion Pending Vs CM Transactions/Consultar Pending de CM'),
 			[('PlayerPin'): UserId_Pendient], FailureHandling.STOP_ON_FAILURE)
 
 	cmPendiente =  cmPendiente!=null&&!cmPendiente.isEmpty()?cmPendiente.trim():'';

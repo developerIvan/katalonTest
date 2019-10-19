@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Consultar Free Balance de Customer Maintenace</name>
+   <name>Consultar Free Balance de CM</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>c6d23722-2aaf-484b-a859-441c70d67a8b</testCaseGuid>

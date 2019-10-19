@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Free Play hace match con Free Balance en CM (C3792)</name>
+   <name>Free Play hace match con CM (C3792)</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>67a38c50-5ce8-408d-a270-fb501577dfb5</testCaseGuid>
