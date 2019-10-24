@@ -9,107 +9,107 @@ import com.kms.katalon.core.testobject.TestObjectProperty
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import java.util.ArrayList;
+import java.util.HashMap;
 
-import bminc.eu.exceptions.LoginException
 import internal.GlobalVariable as GlobalVariable
-WebUI.openBrowser('')
 
-WebUI.navigateToUrl(url)
+String testStartDate = CustomKeywords.'com.utils.ReportHelper.getDate'();
+String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'();
 
-WebUI.maximizeWindow()
-String OsName = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
-
+String testEndHour = '';
+String browserVersion = '';
+String screenResolution = '';
 String testcaseId = 'C3783';
+String OsName = '';
+String testStatus = 'Fallido';
+String testResultDescription = '';
+ArrayList<Integer> rows = new ArrayList<Integer>();
+rows.add(1);
+
+HashMap<Integer,String> testResultData = new  HashMap();
 
 boolean tomarInstantanea=false;
-//Carga del excel
-CustomKeywords.'com.utils.ExcelsUtils.loadFileInputStream'(GlobalVariable.excelReportFileLocation)
 
-//Abre archivo lectura
-CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
-
-//Selecciona la hoja del execl
-CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'(testcaseId)
-
+//Guarda url o dirrecion del sitio según el ambiente
+testResultData.put(0,url);
 //Registro fecha incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 1, CustomKeywords.'com.utils.ReportHelper.getDate'())
+testResultData.put(1,testStartDate);
 
 //Registro  hora  incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 2, CustomKeywords.'com.utils.ReportHelper.getHours'())
-
-//Guarda Version del browser
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 8, CustomKeywords.'mycompany.GetTestingConfig.getBrowserAndVersion'())
-
-//Guarda Version del sistema operativo
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7, OsName)
-
-//Guarda Version del sistema operativo
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 9, CustomKeywords.'mycompany.GetTestingConfig.getScreenResolution'())
-
+testResultData.put(2,testStartHour);
 
 TestObject loginButton = new TestObject("BotonInexistente");
+
 try {
-	TestObject loginButton = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("login", "css", "#logIn", 2);
+	//Valida que el site de pregame on se haya cargado ya en el navegador
+	if(GlobalVariable.pregameSiteEsVisible == false){
+		WebUI.openBrowser('')
+
+		WebUI.navigateToUrl(url)
+
+		WebUI.maximizeWindow()
+	}
+	
+	loginButton = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("login", "css", "#logIn", 2);
+
+
+	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
+	browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'();
+	screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
+
+
+	//Guarda Version del browser
+	testResultData.put(5,browserVersion);
+
+
+	//Guarda Version del sistema operativo
+	testResultData.put(4,OsName);
+
+	//Guarda Version del sistema operativo
+	testResultData.put(6,screenResolution);
 
 	assert !loginButton.equals(CustomKeywords.'com.utils.AutomationUtils.getNullObject'());
 
 	GlobalVariable.pregameSiteEsVisible = true;
-	
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 8, 'Exitoso')
-	
-		CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 9, 'El botón login debería es visibler')
-	
+
+	testStatus = "Exitoso";
+
+	testResultDescription = 'El botón login debería es visible';
+
 } catch(java.lang.AssertionError asserError){
-	String errorCode = '-10'
 	tomarInstantanea = true;
-	KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + asserError.getMessage())
-
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 8, 'Fallido')
-
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 9, 'El botón login debería ser visible, pero actualmente no lo es. lo cual indica que, o el botón desaparecio  o fue modificado, lo cual cuasa que la prueba automatizada no lo pueda encontrar')
+	KeywordUtil.logger.logError((('Error code: -10') + ' error message :') + asserError.getMessage())
+	testResultDescription = 'El botón login debería ser visible, pero actualmente no lo es. lo cual indica que, o el botón desaparecio  o fue modificado, lo cual cuasa que la prueba automatizada no lo pueda encontrar';
 
 	throw asserError;
-} catch(Exception e){
-	String errorCode = '-99'
+}  catch(Exception e){
 	tomarInstantanea = true;
-	KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + e.getMessage())
+	KeywordUtil.logger.logError((('Error code: -99') + ' error message :') + e.getMessage())
 
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 9, 'Fallido')
+	//	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, )
+	testResultDescription = 'El botón login debería ser visible, pero actualmente no lo es debido a un comportanmiento anomalo';
 
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, 'El botón login debería ser visible, pero actualmente no lo es debido a un comportanmiento anomalo')
+	throw e;
+}finally{
+	//Guarda resultado de la prueba
+	testResultData.put(7,testStatus);
 
-	throw e;}
-finally{
-	//Cierra el navegador si la prueba se ejecuto de forma individual
-	if (GlobalVariable.individualTestCase == true) {
-		WebUI.closeBrowser()
-	}
+	//Guarda descricion del resultado de la prueba
+	testResultData.put(8,testResultDescription);
+
+	//Guarda hora final
+	testEndHour =CustomKeywords.'com.utils.ReportHelper.getHours'();
+	testResultData.put(3,testEndHour);
+
+	//Guarda resultado de prueba
+	CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
+
 
 	//toma screenshot en caso de error
 	if(tomarInstantanea == true){
-		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(testcaseId)
+		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation,testcaseId)
 	}
-
-	//Guarda url o dirrecion del sitio según el ambiente
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 0, url)
-
-	//Guarda hora final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.ReportHelper.getHours'())
-
-	//Guarda fecha final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, CustomKeywords.'com.utils.ReportHelper.getDate'())
-
-	//Cierra archivo de lectura para permitir la escritura
-	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()
-
-	//Abre  archivo de escritua
-	CustomKeywords.'com.utils.ExcelsUtils.loadFileOutputStream'(GlobalVariable.excelReportFileLocation)
-
-	//escribe informacion en la hoja del exec
-	CustomKeywords.'com.utils.ExcelsUtils.writeOutputExcelSheet'()
-
-	//Cierra  archivo de escritua
-	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()
 }
 
 return loginButton;

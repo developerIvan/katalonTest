@@ -12,46 +12,107 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.util.KeywordUtil
 
-String OsName = CustomKeywords.'mycompany.GetTestingConfig.getOperatingSystem'()
+String testDate = CustomKeywords.'com.utils.ReportHelper.getDate'();
+String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'();
 
-SimpleDateFormat format = new SimpleDateFormat('dd/MM/YYYY')
+String testEndHour = '';
+String browserVersion = '';
+String screenResolution = '';
+String testcaseId = 'C3787';
+String OsName = '';
+String testStatus = 'Fallido';
+String testResultDescription = '';
 
-SimpleDateFormat timeFormat = new SimpleDateFormat('H:mm:ss')
+ArrayList<Integer> rows = new ArrayList<Integer>();
+rows.add(1);
 
-String testcaseId = 'C3802'
+HashMap<Integer,String> testResultData = new  HashMap();
+
+
+
+
+boolean tomarInstantanea=false;
 
 String expectedUserInputBackgroundText = findTestData('TestData/Datos de Entrada/1.1 Validacion del tipode sitio Classic Premium').getValue(
-    1, 1)
+		1, 1)
 
 String actualUserInputBackGroundTxt = '';
-//Carga del excel
-CustomKeywords.'com.utils.ExcelsUtils.loadFileInputStream'(GlobalVariable.excelReportFileLocation)
 
-//Abre archivo lectura
-CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
-
-//Selecciona la hoja del execl
-CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'(testcaseId)
-
+//Guarda url o dirrecion del sitio según el ambiente
+testResultData.put(0,url);
 //Registro fecha incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 3, CustomKeywords.'com.utils.ReportHelper.getDate'())
+testResultData.put(1,testDate);
+
 
 //Registro  hora  incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.ReportHelper.getHours'())
+testResultData.put(2,testStartHour);
 
-//Indica si tomar un snapshot o instantanea en caso de error
-boolean tomarInstantanea = false
 
-TestObject lobihButton = WebUI.callTestCase(findTestCase('NEW PREGAME/1. Site/1.1 Validacion del tipode sitio Classic Premium/Usuario visualice el boton LOGIN correctamente (C3783)'), 
-    [('url') : GlobalVariable.pregameUrl], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(lobihButton)
 
-WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), 2)
+TestObject loginButton =null;
+try {
+	
 
-actualUserInputBackGroundTxt = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), 
-    'placeholder')
+		loginButton = WebUI.callTestCase(findTestCase('NEW PREGAME/1. Site/1.1 Validacion del tipode sitio Classic Premium/Usuario visualice el boton LOGIN correctamente (C3783)'),
+				[('url') : url], FailureHandling.STOP_ON_FAILURE)
+	
 
-assert expectedUserInputBackgroundText.equals(actualUserInputBackGroundTxt)
+	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
+	browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'();
+	screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
 
+	WebUI.click(loginButton)
+
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), 2)
+
+	actualUserInputBackGroundTxt = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'),
+			'placeholder')
+
+	assert expectedUserInputBackgroundText.equals(actualUserInputBackGroundTxt)
+
+	testStatus = 'Exitoso';
+
+	testResultDescription = 'el formulario de ingreso es visible';
+} catch(java.lang.AssertionError asserError){
+	tomarInstantanea = true;
+	KeywordUtil.logger.logError('Error code: -10 error message :' + asserError.getMessage())
+	testResultDescription = 'El formulario debería ser visible, pero actualmente no lo es. lo cual indica que, o el  o fue modificado, lo cual cuasa que la prueba automatizada no lo pueda encontrar';
+	throw asserError;
+}catch(Exception e){
+	tomarInstantanea = true;
+	KeywordUtil.logger.logError('Error code: -99 boton login :' + e.getMessage())
+	KeywordUtil.logger.logError('Error code: -99, error message :'+ e.getMessage())
+	testResultDescription = 'El formaulrio de ingreso deberia ser visible, pero actualmente no lo es debido a un comportanmiento anomalo';
+	throw e;
+}finally{
+
+	if(tomarInstantanea == true){
+		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation,testcaseId)
+	}
+
+
+	//Guarda Version del sistema operativo
+	testResultData.put(4,OsName);
+
+	//Guarda Version del browser
+	testResultData.put(5,browserVersion);
+
+	//Guarda Version del sistema operativo
+	testResultData.put(6,screenResolution);
+
+	//Guarda hora final
+	testEndHour =CustomKeywords.'com.utils.ReportHelper.getHours'();
+	testResultData.put(3,testEndHour);
+
+	//Guarda resultado de la prueba
+	testResultData.put(7,testStatus);
+
+	//Guarda descricion del resultado de la prueba
+	testResultData.put(8,testResultDescription);
+
+	//Guarda resultado de prueba
+	CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
+}

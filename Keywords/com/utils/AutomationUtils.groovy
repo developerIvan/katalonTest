@@ -197,8 +197,12 @@ public class AutomationUtils {
 	}
 
 	@Keyword
-	def createSnapshop(String testCaseId){
-		String screenshotname =testCaseId+"_"+LocalTime.now().toString().replace(":","-").replace(".","-");
-		WebUI.takeScreenshot("C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\Screenshots\\2.2.1 Usuario Correcto\\"+screenshotname+".png")
+	def String createSnapshop(String folderLocation,String testCaseId){
+		try{
+			String screenshotname =testCaseId+"_"+LocalTime.now().toString().replace(":","-").replace(".","-");
+			return WebUI.takeScreenshot(folderLocation+screenshotname+".png")
+		}catch(Exception e){
+			KeywordUtil.logger.logError("Error al generar el screenshot usando la ruta "+folderLocation+" y el test case id "+testCaseId);
+		}
 	}
 }

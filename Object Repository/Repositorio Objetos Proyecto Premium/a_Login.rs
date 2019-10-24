@@ -10,12 +10,12 @@
          <value></value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[@id='logIn']</value>
-      </entry>
-      <entry>
          <key>BASIC</key>
          <value>id(&quot;logIn&quot;)[count(. | //a[@href = '#' and @id = 'logIn' and @class = 'btn btn-primary btn-sm navbar-btn' and @data-toggle = 'modal' and @data-target = '#modalLogin' and (text() = 'Login' or . = 'Login')]) = count(//a[@href = '#' and @id = 'logIn' and @class = 'btn btn-primary btn-sm navbar-btn' and @data-toggle = 'modal' and @data-target = '#modalLogin' and (text() = 'Login' or . = 'Login')])]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[@id='logIn']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

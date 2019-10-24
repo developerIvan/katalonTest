@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>LoginIvalidoConEnter</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fe09a23d-c2c1-40b9-b875-8fb3ddc7654b</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>77c9e49c-ca36-44bc-ab7c-a14bdc462e7a</id>
+      <masked>false</masked>
+      <name>browser</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>50b04e78-7c5a-471d-a3ba-c0ceb94a86ed</id>
+      <masked>false</masked>
+      <name>loginUser</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>869748b1-2633-4cc0-a478-9fda719c45b5</id>
+      <masked>false</masked>
+      <name>loginPassword</name>
+   </variable>
+</TestCaseEntity>

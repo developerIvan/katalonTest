@@ -19,153 +19,159 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-import java.util.Calendar as Calendar
-import java.util.Date as Date
-import java.text.SimpleDateFormat as SimpleDateFormat
+import org.openqa.selenium.Keys as Keys
 
-String OsName = CustomKeywords.'mycompany.GetTestingConfig.getOperatingSystem'()
+String testEndHour = ''
 
-SimpleDateFormat format = new SimpleDateFormat('dd/MM/YYYY')
+String browserVersion = ''
 
-SimpleDateFormat timeFormat = new SimpleDateFormat('H:mm:ss')
+String screenResolution = ''
 
-String expectedErrorMesage = GlobalVariable.mensajeUsuarioInvalido;
+String OsName = ''
 
-String testcaseId = 'C3840';
+String testStatus = 'Fallido'
 
-String actualErrorMessage = '';
+String testResultDescription = ''
+
+ArrayList<Integer> rows = new ArrayList<Integer>()
+
+rows.add(1)
+
+HashMap<Integer, String> testResultData = new HashMap<Integer, String>()
+
+String testcaseId = 'C3840'
+
+String actualErrorMessage = ''
 
 //Indica si tomar un snapshot o instantanea en caso de error
-boolean tomarInstantanea = false;
+boolean errorEnLaPrueba = false
 
-//Carga del excel
-CustomKeywords.'com.utils.ExcelsUtils.loadFileInputStream'(GlobalVariable.excelReportFileLocation)
+String expectedErrorMesage = GlobalVariable.mensajeUsuarioInvalido != null ? GlobalVariable.mensajeUsuarioInvalido : ''
 
-//Abre archivo lectura
-CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
+String testStartDate = CustomKeywords.'com.utils.ReportHelper.getDate'()
 
-//Selecciona la hoja del execl
-CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'(testcaseId)
+String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
 //Registro fecha incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 3, CustomKeywords.'com.utils.ReportHelper.getDate'())
+testResultData.put(3, testStartDate)
 
 //Registro  hora  incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.ReportHelper.getHours'())
+testResultData.put(4, testStartHour)
 
-if(GlobalVariable.pregameSiteEsVisible == false){
-	WebUI.callTestCase(findTestCase('NEW PREGAME/1. Site/1.1 Validacion del tipode sitio Classic Premium/Usuario visualice el boton LOGIN correctamente (C3783)'),
-		[('url') : url], FailureHandling.STOP_ON_FAILURE)
-}
+WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/Boton login despliega el formulario C3787'),
+		[:], FailureHandling.STOP_ON_FAILURE)
+
 WebUI.maximizeWindow()
 
-CharSequence BrowserNameVersion = CustomKeywords.'mycompany.GetTestingConfig.getBrowserAndVersion'()
+OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
 
-String ScreenResolution = CustomKeywords.'mycompany.GetTestingConfig.getScreenResolution'()
+browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
+
+screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
 
 //Guarda Version del browser
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 8, CustomKeywords.'mycompany.GetTestingConfig.getBrowserAndVersion'())
+testResultData.put(7, browserVersion)
 
 //Guarda Version del sistema operativo
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7, OsName)
+testResultData.put(6, OsName)
 
-//Guarda Version del sistema operativo
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 9, ScreenResolution)
+//Guarda resolucion de pantalla
+testResultData.put(8, screenResolution)
 
 try {
-	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/a_Login'))
 
-	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), 2)
+	def loginResult =	WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/ScriptAuxiliares/LoginIvalidoConEnter'), [('browser') :browserVersion, ('loginUser') : loginUser
+		, ('loginPassword') : loginInvalidPassword], FailureHandling.STOP_ON_FAILURE)
 
-	
-	def loginResult = WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/ScriptAuxiliares/CargarMensajdeDeErrordeIngreso'),
-		[('userPin') : loginUser, ('userPass') : loginInvalidPassword], FailureHandling.STOP_ON_FAILURE)
-	
-	loginUser = loginResult.userId;
-	
-	loginPassword = loginResult.password;
-	
-	actualErrorMessage =loginResult.errorMgs;
+	loginUser = loginResult.userId
+
+	loginPassword = loginResult.password
+
+	actualErrorMessage = loginResult.errorMgs
 
 	assert expectedErrorMesage.equalsIgnoreCase(actualErrorMessage)
-	
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, 'Exitoso')
-	
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, "El sistema no permitio que el usuario ingresará al sitio si la clave es incorrecta de forma exitosa. El esperado mensaje de error '"+expectedErrorMesage+"' es desplegado existosamente")
+
+	testStatus = 'Exitoso'
+
+	testResultDescription = ('El sistema no permitio que el usuario ingresará al sitio con la tecla Enter si la clave es incorrecta de forma exitosa. El esperado mensaje de error \'' +
+			expectedErrorMesage + '\' es desplegado existosamente')
+
+
 }
 catch (com.kms.katalon.core.exception.StepFailedException stepE) {
 	String errorCode = '-01'
 
-	tomarInstantanea = true;
-	
+	errorEnLaPrueba = true
+
 	KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + stepE.getMessage())
 
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, 'Fallido')
-
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, 'El sistema no pudo validar que el usuario no pueda rentrar al sitio si su pin no es ingresado  debido a que el mesaje de error no es el esperado o algún  elmento esperado  de la página no está visible. Favor revisar el log de katalon')
+	testResultDescription = 'El sistema no pudo validar que el usuario no pueda rentrar al sitio con la tecla Enter si su contraseña es erronea  debido a que el mesaje de error no es el esperado o algún  elmento esperado  de la página no está visible. Favor revisar el log de katalon'
 
 	throw new LoginException('Error al ejecutar la prueba por un paso no completado', stepE, errorCode)
-}catch(java.lang.AssertionError asserError){
+}
+catch (AssertionError asserError) {
 	String errorCode = '-10'
-	
-	tomarInstantanea = true;
-	
+
+	errorEnLaPrueba = true
+
 	KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + asserError.getMessage())
 
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, 'Fallido')
+	testResultDescription = ((('El mensaje de error esperado debería ser ' + expectedErrorMesage) + ' pero actualmente es: ') +
+			actualErrorMessage)
 
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, 'El mensaje de error esperado debería ser '+expectedErrorMesage+" pero actualmente es: "+actualErrorMessage)
- 
 	throw new LoginException('Validación de clave incorrecta  fallida', asserError, errorCode)
-} catch (Exception e) {
+}
+catch (Exception e) {
 	String errorCode = '-99'
 
-	tomarInstantanea = true;
-	
+	errorEnLaPrueba = true
+
 	KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + e.getMessage())
 
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, 'Fallido')
-
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, 'El sistema no pudo validar que el usuario no pueda rentrar al sitio si su contraseña está erronea debido a un error anomalo en la prueba. Favor revisar los log ao bitacoras de katalon')
+	testResultDescription = 'El sistema no pudo validar que el usuario no pueda entrar con la tecla Enter al sitio si su contraseña está erronea debido a un error anomalo en la prueba. Favor revisar los logs o bitacoras de katalon'
 
 	throw new LoginException('Login Test Case fallido', e, errorCode)
 }
 finally {
-	
-	//toma screenshot en caso de error
-	if(tomarInstantanea == true){
-		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(testcaseId)
-	 }
-	
-	//Cierra el navegador si la prueba se ejecuto de forma individual
-	if (GlobalVariable.individualTestCase == true) {
-		WebUI.closeBrowser()
-	}
-   
 	//Guarda url o dirrecion del sitio según el ambiente
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 0, url)
+	testResultData.put(0, url)
 
 	//Guarda pin del jugador que se usó para la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 1, loginUser)
+	testResultData.put(1, loginUser)
 
 	//Guarda password del jugador que se usó para la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 2, loginPassword)
+	testResultData.put(2, loginPassword)
 
 	//Guarda hora final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.ReportHelper.getHours'())
+	testEndHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
-	//Guarda fecha final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, CustomKeywords.'com.utils.ReportHelper.getDate'())
+	testResultData.put(5, testEndHour)
 
-	//Cierra archivo de lectura para permitir la escritura
-	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()
+	//Guarda Resultado de la prueba
+	testResultData.put(9, testStatus)
 
-	//Abre  archivo de escritua
-	CustomKeywords.'com.utils.ExcelsUtils.loadFileOutputStream'(GlobalVariable.excelReportFileLocation)
+	//GuardaDescrpipción del  Resultado de la prueba
+	testResultData.put(10, testResultDescription)
 
-	//escribe informacion en la hoja del exec
-	CustomKeywords.'com.utils.ExcelsUtils.writeOutputExcelSheet'()
+	//Guarda resultado de prueba
+	CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
 
-	//Cierra  archivo de escritua
-	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()
+	//toma screenshot en caso de error
+	if (errorEnLaPrueba == true) {
+		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation, testcaseId)
+	}else{
+
+		if (GlobalVariable.individualTestCase == true) {
+			WebUI.closeBrowser()
+			//Cierra el navegador si la prueba se ejecuto de forma individual
+		} else {
+			//Cierra el formulario de login para las demas pruebas dentro del test suite
+			WebUI.waitForElementClickable(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/button_closeLoginPage'),
+					2)
+
+			WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/button_closeLoginPage'))
+		}
+
+	}
 }
+

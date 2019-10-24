@@ -21,12 +21,6 @@ CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
 //Selecciona la hoja del execl
 CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'('Sportbook')
 
-String url = GlobalVariable.pregameUrl;
-
-String userName = GlobalVariable.customerPIN;
-
-String userPassword = GlobalVariable.customerPassword;
-
 String startHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
 //Registro fecha incio de la prueba

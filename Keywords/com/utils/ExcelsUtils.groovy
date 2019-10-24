@@ -23,7 +23,10 @@ import org.apache.poi.xssf.usermodel.XSSFSheet as XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook as XSSFWorkbook
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import internal.GlobalVariable
-
+import java.util.List;
+import java.util.Map;
+import com.kms.katalon.core.util.KeywordUtil;
+import bminc.eu.exceptions.ExcelException;
 public class ExcelsUtils {
 
 	private static FileOutputStream outFile;
@@ -102,6 +105,50 @@ public class ExcelsUtils {
 	def static closeFileInStream(){
 		if( inputFile != null &&   !inputFile.closed){
 			inputFile.close();
+		}
+	}
+
+	@Keyword
+	def saveTestResult(String locationFile,String sheetName,List<Integer> rows,Map<Integer,String> cells ) throws ExcelException{
+		File excelFile = null;
+		FileInputStream inputFile = null;
+		XSSFWorkbook workbook =  null;
+		XSSFSheet sheet = null;
+
+		try{
+			excelFile = new File(locationFile);
+			inputFile = new FileInputStream(excelFile);
+			workbook =  new XSSFWorkbook(inputFile);
+			sheet = workbook.getSheet(sheetName);
+
+			for(int currentRow:rows){
+				for(int cellPosition:cells.keySet()){
+					XSSFRow row = sheet.getRow(currentRow)!=null?sheet.getRow(currentRow):sheet.createRow(currentRow);
+					row.createCell(cellPosition).setCellValue(cells.get(cellPosition));
+				}
+			}
+
+		}catch(Exception e){
+			KeywordUtil.logger.logError((('Error al procesar la informacion de la hoja '+sheetName) ),e);
+			throw new ExcelException("Error durante la lectura de archivo excel",e);
+		}finally{
+			if( inputFile != null &&   !inputFile.closed){
+				inputFile.close();
+			}
+
+
+			FileOutputStream outFile= new FileOutputStream(excelFile);
+			workbook.write(outFile);
+
+
+			if(outFile != null && !outFile.closed){
+				outFile.close();
+			}
+
+			excelFile = null;
+			inputFile = null;
+			workbook =  null;
+			sheet = null;
 		}
 	}
 }

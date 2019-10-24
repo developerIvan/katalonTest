@@ -11,7 +11,7 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>b45aa7c0-fa75-44ba-ac2f-cda58b044d79</testSuiteGuid>
    <testCaseLink>
-      <guid>1f94af75-fa16-493d-b3f1-2e7bf29f9677</guid>
+      <guid>e52c06bc-a4c1-4bdf-81de-0d2f37872b2a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Usuario no ingrese al sitio si el pin es incorrecto (C3802)</testCaseId>
@@ -41,7 +41,55 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>dd3a4236-9ff9-4142-b7b0-21e6027478b1</guid>
+      <guid>c740a8f0-8130-49be-a6fe-17044674596c</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Usuario no ingrese con pin invalido y tecla enter C6415</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>a2a96fc8-164d-4edd-a6e1-c64ab2e16c64</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>f9a164f2-9ab0-45bd-9051-1398f2dcb8aa</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>1a8c7de5-7761-4eca-940a-cc72a6f9860d</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>44bffcd9-33ee-4e2f-82a8-d5e3571eac69</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/Usuario no ingrese si el pin no es ingresado (C3810)</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>2f185da1-583f-4543-a535-b03193119533</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>18bac46d-7edb-493a-a580-f58c364807ba</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>d2a51d30-6a34-436a-8e85-2b03e70d3701</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1616ac91-13bb-4ac3-9775-42a2527344dc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.1 User/2.1.1.1 Usuario Correcto/El jugador ingrese al sitio meditante la tecla enter (C3841)</testCaseId>

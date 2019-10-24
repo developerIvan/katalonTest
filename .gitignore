@@ -2,10 +2,8 @@
 /Libs/
 /.settings/
 /settings/internal
-/Reports/
 /.classpath
 .svn/
-
 *.html
 *.csv
 *.log

@@ -6,7 +6,7 @@
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description>Siver para definir si los test cases invocan los test cases necesarios de forma separada, ejemplo  Transacciones MenuMiCuenta</description>
-      <initValue>false</initValue>
+      <initValue>true</initValue>
       <name>individualTestCase</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -93,5 +93,10 @@
       <description>Almacena la clave incorrecta de usuario apra la prueba</description>
       <initValue>findTestData('TestData/Datos de Entrada/2.1.2.1 Permiso Correcto').getValue(1, 1)</initValue>
       <name>invalidCustomerPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define el directorio para guardar las instantenas</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\Screenshots\\'</initValue>
+      <name>screenshotLocation</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
