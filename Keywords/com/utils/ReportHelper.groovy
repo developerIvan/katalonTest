@@ -20,9 +20,6 @@ import internal.GlobalVariable
 import java.time.LocalTime;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
-import internal.GlobalVariable
-
 import org.openqa.selenium.Capabilities
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.remote.RemoteWebDriver

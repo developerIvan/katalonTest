@@ -6,14 +6,15 @@
    <elementGuidId>fb2a7dfd-2b11-45c2-aa38-2c815a5e415c</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>CSS</key>
+         <value>#init_modal</value>
+      </entry>
+      <entry>
          <key>BASIC</key>
          <value>//*[@id = 'init_modal']</value>
       </entry>
-      <entry>
-         <key>CSS</key>
-      </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

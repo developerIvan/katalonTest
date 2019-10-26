@@ -75,7 +75,7 @@ try {
 
 	testStatus = "Exitoso";
 
-	testResultDescription = 'El botón login debería es visible';
+	testResultDescription = 'El botón login es visible';
 
 } catch(java.lang.AssertionError asserError){
 	tomarInstantanea = true;

@@ -19,12 +19,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebDriver as WebDriver
+import org.openqa.selenium.support.ui.WebDriverWait as WebDriverWait
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import internal.GlobalVariable
 import java.time.LocalTime;
 import java.time.LocalDateTime;
-
+import java.util.List;
+import java.util.ArrayList;
+import  org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.By;
+import com.kms.katalon.core.util.KeywordUtil;
 public class AutomationUtils {
 
 	@Keyword
@@ -183,6 +188,7 @@ public class AutomationUtils {
 	@Keyword
 	def void clickMultiElements(By bySelector,int waitTime){
 		WebDriver driver = DriverFactory.getWebDriver();
+		WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
 
 		List<WebElement> elements = driver.findElements(bySelector);
 
@@ -195,6 +201,42 @@ public class AutomationUtils {
 			}
 		}
 	}
+
+
+
+	/**
+	 * Funcion que traer una lista de elementos Web
+	 * @param selectorType tipo de selector : ejemplo css,xpath, id
+	 * @param selectorId selector a usar en contrao
+	 * @return
+	 */
+	@Keyword
+	def List<WebElement> returnElementsObjects(String selectorType,String selectorId){
+		WebDriver driver = DriverFactory.getWebDriver();
+		WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+
+		List<WebElement> element = null;
+
+		switch(selectorType.toString().toUpperCase()){
+			case "CSS":
+				element = webDriverWait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.cssSelector(selectorId)) ));
+				break;
+			case "XPATH":
+				element = webDriverWait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath(selectorId)) ));
+				break;
+			case "ID":
+				element = webDriverWait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.id(selectorId)) ));
+				break;
+			default:
+				element = new ArrayList<WebElement>();
+				break;
+		}
+
+		webDriverWait = null;
+		driver = null;
+		return element;
+	}
+
 
 	@Keyword
 	def String createSnapshop(String folderLocation,String testCaseId){

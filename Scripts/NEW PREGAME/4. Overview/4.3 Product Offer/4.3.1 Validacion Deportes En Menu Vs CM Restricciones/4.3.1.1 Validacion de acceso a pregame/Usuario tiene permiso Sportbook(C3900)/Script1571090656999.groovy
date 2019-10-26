@@ -1,115 +1,144 @@
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
-import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.logging.KeywordLogger
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
 import internal.GlobalVariable as GlobalVariable
-import java.lang.AssertionError;
-import com.kms.katalon.core.exception.StepFailedException;
-KeywordLogger log = new KeywordLogger()
-import com.kms.katalon.core.testobject.ConditionType
+import java.lang.AssertionError as AssertionError
+import com.kms.katalon.core.exception.StepFailedException as StepFailedException
+import com.kms.katalon.core.testobject.ConditionType as ConditionType
 import com.kms.katalon.core.testobject.TestObject as TestObject
-import com.kms.katalon.core.testobject.TestObjectProperty
+import com.kms.katalon.core.testobject.TestObjectProperty as TestObjectProperty
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 
-//Carga del excel
-CustomKeywords.'com.utils.ExcelsUtils.loadFileInputStream'(GlobalVariable.permisosExcelRutaSportbook)
+KeywordLogger log = new KeywordLogger()
 
-//Abre archivo lectura
-CustomKeywords.'com.utils.ExcelsUtils.createReadXSSFWorkbook'()
+String testEndHour = ''
 
-//Selecciona la hoja del execl
-CustomKeywords.'com.utils.ExcelsUtils.loadXSSFSheet'('Sportbook')
+String browserVersion = ''
 
-String startHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
+String screenResolution = ''
+
+String OsName = ''
+
+String testStatus = 'Fallido'
+
+String testResultDescription = ''
+
+ArrayList<Integer> rows = new ArrayList<Integer>()
+
+rows.add(1)
+
+HashMap<Integer, String> testResultData = new HashMap<Integer, String>()
+
+String testcaseId = 'C3900'
+
+String actualErrorMessage = ''
+
+boolean errorEnLaPrueba = false
+
+String testStartDate = CustomKeywords.'com.utils.ReportHelper.getDate'()
+
+String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
 //Registro fecha incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 4, CustomKeywords.'com.utils.ReportHelper.getDate'())
+testResultData.put(3, testStartDate)
 
 //Registro  hora  incio de la prueba
-CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 5, startHour)
+testResultData.put(4, testStartHour)
 
-final String FAILED_STATUS = CustomKeywords.'com.utils.ConstantsUtil.getFailedStatus'();
+String CSS_SELECTOR = CustomKeywords.'com.utils.ConstantsUtil.getCSSSelectorId'()
 
-final String SUCCESS_STATUS = CustomKeywords.'com.utils.ConstantsUtil.getsuccessStatus'();
+ConditionType equalsCondType = CustomKeywords.'com.utils.ConstantsUtil.getEqualsConditionType'()
 
-final String CSS_SELECTOR = CustomKeywords.'com.utils.ConstantsUtil.getCSSSelectorId'()
+String textContentAtribute = CustomKeywords.'com.utils.ConstantsUtil.getHtmlTextContentAtt'()
 
-final ConditionType equalsCondType = CustomKeywords.'com.utils.ConstantsUtil.getEqualsConditionType'();
+try {
+    if (!(GlobalVariable.usuarioLogeado)) {
+        WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.3 Validacion Inet Target/2.1.3.1 Inet Target Correcto/Jugador logra ingresar a Overview (C6414)'), 
+            [('url') : url, ('loginUser') : userName, ('loginPassword') : userPassword], FailureHandling.STOP_ON_FAILURE)
 
-final String textContentAtribute = CustomKeywords.'com.utils.ConstantsUtil.getHtmlTextContentAtt'()
+        GlobalVariable.usuarioLogeado = true
+    }
+    
+    //Guarda Sistema operativo
+    OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
 
-try{
-	if (!(GlobalVariable.usuarioLogeado)) {
-		WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.3 Validacion Inet Target/2.1.3.1 Inet Target Correcto/Jugador logra ingresar a Overview (C6414)'), [('url') : url, ('loginUser') : userName, ('loginPassword') : userPassword],
-		FailureHandling.STOP_ON_FAILURE)
+    testResultData.put(6, OsName)
 
-		GlobalVariable.usuarioLogeado = true;
-	}
+    //Guarda Resoluci?n
+    screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
 
-	//Guarda Sistema operativo
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 8, CustomKeywords.'mycompany.GetTestingConfig.getOperatingSystem'())
+    testResultData.put(8, screenResolution)
 
-	//Guarda Resoluci?n
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, CustomKeywords.'mycompany.GetTestingConfig.getScreenResolution'())
+    //Guarda Version del browser
+    browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
 
-	//Guarda Version del browser
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 9, CustomKeywords.'mycompany.GetTestingConfig.getBrowserAndVersion'())
+    testResultData.put(7, browserVersion)
 
-	//WebUI.verifyElementVisible(findTestObject('Repositorio Sportbook/Permisos/Sportbook/div_Sports'))
+    WebUI.waitForElementNotPresent(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/InitModal'), 4)
+	
+    WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/div_Sports'), 2)
 
-	String permisoLive = CustomKeywords.'com.utils.AutomationUtils.getObjectAttribute'('Enlace live Obj', textContentAtribute, new TestObjectProperty(CSS_SELECTOR, equalsCondType, "#live_link .mainMenuLi div"),4);
-
-	assert !permisoLive.equals(null)&&!permisoLive.isEmpty();
-	//Guarda permito otorgado
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 11, permisoLive)
-
-	//Guara estado de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 12, SUCCESS_STATUS)
-
-	//Guara descripci?n de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 13, 'Permiso Sportbook es correctamente accesible para el usuario')
-
-}catch(StepFailedException step){
-	//Guara estado de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 12, FAILED_STATUS)
-	//Guara descripci?n de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 13,  'Validaci\u00f3n de permiso fallida por incumplimiento de verifaicaci\u00f3n de elementos en la p\u00e1gina')
-	throw  new AssertionError('Error en la prueba Sportbook debido a que hay un paso que no se cumplio',step);
-
-}catch(Exception ex){
-	//Guara estado de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 12, FAILED_STATUS)
-	//Guara descripci?n de la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 13, 'Validaci\u00f3n de permiso fallida causado por excepci\u00f3n inesperada')
-	throw  new AssertionError('Error en la prueba Sporbbok ',ex);
-}finally{
+	
+String permisoLive =	WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/div_Sports'), 'textContent', FailureHandling.STOP_ON_FAILURE)
 
 
-	//Guarda url o dirrecion del sitio según el ambiente
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,1,url);
+    assert !(permisoLive.equals(null)) && !(permisoLive.isEmpty())
 
-	//Guarda pin del jugador que se usó para la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,2,userName);
+    //Guara estado de la prueba
+    testStatus = 'Exitoso'
 
-	//Guarda password del jugador que se usó para la prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1,3,userPassword);
-
-	//Guarda hora final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 7, CustomKeywords.'com.utils.ReportHelper.getHours'())
-
-	//Guarda fecha final
-	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 6, CustomKeywords.'com.utils.ReportHelper.getDate'())
-
-	//Cierra archivo de lectura
-	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()
-
-	//Abre  archivo de escritua
-	CustomKeywords.'com.utils.ExcelsUtils.loadFileOutputStream'(GlobalVariable.permisosExcelRutaSportbook)
-
-	//escribe informacion en la hoja del exec
-	CustomKeywords.'com.utils.ExcelsUtils.writeOutputExcelSheet'()
-
-	//Cierra  archivo de escritua
-	CustomKeywords.'com.utils.ExcelsUtils.closeFileInStream'()
+    //Guara descripci?n de la prueba
+    testResultDescription = (('Permiso de Sportbook ' + permisoLive) + ' es correctamente accesible para el usuario')
 }
+catch (StepFailedException step) {
+    //Guara descripci?n de la prueba
+    testResultDescription = 'Validación de permiso Sportbook fallida por incumplimiento de verifaicación de elementos en la página'
+
+    throw new AssertionError('Error en la prueba Sportbook debido a que hay un paso que no se cumplio', step)
+} 
+catch (Exception ex) {
+    //Guara descripci?n de la prueba
+    testResultDescription = 'Validación de permiso fallida causado por comnportamiento anomalo en la prueba'
+
+    throw new AssertionError('Error en la prueba Sporbbok ', ex)
+} 
+finally { 
+    //Guarda url o dirrecion del sitio según el ambiente
+    testResultData.put(0, url)
+
+    //Guarda pin del jugador que se usó para la prueba
+    testResultData.put(1, userName)
+
+    //Guarda password del jugador que se usó para la prueba
+    testResultData.put(2, userPassword)
+
+    //Guarda hora final
+    testEndHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
+
+    testResultData.put(5, testEndHour)
+
+    //Guarda Resultado de la prueba
+    testResultData.put(9, testStatus)
+
+    //GuardaDescrpipción del  Resultado de la prueba
+    testResultData.put(10, testResultDescription)
+
+    //Guarda resultado de prueba
+    CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
+
+    //toma screenshot en caso de error
+    if (errorEnLaPrueba == true) {
+        CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation, testcaseId)
+    }
+}
+

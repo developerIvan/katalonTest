@@ -9,8 +9,12 @@
          <key>XPATH</key>
          <value>//button[@id='loadOpenBets']</value>
       </entry>
+      <entry>
+         <key>CSS</key>
+         <value>#loadOpenBets</value>
+      </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>false</isSelected>

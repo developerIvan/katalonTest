@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CargarPrecondicionesDeCustomerMaintenance</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2ec23701-9409-48fd-b510-aa30594ade99</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ad220610-eeaa-4ccf-9009-6ce4eef6ff8b</id>
+      <masked>false</masked>
+      <name>casoDePrueba</name>
+   </variable>
+</TestCaseEntity>

@@ -6,6 +6,14 @@
    <elementGuidId>f8875a68-4448-411a-a266-6ebea945a11c</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@type = 'button' and (text() = 'REPORTS' or . = 'REPORTS')]</value>
+      </entry>
+      <entry>
          <key>XPATH</key>
          <value>(//button[@type='button'])[12]</value>
       </entry>

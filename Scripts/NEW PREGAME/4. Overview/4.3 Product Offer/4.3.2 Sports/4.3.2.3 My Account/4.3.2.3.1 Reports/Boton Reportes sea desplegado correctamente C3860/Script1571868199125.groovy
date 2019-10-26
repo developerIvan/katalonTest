@@ -70,7 +70,7 @@ try {
 	//Guarda resolucion de pantalla
 	testResultData.put(8,screenResolution);
 
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/div_MY ACCOUNT'), 1)
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/div_MY ACCOUNT'), 4)
 
 	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/div_MY ACCOUNT'))
 
@@ -95,7 +95,7 @@ try {
 
 	testResultDescription =  'El botón de reportes de la sección "My Account"  no es visiblea debido a que un paso de la prueba no se completo o un elemento de la página que no está visible. Favor revisar el log de katalon';
 
-	throw new LoginException('Paso de la prueba  no completado', stepE, errorCode)
+	throw new com.kms.katalon.core.exception.StepFailedException('Paso de la prueba  no completado', stepE)
 }
 catch (AssertionError asserError) {
 	String errorCode = '-10'
@@ -106,7 +106,7 @@ catch (AssertionError asserError) {
 
 	testResultDescription = 'El botón de reportes de la sección "My Account no es visible, revisar las tomas instantaneas';
 
-	throw new LoginException('Ingreso mediante la tecla enter fallido', asserError, errorCode)
+	throw new AssertionError('Botón reporte no es visible', asserError, errorCode)
 }
 catch (Exception e) {
 	String errorCode = '-99'
@@ -117,7 +117,7 @@ catch (Exception e) {
 
 	testResultDescription ='El botón de reportes de la sección "My Account no es visible debido a un error anomalo en la prueba. Favor revisar los log o bitacoras de katalon';
 
-	throw new LoginException('Login Test Case fallido', e, errorCode)
+	throw e;
 }
 finally {
 	//Guarda url o dirrecion del sitio según el ambiente
@@ -146,13 +146,6 @@ finally {
 	//toma screenshot en caso de error
 	if(errorEnLaPrueba == true){
 		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation,testcaseId)
-	}
-
-	//Cierra el navegador si la prueba se ejecuto de forma individual y en caso de que no haya errroes en la prueba
-	if(!errorEnLaPrueba){
-		if (GlobalVariable.individualTestCase == true) {
-			WebUI.closeBrowser()
-		}
 	}
 }
 

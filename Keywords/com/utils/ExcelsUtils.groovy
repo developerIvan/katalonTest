@@ -129,7 +129,7 @@ public class ExcelsUtils {
 			}
 
 		}catch(Exception e){
-			KeywordUtil.logger.logError((('Error al procesar la informacion de la hoja '+sheetName) ),e);
+			KeywordUtil.logger.logError('Error al procesar la informacion de la hoja '+sheetName);
 			throw new ExcelException("Error durante la lectura de archivo excel",e);
 		}finally{
 			if( inputFile != null &&   !inputFile.closed){
