@@ -44,13 +44,16 @@ TestObject loginButton = new TestObject("BotonInexistente");
 try {
 	//Valida que el site de pregame on se haya cargado ya en el navegador
 	if(GlobalVariable.pregameSiteEsVisible == false){
-		WebUI.openBrowser('')
 
+		if(! GlobalVariable.browserIsOpen){
+			WebUI.openBrowser('')
+			GlobalVariable.browserIsOpen = true;
+		}
 		WebUI.navigateToUrl(url)
 
 		WebUI.maximizeWindow()
 	}
-	
+
 	loginButton = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("login", "css", "#logIn", 2);
 
 
@@ -79,16 +82,16 @@ try {
 
 } catch(java.lang.AssertionError asserError){
 	tomarInstantanea = true;
-	KeywordUtil.logger.logError((('Error code: -10') + ' error message :') + asserError.getMessage())
-	testResultDescription = 'El botón login debería ser visible, pero actualmente no lo es. lo cual indica que, o el botón desaparecio  o fue modificado, lo cual cuasa que la prueba automatizada no lo pueda encontrar';
+	KeywordUtil.logger.logError('Error code: -10' + ' error message :' + asserError.getMessage())
+	testResultDescription = 'El botón login debería ser visible, pero actualmente no lo es. lo cual indica que, o el botón desaparecio  o fue modificado, lo cual causa que la prueba automatizada no lo pueda encontrar. Favor buscar en el log de katalon con el código  -10';
 
 	throw asserError;
 }  catch(Exception e){
 	tomarInstantanea = true;
-	KeywordUtil.logger.logError((('Error code: -99') + ' error message :') + e.getMessage())
+	KeywordUtil.logger.logError('Error code: -99' + ' error message :') + e.getMessage()
 
 	//	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, )
-	testResultDescription = 'El botón login debería ser visible, pero actualmente no lo es debido a un comportanmiento anomalo';
+	testResultDescription = 'El botón login debería ser visible, pero actualmente no lo es debido a un comportanmiento anomalo. Favor revisar el log de katalon con el código de error -99';
 
 	throw e;
 }finally{

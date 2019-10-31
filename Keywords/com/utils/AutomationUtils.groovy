@@ -28,8 +28,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
 import  org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.By;
-import com.kms.katalon.core.util.KeywordUtil;
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
 public class AutomationUtils {
 
 	@Keyword
@@ -133,6 +135,12 @@ public class AutomationUtils {
 	}
 
 
+	/**
+	 * Devulve un objecto  TestObjectProperty dependiento del selector 
+	 * @param selectorType css, xpath , name or id
+	 * @param searchLocator
+	 * @return
+	 */
 	@Keyword
 	def TestObjectProperty returnObjectPropretyType(String selectorType,String searchLocator){
 		TestObjectProperty testOjbPropertyType = null;
@@ -147,6 +155,11 @@ public class AutomationUtils {
 			case "NAME":
 				testOjbPropertyType = new TestObjectProperty( "name", ConditionType.CONTAINS, searchLocator);
 				break;
+			case "NAME":
+				testOjbPropertyType = new TestObjectProperty( "name", ConditionType.CONTAINS, searchLocator);
+				break;
+			case "ID":
+				testOjbPropertyType = new TestObjectProperty( "id", ConditionType.CONTAINS, searchLocator);
 			default:
 				testOjbPropertyType = new TestObjectProperty("Empty Property "+selectorType+" "+searchLocator);
 				break;
@@ -155,11 +168,19 @@ public class AutomationUtils {
 		return testOjbPropertyType;
 	}
 
+	/**
+	 * Devuleve un objeto o elemento de la página de forma dinamica
+	 * @param testObjectId id o nombre del objeto
+	 * @param selectorType tipo de selector:css, xpath,id etc
+	 * @param selectorSearchCriteria selector del elemento
+	 * @param waitTime tiempo de espera, en segundos
+	 * @return
+	 */
 	@Keyword
-	def TestObject findTestObject(String testObjectId,String type,String searchCriteria,int waitTime){
+	def TestObject findTestObject(String testObjectId,String selectorType,String selectorSearchCriteria,int waitTime){
 		try{
 			TestObject object = new TestObject(testObjectId);
-			object.addProperty(returnObjectPropretyType(type,searchCriteria));
+			object.addProperty(returnObjectPropretyType(selectorType,selectorSearchCriteria));
 
 			WebUI.waitForElementPresent(object,waitTime);
 			WebUI.waitForElementVisible(object,waitTime);
@@ -170,6 +191,21 @@ public class AutomationUtils {
 		}
 	}
 
+	/**
+	 * Valida que un elemento de la pagina no sea visible
+	 * @param testObjectId id o nombre del objeto
+	 * @param selectorType tipo de selector : css, xpath o id
+	 * @param selelctor : selector especifico del elemento: ver mas en https://www.swtestacademy.com/xpath-selenium/ y https://www.swtestacademy.com/css-selenium/
+	 * @param waitTime tiempo de espera para el elemnto en caso de que este sea cargado dinamicamente, se mide en segundos
+	 * @return true si el elemento no esta, false si el elemento esta
+	 */
+	@Keyword
+	def boolean verifyTestObjectIsNotPresent(String testObjectId,String selectorType,String selelctor,int waitTime){
+		TestObject object = new TestObject(testObjectId);
+		object.addProperty(returnObjectPropretyType(selectorType,selelctor));
+
+		return WebUI.verifyElementNotPresent(object, waitTime);
+	}
 
 	@Keyword
 	def TestObject findTestObject(String testObjectId,TestObjectProperty objProperty,int waitTime){
@@ -185,22 +221,7 @@ public class AutomationUtils {
 			return NullTestObject;
 		}
 	}
-	@Keyword
-	def void clickMultiElements(By bySelector,int waitTime){
-		WebDriver driver = DriverFactory.getWebDriver();
-		WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
 
-		List<WebElement> elements = driver.findElements(bySelector);
-
-		if(elements != null){
-			for(WebElement element:elements){
-				CharSequence classElement =element.getAttribute("class");
-				if(!'collapsed'.contains(classElement)){
-					element.click();
-				}
-			}
-		}
-	}
 
 
 
@@ -211,25 +232,29 @@ public class AutomationUtils {
 	 * @return
 	 */
 	@Keyword
-	def List<WebElement> returnElementsObjects(String selectorType,String selectorId){
+	def List<WebElement> returnElementsObjects(String selectorType,String selectorId,int waitTime){
 		WebDriver driver = DriverFactory.getWebDriver();
-		WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+		WebDriverWait webDriverWait = new WebDriverWait(driver, waitTime);
 
-		List<WebElement> element = null;
+		List<WebElement> element =  new ArrayList<WebElement>();
 
-		switch(selectorType.toString().toUpperCase()){
-			case "CSS":
-				element = webDriverWait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.cssSelector(selectorId)) ));
-				break;
-			case "XPATH":
-				element = webDriverWait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath(selectorId)) ));
-				break;
-			case "ID":
-				element = webDriverWait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.id(selectorId)) ));
-				break;
-			default:
-				element = new ArrayList<WebElement>();
-				break;
+		try{
+			switch(selectorType.toString().toUpperCase()){
+				case "CSS":
+					element = webDriverWait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.cssSelector(selectorId)) ));
+					break;
+				case "XPATH":
+					element = webDriverWait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath(selectorId)) ));
+					break;
+				case "ID":
+					element = webDriverWait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.id(selectorId)) ));
+					break;
+				default:
+					break;
+			}
+		}catch(ElementNotVisibleException  | TimeoutException notVisibleE){
+			KeywordUtil.markWarning("Elementos buscados con este tipo de selector "+selectorId+" y con el selector "+selectorId+" no son visibles");
+			KeywordLogger.getInstance(this.class).logger.error("Excepcion de elemento no visible ", notVisibleE)
 		}
 
 		webDriverWait = null;

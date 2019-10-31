@@ -7,9 +7,16 @@
    <testCaseGuid>2ec23701-9409-48fd-b510-aa30594ade99</testCaseGuid>
    <variable>
       <defaultValue>''</defaultValue>
-      <description></description>
+      <description>Define el tipo de apuesta a buscar, si pending o graded</description>
       <id>ad220610-eeaa-4ccf-9009-6ce4eef6ff8b</id>
       <masked>false</masked>
-      <name>casoDePrueba</name>
+      <name>tipoDeApuesta</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>567ed93a-46f7-423c-9ab4-c9ef33770656</id>
+      <masked>false</masked>
+      <name>customerPin</name>
    </variable>
 </TestCaseEntity>

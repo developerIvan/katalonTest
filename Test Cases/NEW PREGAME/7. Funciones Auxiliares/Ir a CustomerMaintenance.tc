@@ -5,4 +5,11 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>379988af-fb49-4cf1-9521-47ec0d7a1b32</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.null</defaultValue>
+      <description></description>
+      <id>b400c042-391d-4270-9547-7e09c1aef070</id>
+      <masked>false</masked>
+      <name>customerId</name>
+   </variable>
 </TestCaseEntity>

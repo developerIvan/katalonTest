@@ -14,7 +14,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
-
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
 String testDate = CustomKeywords.'com.utils.ReportHelper.getDate'()
 
 String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
@@ -108,27 +108,26 @@ try {
 	testResultDescription = 'La función de recordar credenciales  funciona correctamente'
 }catch(java.lang.AssertionError asserError){
 	tomarInstantanea = true;
-	KeywordUtil.logger.logError('Error code: -10 error message :' + asserError.getMessage())
 	testResultDescription = 'La función de recordar credenciales o "remeber credentials" no funciona correctamente debido a que el ingreso al sitio de sportbook fue fallido  ';
 	throw asserError;
 }
 catch (com.kms.katalon.core.exception.StepFailedException stepE) {
+	errorCode = "-10"
 	tomarInstantanea = true
 
-	KeywordUtil.logger.logError('Error code: -10 error message :' + stepE.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
-	testResultDescription = 'La opción de "Remember Credentials" debería ser visible, pero actualmente no lo es. Lo cual indica que, la caja de selección o la descripción no aparecen, lo cual cuasa que la prueba automatizada no lo pueda encontrar'
+	testResultDescription = 'La opción de "Remember Credentials" debería ser visible, pero actualmente no lo es. Lo cual indica que, la caja de selección o la descripción no aparecen, lo cual cuasa que la prueba automatizada no lo pueda encontrar'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
 
 	throw stepE
 }
 catch (Exception e) {
+	String errorCode = '99';
 	tomarInstantanea = true
 
-	KeywordUtil.logger.logError('Error code: -99 boton login :' + e.getMessage())
+	 KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
 
-	KeywordUtil.logger.logError('Error code: -99, error message :' + e.getMessage())
-
-	testResultDescription = 'La opción de "Remember Credentials" debería ser visible, pero actualmente no lo es debido a un comportanmiento anomalo, favor revisar el log de katalon'
+	testResultDescription = 'La opción de "Remember Credentials" debería ser visible, pero actualmente no lo es debido a un comportanmiento anomalo'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);
 
 	throw e
 }

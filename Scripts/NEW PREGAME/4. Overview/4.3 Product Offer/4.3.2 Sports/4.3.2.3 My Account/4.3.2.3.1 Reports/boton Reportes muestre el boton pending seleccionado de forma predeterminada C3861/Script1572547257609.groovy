@@ -16,6 +16,8 @@ import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.exception.StepFailedException as StepFailedException
 import java.util.List as List
 import org.openqa.selenium.WebElement as WebElement
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
+
 String testEndHour = ''
 
 String browserVersion = ''
@@ -51,15 +53,11 @@ testResultData.put(3, testStartDate)
 testResultData.put(4, testStartHour)
 
 try {
-	//Precondiciones de la prueba
-	//Verifica si hay apuestas pendientes
-	List<String> tiquetesDeCustomerMaintenace = new ArrayList<String>();
-
-	tiquetesDeCustomerMaintenace =  WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.1 Reports/CargarPrecondicionesDeCustomerMaintenance'),
-			[('casoDePrueba') : testcaseId], FailureHandling.STOP_ON_FAILURE)
+	
+	
 
 	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.1 Reports/Boton Reportes sea desplegado correctamente C3860'),
-			[('url') : GlobalVariable.pregameUrl, ('customerPIN') : GlobalVariable.customerPIN, ('customerPass') : GlobalVariable.customerPassword],
+			[('url') : url, ('customerPIN') : customerPIN, ('customerPass') : customerPass],
 			FailureHandling.STOP_ON_FAILURE)
 
 	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
@@ -88,47 +86,28 @@ try {
 	assert pendingButtonName != null && pendingButtonName.contains("btn-success");
 
 	testResultDescription = "El botón pending aparece seleccionado de forma predeterminada correctamente";
-    List<WebElement> tiquetesDepregame = CustomKeywords.'com.utils.AutomationUtils.returnElementsObjects'("CsS","div.wpr_headerWagerDiv div:nth-child(3)")
-	
-	
-	//Valida que aparescan los tiquetes de las apuestas en customer maitnenance
-	if(tiquetesDeCustomerMaintenace.size()>0){
-		
-		//Verifa que en regame el boton contenga las apuestas pendeitnes
-		assert tiquetesDepregame.size() == tiquetesDeCustomerMaintenace.size();
-		
-
-		    for(WebElement tiquetePregame:tiquetesDepregame){
-				String tiquete = tiquetePregame.getAttribute("innerText")!=null?tiquetePregame.getAttribute("innerText").toString().replace(" ", "").trim():"";
-			    assert tiquetesDeCustomerMaintenace.contains(tiquete);
-				
-			}
-			testResultDescription.concat("Y las apuestas pendietnes  de customer maintenance aparecen correctamente")
-			
-	}
 
 	testStatus = 'Exitoso'
 
-	testResultDescription = 'Los botones graded y pending de la sección de  reportes son visibles'
 }catch (StepFailedException stepE) {
 	String errorCode = '-09'
 
 	errorEnLaPrueba = true
 
-	KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + stepE.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
+	
 
-	testResultDescription = 'La prueba resulto fallida por algún componente que no pudó ser localizado. Favor revisar el log de katalon con el código: '+errorCode
+	testResultDescription = 'La prueba resulto fallida por algún componente que no pudó ser localizado. '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
 
-	throw new StepFailedException('El botón graded o pending  no esta visible', stepE)
+	throw  stepE
 }
 catch (AssertionError asserError) {
 	String errorCode = '-10'
 
 	errorEnLaPrueba = true
 
-	KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + asserError.getMessage())
 
-	testResultDescription = 'El botón  pending  no está seleccionado de forma predeterminada al presionar el botón account o, las apuestas pendientes de customer maintenance no se reflejan correctamente en pregame. Si se desea, se puede revisar en el log dfe katalon con el código '+errorCode
+	testResultDescription = 'El botón  pending  no está seleccionado de forma predeterminada al presionar el botón Report '
 
 	throw new AssertionError('Prueba fallida', asserError)
 }
@@ -137,9 +116,9 @@ catch (Exception e) {
 
 	errorEnLaPrueba = true
 
-	KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + e.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
 
-	testResultDescription = 'La prueba resulto fallida por algún fallo anomalo. Favor revisar los log o bitacoras de katalon con el código '+errorCode
+	testResultDescription = 'La prueba resulto fallida por algún fallo anomalo. '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);
 
 	throw e
 }

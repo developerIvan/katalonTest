@@ -89,4 +89,9 @@
       <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\Screenshots\\'</initValue>
       <name>screenshotLocation</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Valida si el navegador está abierto, esto con el fin de que katalon esté abriendo y cerrando navegadores web cuando se va por difernetes sitios</description>
+      <initValue>false</initValue>
+      <name>browserIsOpen</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

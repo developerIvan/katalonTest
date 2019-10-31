@@ -64,4 +64,15 @@ public class ConstantsUtil {
 	def String getsuccessStatus(){
 		return 'Exitoso';
 	}
+
+	@Keyword
+	def String getCustomErrorMessageForGeneralExceptions(String errorCode){
+		return "Favor de revisar en la consola de katalon con el siguiente código ".concat(errorCode);
+	}
+
+
+	@Keyword
+	def String getCustomErrorMessageForStepExceptions(String errorCode){
+		return " Para ver que elemento faltó, o que pasó no se cumplió, favor ir a la consola de katalon con el siguiente código  ".concat(errorCode);
+	}
 }

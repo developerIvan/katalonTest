@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que cuando el usuario presiona sobre el botón &lt;Pendings> no se despliegue ninguna apuesta</description>
+   <name>Boton Pendings no muestre apuestas pendientes C3873</name>
+   <tag>C3873</tag>
+   <comment></comment>
+   <testCaseGuid>82177914-0776-4cc1-8723-b6d86a46a00c</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>adcc1494-0eb9-4744-96fa-616f27804df9</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>b39370c0-a09e-4540-8962-7ef324b0e8e6</id>
+      <masked>false</masked>
+      <name>customerId</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>50d63d56-797c-4eb0-a944-f6515d8be8ee</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>

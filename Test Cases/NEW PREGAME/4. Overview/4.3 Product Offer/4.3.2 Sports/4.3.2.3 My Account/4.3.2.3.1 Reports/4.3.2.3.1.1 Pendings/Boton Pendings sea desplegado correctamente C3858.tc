@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que el usuario pueda visualizar correctamente el botón &lt;Pendings> cuando selecciona la opción My Account.</description>
+   <name>Boton Pendings sea desplegado correctamente C3858</name>
+   <tag>C3858</tag>
+   <comment></comment>
+   <testCaseGuid>382bf2bb-adb8-4506-b29d-e08008954783</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>b0d4c7ab-f6c3-4137-8ba9-72ac5305cfb5</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>45561e99-0bb3-43c4-b62d-0af47bc322ee</id>
+      <masked>false</masked>
+      <name>customerLogin</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>b7cd6eb1-b220-4af7-952b-5a7a4d5c54ff</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

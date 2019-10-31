@@ -25,6 +25,10 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.remote.RemoteWebDriver
 import com.kms.katalon.core.webui.driver.DriverFactory
 import java.awt.*
+import java.util.Map;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 /**
  * @author qa-katalon
  * Contiene funciones para registrar la infomación relacionadas  al tiempo y espacio donde se  de ejecuccten las pruebas tales como fecha hora de ejecucción, navegador usado etc 
@@ -68,5 +72,14 @@ public class ReportHelper {
 		Integer screenWidth = screenSize.width
 		println screenWidth + 'x' + screenHeight
 		return screenWidth + 'x' + screenHeight
+	}
+	
+	@Keyword
+	def Map<String,String> returnTestParametersForLog(Map<Integer,String> parametersMap){
+		Map<String,String> logParamMap = new HashMap<String,String>();
+		for(Integer pos:parametersMap.keySet()){
+			logParamMap.put("Parameter "+pos,parametersMap.get(pos))
+		}
+		return logParamMap;
 	}
 }

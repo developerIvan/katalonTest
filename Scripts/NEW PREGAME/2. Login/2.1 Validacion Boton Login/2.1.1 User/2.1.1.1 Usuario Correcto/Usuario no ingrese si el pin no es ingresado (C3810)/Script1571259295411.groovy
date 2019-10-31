@@ -20,8 +20,7 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import java.util.Calendar as Calendar
-import java.util.Date as Date
-import java.text.SimpleDateFormat as SimpleDateFormat
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
 
 String testEndHour = '';
 String browserVersion = '';
@@ -58,7 +57,7 @@ browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
 
 screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
 
-//Guarda Version del browser
+//Guarda Version del browser`
 testResultData.put(7,browserVersion);
 
 //Guarda Version del sistema operativo
@@ -89,32 +88,31 @@ catch (com.kms.katalon.core.exception.StepFailedException stepE) {
 
 	errorEnlaPrueba = true;
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode + ' error message :' + stepE.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
-	testResultDescription = 'El sistema no pudo validar que el usuario no pueda rentrar al sitio si su pin no es ingresado  debido a que el mesaje de error no es el esperado o algún  elmento esperado  de la página no está visible. Favor revisar el log de katalon';
+	testResultDescription = 'El sistema no pudo validar que el usuario no pueda rentrar al sitio si su pin no es ingresado  debido a que el mesaje de error no es el esperado o algún  elmento esperado  de la página no está visible.'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
 
-	throw new LoginException('Paso de la prueba login no completado', stepE, errorCode)
+	throw stepE;
 }catch(java.lang.AssertionError asserError){
 	String errorCode = '-10'
 
 	errorEnlaPrueba = true;
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode + ' error message :' + asserError.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
 
 
 	testResultDescription =  'El mensaje de error esperado debería ser '+expectedErrorMesage+" pero actualmente es: "+actualErrorMessage;
 
-
-	throw new LoginException('Validación de pin invalido fallida', asserError, errorCode)
+	throw  asserError;
 } catch (Exception e) {
 	String errorCode = '-99'
 
 	errorEnlaPrueba = true;
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode + ' error message :' + e.getMessage())
-
-	testResultDescription = 'El sistema no pudo validar que el usuario no pueda rentrar al sitio si su pin no es ingresado  debido a un error anomalo en la prueba. Favor revisar los log ao bitacoras de katalon';
-	throw new LoginException('Login Test Case fallido', e, errorCode)
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
+	
+	testResultDescription = 'El sistema no pudo validar que el usuario no pueda rentrar al sitio si su pin no es ingresado  debido a un error anomalo en la prueba.'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);
+	throw e;
 }
 finally {
 	//Guarda url o dirrecion del sitio según el ambiente

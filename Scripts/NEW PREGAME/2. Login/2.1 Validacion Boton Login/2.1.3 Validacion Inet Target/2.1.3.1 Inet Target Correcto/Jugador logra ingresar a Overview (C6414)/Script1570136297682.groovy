@@ -10,7 +10,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
-import bminc.eu.exceptions.LoginException as LoginException
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -19,7 +18,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
 String testEndHour = '';
 
 String browserVersion = '';
@@ -122,20 +121,20 @@ try {
 catch (com.kms.katalon.core.exception.StepFailedException stepE) {
 	String errorCode = '-01'
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode + ' error message :' + stepE.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
-	testResultDescription = "El jugador no logró ingresar al Overwiew debido a un paso de la prueba o elmento de la página que no está visible. Favor revisar el log de katalon";
+	testResultDescription = "El jugador no logró ingresar al Overwiew debido a un paso de la prueba o elmento de la página que no está visible."+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);;
 
-	throw new LoginException('Paso de la prueba login no completado', stepE, errorCode)
+	throw stepE;
 }
 catch (Exception e) {
 	String errorCode = '-99'
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode + ' error message :' + e.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
 
-	testResultDescription = "El jugador no logró ingresar al Overwiew debido a un error anomalo en la prueba. Favor revisar los log ao bitacoras de katalon";
+	testResultDescription = "El jugador no logró ingresar al Overwiew debido a un error anomalo en la prueba."+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);
 
-	throw new LoginException('Login Test Case fallido', e, errorCode)
+	throw e;
 }finally{
 	//Guarda url o dirrecion del sitio según el ambiente
 	testResultData.put(0,url);

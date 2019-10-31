@@ -94,4 +94,9 @@
       <initValue>findTestData('TestData/Datos de Entrada/2.1.1.1 Usuario Correcto').getValue(3, 1)</initValue>
       <name>mensajeUsuarioInvalido</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Valida si el navegador está abierto, esto con el fin de que katalon esté abriendo y cerrando navegadores web cuando se va por difernetes sitios</description>
+      <initValue>false</initValue>
+      <name>browserIsOpen</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

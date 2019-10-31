@@ -13,6 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
 
 String testDate = CustomKeywords.'com.utils.ReportHelper.getDate'();
 String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'();
@@ -75,17 +76,27 @@ try {
 
 	testStatus = 'Exitoso';
 
+}catch (com.kms.katalon.core.exception.StepFailedException stepE) {
+	String errorCode = '-01'
+
+	errorEnLaPrueba = true
+
+     KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
+	testResultDescription = 'El sistema no pudo validar que el usuario pudiera entrar al sistema usando la tecla enter '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
+
+	throw stepE;
 	testResultDescription = 'el formulario de ingreso es visible';
 } catch(java.lang.AssertionError asserError){
 	tomarInstantanea = true;
-	KeywordUtil.logger.logError('Error code: -10 error message :' + asserError.getMessage())
+	
+	KeywordLogger.getInstance(this.class).logger.error("-10", asserError)
 	testResultDescription = 'El formulario debería ser visible, pero actualmente no lo es. lo cual indica que, o el  o fue modificado, lo cual cuasa que la prueba automatizada no lo pueda encontrar';
 	throw asserError;
 }catch(Exception e){
+      String errorCode = '-99'
 	tomarInstantanea = true;
-	KeywordUtil.logger.logError('Error code: -99 boton login :' + e.getMessage())
-	KeywordUtil.logger.logError('Error code: -99, error message :'+ e.getMessage())
-	testResultDescription = 'El formaulrio de ingreso deberia ser visible, pero actualmente no lo es debido a un comportanmiento anomalo';
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
+	testResultDescription = 'El formaulrio de ingreso deberia ser visible, pero actualmente no lo es debido a un comportanmiento anomalo'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);;
 	throw e;
 }finally{
 

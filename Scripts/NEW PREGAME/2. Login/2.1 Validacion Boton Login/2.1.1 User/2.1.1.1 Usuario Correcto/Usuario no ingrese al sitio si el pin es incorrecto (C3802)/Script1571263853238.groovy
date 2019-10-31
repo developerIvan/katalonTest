@@ -10,7 +10,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
-import bminc.eu.exceptions.LoginException as LoginException
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -22,7 +21,7 @@ import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import java.util.Calendar as Calendar
 import java.util.Date as Date
 import java.text.SimpleDateFormat as SimpleDateFormat
-
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
 String testEndHour = ''
 
 String browserVersion = ''
@@ -104,33 +103,30 @@ catch (com.kms.katalon.core.exception.StepFailedException stepE) {
 
 	errorEnLaPrueba = true
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode + ' error message :' + stepE.getMessage())
+     KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
+	testResultDescription = 'El sistema no pudo validar que el usuario no pueda entrar al sitio si su pin no es ingresado  debido a algún elemento de la pagina que no esta presente o fue modificado '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
 
-	testResultDescription = 'El sistema no pudo validar que el usuario no pueda rentrar al sitio si su pin no es ingresado  debido a un error anomalo en la prueba. Favor revisar los log ao bitacoras de katalon';
-
-	throw new LoginException('Paso de la prueba login no completado', stepE, errorCode)
+	throw stepE;
 }
 catch (AssertionError asserError) {
 	String errorCode = '-10'
 
 	errorEnLaPrueba = true
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode + ' error message :' + asserError.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
+	testResultDescription ='El mensaje de error esperado debería ser ' + expectedErrorMesage;
 
-	testResultDescription ='El mensaje de error esperado debería ser ' + expectedErrorMesage +  ' pero actualmente es: ' + actualErrorMessage;
-
-	throw new LoginException('Ingreso mediante la tecla enter fallido', asserError, errorCode)
+	throw  asserError
 }
 catch (Exception e) {
 	String errorCode = '-99'
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode + ' error message :' + e.getMessage())
-
-	testResultDescription ='El sistema no pudo validar que el usuario no pueda rentrar al sitio si su pin no es ingresado  debido a un error anomalo en la prueba. Favor revisar los log ao bitacoras de katalon';
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
+	testResultDescription ='El sistema no pudo validar que el usuario no pueda rentrar al sitio si su pin no es ingresado  debido a un error anomalo en la prueba. '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);
 
 	errorEnLaPrueba = true
 
-	throw new LoginException('Login Test Case fallido', e, errorCode)
+	throw e;
 }
 finally {
 	//Guarda url o dirrecion del sitio según el ambiente
@@ -159,8 +155,6 @@ finally {
 	if(errorEnLaPrueba == true){
 		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation,testcaseId)
 	}
-
-
 	
 	if(!errorEnLaPrueba){  //Cierra el navegador si la prueba se ejecuto de forma individual
 		if (GlobalVariable.individualTestCase == true) {

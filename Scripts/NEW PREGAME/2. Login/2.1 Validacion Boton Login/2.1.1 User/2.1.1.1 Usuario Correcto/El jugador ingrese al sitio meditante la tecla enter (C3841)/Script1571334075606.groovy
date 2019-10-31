@@ -20,7 +20,7 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import org.openqa.selenium.Keys as Keys
-
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
 String testEndHour = ''
 
 String browserVersion = ''
@@ -126,19 +126,17 @@ catch (com.kms.katalon.core.exception.StepFailedException stepE) {
 
 	errorEnLaPrueba = true
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode + ' error message :' + stepE.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
+	testResultDescription =  'El jugador no logró ingresar al sitio de pregame con la tecla enter debido a un paso de la prueba o elmento de la página que no está visible.'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
 
-
-	testResultDescription =  'El jugador no logró ingresar al sitio de pregame con la tecla enter debido a un paso de la prueba o elmento de la página que no está visible. Favor revisar el log de katalon';
-
-	throw new LoginException('Paso de la prueba  no completado', stepE, errorCode)
+	throw  stepE;
 }
 catch (AssertionError asserError) {
 	String errorCode = '-10'
 
 	errorEnLaPrueba = true
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode+ ' error message :' + asserError.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
 
 	testResultDescription = 'El jugador no logró ingresar al sitio de pregame con la tecla enter, la pagina esperada debería tener el domino o sección sportbook pero actualmente es: ' +
 			WebUI.getUrl().toString();
@@ -150,11 +148,10 @@ catch (Exception e) {
 
 	errorEnLaPrueba = true
 
-	KeywordUtil.logger.logError('Error code: ' + errorCode + ' error message :' + e.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
+	testResultDescription ='El jugador no logró ingresar al sitio de pregame con la tecla enter debido a un error anomalo en la prueba.'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode)
 
-	testResultDescription ='El jugador no logró ingresar al sitio de pregame con la tecla enter debido a un error anomalo en la prueba. Favor revisar los log ao bitacoras de katalon';
-
-	throw new LoginException('Login Test Case fallido', e, errorCode)
+	throw  e;
 }
 finally {
 	//Guarda url o dirrecion del sitio según el ambiente

@@ -12,9 +12,8 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
-
+import com.kms.katalon.core.exception.StepFailedException as StepFailedException
 String testEndHour = ''
 
 String browserVersion = ''
@@ -33,7 +32,7 @@ rows.add(1)
 
 HashMap<Integer, String> testResultData = new HashMap<Integer, String>()
 
-String testcaseId = 'C3860'
+String testcaseId = 'C3858'
 
 String actualErrorMessage = ''
 
@@ -49,10 +48,10 @@ testResultData.put(3, testStartDate)
 //Registro  hora  incio de la prueba
 testResultData.put(4, testStartHour)
 
-try {
-	//login pregame
-	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.1 Validacion Deportes En Menu Vs CM Restricciones/4.3.1.1 Validacion de acceso a pregame/Usuario tiene permiso Sportbook(C3900)'),
-			[('url') : url, ('userName') : customerPIN, ('userPassword') : customerPass],
+
+try{
+	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.1 Reports/boton Reportes muestre el boton pending seleccionado de forma predeterminada C3861'),
+			[('url') : url, ('customerPIN') : customerLogin, ('customerPass') : customerPass],
 			FailureHandling.STOP_ON_FAILURE)
 
 	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
@@ -62,90 +61,74 @@ try {
 	screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
 
 	//Guarda Version del browser
-	testResultData.put(7,browserVersion);
+	testResultData.put(7, browserVersion)
 
 	//Guarda Version del sistema operativo
-	testResultData.put(6,OsName);
+	testResultData.put(6, OsName)
 
 	//Guarda resolucion de pantalla
-	testResultData.put(8,screenResolution);
+	testResultData.put(8, screenResolution)
 
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/div_MY ACCOUNT'), 4)
+	WebUI.waitForElementNotVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_Pendings'), 2)
 
-	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/div_MY ACCOUNT'))
-
-
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_REPORTS'), 2)
-
-	String reportButtonName = WebUI.getAttribute(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_REPORTS'), "innerText", FailureHandling.STOP_ON_FAILURE)
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_Pendings'))
 
 
-	assert null != reportButtonName;
+	testStatus = 'Exitoso'
 
-	testStatus = 'Exitoso';
-
-	testResultDescription = 'El botón de reportes de la sección "My Account" es visible';
-
-}catch (com.kms.katalon.core.exception.StepFailedException stepE) {
+	testResultDescription = 'El boton de pending se ve correctamente';
+}catch (StepFailedException stepE) {
 	String errorCode = '-09'
 
 	errorEnLaPrueba = true
 
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
-	testResultDescription =  'El botón de reportes de la sección "My Account"  no es visiblea debido a que un paso de la prueba no se completo o un elemento de la página que no está visible. '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
 
-	throw new com.kms.katalon.core.exception.StepFailedException('Paso de la prueba  no completado', stepE)
-}
-catch (AssertionError asserError) {
-	String errorCode = '-10'
+	testResultDescription = 'El botón de apuestas pendiente es visible visible. '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
 
-	errorEnLaPrueba = true
-
-	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
-
-	testResultDescription = 'El botón de reportes de la sección "My Account no es visible, revisar las tomas instantaneas';
-
-	throw asserError
-}
-catch (Exception e) {
+	throw  stepE
+}catch (Exception e) {
 	String errorCode = '-99'
 
 	errorEnLaPrueba = true
 
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
 
-	testResultDescription ='El botón de reportes de la sección "My Account no es visible debido a un error anomalo en la prueba. '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);
+	testResultDescription = 'El botón de apuestas pendeitnes no es visible por algún comportamiento atipico. '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);
 
-	throw e;
+	throw e
 }
 finally {
 	//Guarda url o dirrecion del sitio según el ambiente
-	testResultData.put(0,url);
+	testResultData.put(0, url)
 
 	//Guarda pin del jugador que se usó para la prueba
-	testResultData.put(1,customerPIN);
+	testResultData.put(1, customerLogin)
 
 	//Guarda password del jugador que se usó para la prueba
-	testResultData.put(2,customerPass);
+	testResultData.put(2, customerPass)
 
 	//Guarda hora final
-	testEndHour =  CustomKeywords.'com.utils.ReportHelper.getHours'();
-	testResultData.put(5,testEndHour);
+	testEndHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
+
+	testResultData.put(5, testEndHour)
 
 	//Guarda Resultado de la prueba
-	testResultData.put(9,testStatus);
-
+	testResultData.put(9, testStatus)
 
 	//GuardaDescrpipción del  Resultado de la prueba
-	testResultData.put(10,testResultDescription);
+	testResultData.put(10, testResultDescription)
 
 	//Guarda resultado de prueba
 	CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
 
 	//toma screenshot en caso de error
-	if(errorEnLaPrueba == true){
-		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation,testcaseId)
+	if (errorEnLaPrueba == true) {
+		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation, testcaseId)
 	}
 }
+
+
+
 

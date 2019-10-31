@@ -13,7 +13,13 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser(GlobalVariable.lobbyUrl)
+if(!GlobalVariable.browserIsOpen){
+	WebUI.openBrowser('')
+	WebUI.maximizeWindow();
+	GlobalVariable.browserIsOpen = true;
+}
+
+WebUI.navigateToUrl(GlobalVariable.lobbyUrl)
 
 WebUI.setText(findTestObject('Repositorio Objetos Customer Maintenance/input_User_id_user'),GlobalVariable.lobbyUser )
 
@@ -26,7 +32,7 @@ WebUI.waitForElementClickable(findTestObject('Repositorio Objetos Customer Maint
 WebUI.click(findTestObject('Repositorio Objetos Customer Maintenance/a_Customer Maintenance'))
 
 WebUI.setText(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/input_Save changes_globalcusto'),
-	GlobalVariable.customerPIN)
+		GlobalVariable.customerPIN)
 
 WebUI.delay(1)
 

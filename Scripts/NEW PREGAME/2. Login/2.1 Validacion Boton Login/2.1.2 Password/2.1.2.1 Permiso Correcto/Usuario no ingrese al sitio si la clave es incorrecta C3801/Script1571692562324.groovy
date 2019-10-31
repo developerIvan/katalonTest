@@ -19,7 +19,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
 String testEndHour = ''
 
 String browserVersion = ''
@@ -59,8 +59,8 @@ testResultData.put(4, testStartHour)
 
 
 
-WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/Boton login despliega el formulario C3787'), 
-    [('url') : url], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/Boton login despliega el formulario C3787'),
+		[('url') : url], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.maximizeWindow()
 
@@ -80,93 +80,94 @@ testResultData.put(6, OsName)
 testResultData.put(8, screenResolution)
 
 try {
-    def loginResult = WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/ScriptAuxiliares/CargarMensajdeDeErrordeIngreso'), 
-        [('userPin') : loginUser, ('userPass') : password], FailureHandling.STOP_ON_FAILURE)
+	def loginResult = WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/ScriptAuxiliares/CargarMensajdeDeErrordeIngreso'),
+			[('userPin') : loginUser, ('userPass') : password], FailureHandling.STOP_ON_FAILURE)
 
-    loginUser = loginResult.userId
+	loginUser = loginResult.userId
 
-    loginPassword = loginResult.password
+	loginPassword = loginResult.password
 
-    actualErrorMessage = loginResult.errorMgs
+	actualErrorMessage = loginResult.errorMgs
 
-    assert expectedErrorMesage.equalsIgnoreCase(actualErrorMessage)
+	assert expectedErrorMesage.equalsIgnoreCase(actualErrorMessage)
 
-    testStatus = 'Exitoso'
+	testStatus = 'Exitoso'
 
-    testResultDescription = ('El sistema no permitio que el usuario ingresará al sitio si la clave es incorrecta de forma exitosa. El esperado mensaje de error \'' + 
-    expectedErrorMesage+ '\' es desplegado existosamente')
+	testResultDescription = ('El sistema no permitio que el usuario ingresará al sitio si la clave es incorrecta de forma exitosa. El esperado mensaje de error \'' +
+			expectedErrorMesage+ '\' es desplegado existosamente')
 }
 catch (com.kms.katalon.core.exception.StepFailedException stepE) {
-    String errorCode = '-01'
+	String errorCode = '-01'
 
-    tomarInstantanea = true
+	tomarInstantanea = true
 
-    KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + stepE.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
-    testResultDescription = 'El sistema no pudo validar que el usuario no pueda rentrar al sitio si su contraseña no es ingresada  debido a que el mesaje de error no es el esperado o algún  elmento esperado  de la página no está visible. Favor revisar el log de katalon'
+	testResultDescription = 'El sistema no pudo validar que el usuario no pueda rentrar al sitio si su contraseña no es ingresada  debido a que el mesaje de error no es el esperado o algún  elmento esperado  de la página no está visible.'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
 
-    throw new LoginException('Error al ejecutar la prueba por un paso no completado', stepE, errorCode)
-} 
+	throw new LoginException('Error al ejecutar la prueba por un paso no completado', stepE, errorCode)
+}
 catch (AssertionError asserError) {
-    String errorCode = '-10'
+	String errorCode = '-10'
 
-    tomarInstantanea = true
+	tomarInstantanea = true
 
-    KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + asserError.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
 
-    testResultDescription = ((('El mensaje de error esperado debería ser ' + expectedErrorMesage) + ' pero actualmente es: ') + 
-    actualErrorMessage)
+	testResultDescription = ((('El mensaje de error esperado debería ser ' + expectedErrorMesage) + ' pero actualmente es: ') +
+			actualErrorMessage)
 
-    throw new LoginException('Validación de clave incorrecta  fallida', asserError, errorCode)
-} 
+	throw new LoginException('Validación de clave incorrecta  fallida', asserError, errorCode)
+}
 catch (Exception e) {
-    String errorCode = '-99'
+	String errorCode = '-99'
 
-    tomarInstantanea = true
+	tomarInstantanea = true
 
-    KeywordUtil.logger.logError((('Error code: ' + errorCode) + ' error message :') + e.getMessage())
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
 
-    testResultDescription = 'El sistema no pudo validar que el usuario no pueda entrar al sitio si su contraseña está erronea debido a un error anomalo en la prueba. Favor revisar los logs o bitacoras de katalon'
 
-    throw new LoginException('Login Test Case fallido', e, errorCode)
-} 
-finally { 
-    //Guarda url o dirrecion del sitio según el ambiente
-    testResultData.put(0, url)
+	testResultDescription = 'El sistema no pudo validar que el usuario no pueda entrar al sitio si su contraseña está erronea debido a un error anomalo en la prueba.'+ CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);
 
-    //Guarda pin del jugador que se usó para la prueba
-    testResultData.put(1, loginUser)
+	throw new LoginException('Login Test Case fallido', e, errorCode)
+}
+finally {
+	//Guarda url o dirrecion del sitio según el ambiente
+	testResultData.put(0, url)
 
-    //Guarda password del jugador que se usó para la prueba
-    testResultData.put(2, loginPassword)
+	//Guarda pin del jugador que se usó para la prueba
+	testResultData.put(1, loginUser)
 
-    //Guarda hora final
-    testEndHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
+	//Guarda password del jugador que se usó para la prueba
+	testResultData.put(2, loginPassword)
 
-    testResultData.put(5, testEndHour)
+	//Guarda hora final
+	testEndHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
-    //Guarda Resultado de la prueba
-    testResultData.put(9, testStatus)
+	testResultData.put(5, testEndHour)
 
-    //GuardaDescrpipción del  Resultado de la prueba
-    testResultData.put(10, testResultDescription)
+	//Guarda Resultado de la prueba
+	testResultData.put(9, testStatus)
 
-    //Guarda resultado de prueba
-    CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
+	//GuardaDescrpipción del  Resultado de la prueba
+	testResultData.put(10, testResultDescription)
 
-    //toma screenshot en caso de error
-    if (tomarInstantanea == true) {
-        CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation, testcaseId)
-    }
-    
-    //Cierra el navegador si la prueba se ejecuto de forma individual
-    if (GlobalVariable.individualTestCase == true) {
-        WebUI.closeBrowser()
-    } else {
-        WebUI.waitForElementClickable(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/button_closeLoginPage'), 
-            2)
+	//Guarda resultado de prueba
+	CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
 
-        WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/button_closeLoginPage'))
-    }
+	//toma screenshot en caso de error
+	if (tomarInstantanea == true) {
+		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation, testcaseId)
+	}
+
+	//Cierra el navegador si la prueba se ejecuto de forma individual
+	if (GlobalVariable.individualTestCase == true) {
+		WebUI.closeBrowser()
+	} else {
+		WebUI.waitForElementClickable(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/button_closeLoginPage'),
+				2)
+
+		WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/button_closeLoginPage'))
+	}
 }
 
