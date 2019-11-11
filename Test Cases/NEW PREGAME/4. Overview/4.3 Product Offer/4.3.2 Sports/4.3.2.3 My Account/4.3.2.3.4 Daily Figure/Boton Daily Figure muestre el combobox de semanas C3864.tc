@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que al presionar el botón &lt;Daily Figure este debe mostrar el combo box de semanas</description>
+   <name>Boton Daily Figure muestre el combobox de semanas C3864</name>
+   <tag>C3864</tag>
+   <comment></comment>
+   <testCaseGuid>e20c79cb-7f03-4863-8ae4-506fe76efd7d</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>url del sitio de pregame </description>
+      <id>286d126e-2682-4749-8f8e-28cdb5da26e5</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>id del usuario</description>
+      <id>15651d7e-d1cf-4c20-978e-d775cf3fccb8</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave del usuario</description>
+      <id>145157a9-f8d6-4f49-a1c9-09842e862985</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

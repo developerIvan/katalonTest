@@ -84,7 +84,7 @@ try {
 
     testResultData.put(7, browserVersion)
 
-    WebUI.waitForElementNotPresent(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/InitModal'), 4)
+    WebUI.waitForElementNotPresent(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/InitModal'), 6)
 	
     WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/div_Sports'), 2)
 

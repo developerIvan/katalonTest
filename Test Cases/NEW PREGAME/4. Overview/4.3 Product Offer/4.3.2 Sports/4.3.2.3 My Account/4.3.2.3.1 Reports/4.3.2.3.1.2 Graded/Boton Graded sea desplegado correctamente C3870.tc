@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que al ingresar al sitio de pregame , al seleccionar el botón de MY ACCOUNT o REPORT se debe visualizar correctamente el botón de &lt;Graded></description>
+   <name>Boton Graded sea desplegado correctamente C3870</name>
+   <tag>C3870</tag>
+   <comment></comment>
+   <testCaseGuid>8b36a1ad-deaa-4dc4-849b-c76638a45acb</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>7d6271f9-ce66-422b-95c2-b7506851e30a</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>279849ec-9282-4a04-af60-c8d28ab9a9d5</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>36e9e5e1-d7b1-4c32-aa6c-895eab3750ac</id>
+      <masked>false</masked>
+      <name>customerPassword</name>
+   </variable>
+</TestCaseEntity>

@@ -104,4 +104,9 @@
       <initValue>false</initValue>
       <name>browserIsOpen</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Bandera para que mas de una prueba no vuelva a presionar nuevamente el botón de daily figure ya que ya está presioando</description>
+      <initValue>false</initValue>
+      <name>botonDailyFigureEsPresionado</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

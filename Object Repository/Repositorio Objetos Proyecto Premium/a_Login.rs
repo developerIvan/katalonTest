@@ -6,19 +6,19 @@
    <elementGuidId>97d31372-1ffa-47d4-9ffc-349e84a843ba</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//a[@id='logIn']</value>
       </entry>
       <entry>
          <key>BASIC</key>
          <value>id(&quot;logIn&quot;)[count(. | //a[@href = '#' and @id = 'logIn' and @class = 'btn btn-primary btn-sm navbar-btn' and @data-toggle = 'modal' and @data-target = '#modalLogin' and (text() = 'Login' or . = 'Login')]) = count(//a[@href = '#' and @id = 'logIn' and @class = 'btn btn-primary btn-sm navbar-btn' and @data-toggle = 'modal' and @data-target = '#modalLogin' and (text() = 'Login' or . = 'Login')])]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[@id='logIn']</value>
+         <key>CSS</key>
+         <value>#logIn</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>true</isSelected>

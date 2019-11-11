@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test case auxiliar que se envcarga de validar que la los dias del daily figure esten visibles</description>
+   <name>Validar visibilidad de dias de Daily Figure</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>103e2355-419b-44c0-8cf5-672eb5c0d0b6</testCaseGuid>
+</TestCaseEntity>

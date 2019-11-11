@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que, al hacer click en el check de &quot;Iniciar Martes&quot; o &quot;Start from Start from Tuesday&quot; reordene la tabla de días con el día martes como el primero y lunes como el último.</description>
+   <name>Check Start from Tuesday del boton Daily Figure funcione C6399</name>
+   <tag>C6399</tag>
+   <comment></comment>
+   <testCaseGuid>4660d624-e193-4a28-8a1b-1184742b7633</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>Url del sitio de Pregame</description>
+      <id>2bc91320-5fff-4fa0-ab64-67a73530ceb1</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>id del cliente</description>
+      <id>0c564cc1-580f-4617-96cb-cdb222390077</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave del cliente</description>
+      <id>8bac3d2a-c2b1-4c02-b3aa-856a28c49aa2</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

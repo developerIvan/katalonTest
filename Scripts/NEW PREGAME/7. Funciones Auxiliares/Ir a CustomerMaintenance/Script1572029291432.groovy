@@ -27,12 +27,12 @@ WebUI.setText(findTestObject('Repositorio Objetos Customer Maintenance/input_Pas
 
 WebUI.click(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/input_Password_bt_login'))
 
-WebUI.waitForElementClickable(findTestObject('Repositorio Objetos Customer Maintenance/a_Customer Maintenance'), 3)
+WebUI.waitForElementClickable(findTestObject('Repositorio Objetos Customer Maintenance/a_Customer Maintenance'), 4)
 
 WebUI.click(findTestObject('Repositorio Objetos Customer Maintenance/a_Customer Maintenance'))
 
 WebUI.setText(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/input_Save changes_globalcusto'),
-		GlobalVariable.customerPIN)
+		customerId)
 
 WebUI.delay(1)
 

@@ -69,9 +69,9 @@ try{
 	//Guarda resolucion de pantalla
 	testResultData.put(8, screenResolution)
 
-	WebUI.waitForElementNotVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_Pendings'), 2)
+	WebUI.waitForElementNotVisible(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.1 Reports/button_Pendings'), 2)
 
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_Pendings'))
+	WebUI.verifyElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.1 Reports/button_Pendings'))
 
 
 	testStatus = 'Exitoso'

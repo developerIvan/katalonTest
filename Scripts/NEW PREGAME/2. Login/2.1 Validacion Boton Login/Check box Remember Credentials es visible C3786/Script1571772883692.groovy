@@ -49,9 +49,9 @@ try {
 	browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'();
 	screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
 
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/input_Welcome_chkRemember'), 2)
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome_chkRemember'), 2)
 
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/input_Welcome_chkRemember'), FailureHandling.STOP_ON_FAILURE)
+	WebUI.verifyElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome_chkRemember'), FailureHandling.STOP_ON_FAILURE)
 
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/span_RememberCredentials'), 2)
 

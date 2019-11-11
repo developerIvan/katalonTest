@@ -103,10 +103,10 @@ try {
 
 	//Debido a un bug en el navegador de firefox, la prueba usará click en lugar de la tecla enter
 	if (!(browserVersion.toString().contains('Firefox'))) {
-		WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/button_Enter'), Keys.chord(Keys.ENTER)
+		WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/button_Enter'), Keys.chord(Keys.ENTER)
 				)
 	} else {
-		WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/button_Enter'))
+		WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/button_Enter'))
 	}
 
 	// WebUI.delay(4)

@@ -30,9 +30,16 @@ import java.util.ArrayList;
 import  org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.By;
 import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
+import org.openqa.selenium.support.ui.Select as Select;
 public class AutomationUtils {
+
+
+	@Keyword
+	def String getSelectedValueFromSelectCombobox(TestObject object){
+		Select elementSelect = new Select(WebUI.findWebElement(object));
+		return elementSelect.firstSelectedOption.getText();
+	}
 
 	@Keyword
 	public TestObject loadTestObject(String objectName,TestObjectProperty testObjProperty){
@@ -186,6 +193,7 @@ public class AutomationUtils {
 			WebUI.waitForElementVisible(object,waitTime);
 			return object;
 		}catch(com.kms.katalon.core.exception.StepFailedException step){
+			KeywordUtil.markWarning("Elemento "+testObjectId+"  buscado con este tipo de selector "+selectorType+" y con el selector "+selectorSearchCriteria+" no es  visible");
 			KeywordUtil.logger.logError(step.getMessage());
 			return NullTestObject;
 		}
@@ -253,7 +261,7 @@ public class AutomationUtils {
 					break;
 			}
 		}catch(ElementNotVisibleException  | TimeoutException notVisibleE){
-			KeywordUtil.markWarning("Elementos buscados con este tipo de selector "+selectorId+" y con el selector "+selectorId+" no son visibles");
+			KeywordUtil.markWarning("Elementos buscados con este tipo de selector "+selectorType+" y con el selector "+selectorId+" no son visibles");
 			KeywordLogger.getInstance(this.class).logger.error("Excepcion de elemento no visible ", notVisibleE)
 		}
 

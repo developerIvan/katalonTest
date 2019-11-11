@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que, al hacer click al botón &lt;Daily Figure>, se visualice el checkbox &quot;Start from Tuesday&quot;.</description>
+   <name>Boton Daily Figure muestre el checkbox start from Tuesday C3876</name>
+   <tag>C3876</tag>
+   <comment></comment>
+   <testCaseGuid>dfa0139e-dd8b-4c5b-a5eb-b0a90a025127</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>enlace al sitio de pregame</description>
+      <id>83b4e3e6-6b10-46fa-9f09-3b8f163e2922</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave del cliente</description>
+      <id>ee874630-adae-4dcd-a5a5-dded60bb2a7f</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>Pin dle cliente</description>
+      <id>b27a09d9-4875-46aa-84d8-60c099f09bac</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+</TestCaseEntity>

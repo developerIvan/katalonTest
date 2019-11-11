@@ -56,7 +56,7 @@ testResultData.put(4, testStartHour)
 List<String> pendingWagersFromCM = new ArrayList<Integer>()
 try{
 	//Carga las apuestas pendientes de custoemr maintenance
-	pendingWagersFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.1 Reports/CargarPrecondicionesDeCustomerMaintenance'),
+	pendingWagersFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.1 Reports/CargarApuestasDeCustomerMaintenance'),
 			[('tipoDeApuesta') : 'PENDING'], FailureHandling.STOP_ON_FAILURE)
 
     WebUI.verifyEqual(pendingWagersFromCM.size(), 0);
@@ -82,14 +82,14 @@ try{
 			[('url') : url, ('customerLogin') : customerId, ('customerPass') : password], FailureHandling.STOP_ON_FAILURE)
 
 	//Click en boton de graded
-	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_Graded'), 2)
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.1 Reports/button_Graded'), 2)
 
-	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_Graded'))
+	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.1 Reports/button_Graded'))
 
-	WebUI.waitForElementNotPresent(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/div_Overlay'), 3)
+	WebUI.waitForElementNotPresent(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.1 Reports/div_Overlay'), 3)
 	//Se presiona el botón de 'Pending'
 	
-	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_Pendings'))
+	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.1 Reports/button_Pendings'))
 
 	
 	List<WebElement> tiquetesDepregame = CustomKeywords.'com.utils.AutomationUtils.returnElementsObjects'("CsS","div.wpr_headerWagerDiv div:nth-child(3)",6)
@@ -100,7 +100,7 @@ try{
 
 	testStatus = 'Exitoso'
 
-	testResultDescription = 'El botón de pendings muestra existosamente que el '+customerId+ ' no tiene apuestas pendientes '
+	testResultDescription = 'El botón de pendings muestra existosamente que el jugador '+customerId+ ' no tiene apuestas pendientes '
 }catch (StepFailedException stepE) {
 	String errorCode = '-09'
 
@@ -112,15 +112,6 @@ try{
 	testResultDescription = 'La prueba resulto fallida porque el jugador de prueba  tiene apuestas pendientes en customer maintenance y esto incumple con las precondiciones de la prueba, o algún componente que no pudó ser localizado. '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
 
 	throw  stepE
-}catch (AssertionError asserError) {
-	String errorCode = '-10'
-
-	errorEnLaPrueba = true
-
-
-	testResultDescription = 'El reporte  muestra apuestas pendientesy esto incumple con las precondiciones de la prueba'
-
-	throw new AssertionError('Prueba fallida', asserError)
 }catch(Exception e){
 	String errorCode = '-99'
 

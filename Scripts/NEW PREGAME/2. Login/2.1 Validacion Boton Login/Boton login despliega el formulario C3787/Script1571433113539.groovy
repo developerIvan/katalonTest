@@ -67,9 +67,9 @@ try {
 
 	WebUI.click(loginButton)
 
-	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), 2)
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), 2)
 
-	actualUserInputBackGroundTxt = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'),
+	actualUserInputBackGroundTxt = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'),
 			'placeholder')
 
 	assert expectedUserInputBackgroundText.equals(actualUserInputBackGroundTxt)

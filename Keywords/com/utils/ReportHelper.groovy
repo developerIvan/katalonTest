@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat as SimpleDateFormat
 import internal.GlobalVariable
 import java.time.LocalTime;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatter as DateTimeFormatter;
 import org.openqa.selenium.Capabilities
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.remote.RemoteWebDriver
@@ -29,11 +29,26 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import java.time.DayOfWeek as DayOfWeek;
+import  java.time.LocalDate as LocalDate;
+import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.TemporalAdjuster
 /**
  * @author qa-katalon
  * Contiene funciones para registrar la infomación relacionadas  al tiempo y espacio donde se  de ejecuccten las pruebas tales como fecha hora de ejecucción, navegador usado etc 
  */
 public class ReportHelper {
+
+	@Keyword
+	def static DayOfWeek getDayOfWeek(String dateString,DateTimeFormatter dayTimeFormater){
+		LocalDate customDate = LocalDate.parse(dateString,dayTimeFormater);
+		return customDate.getDayOfWeek();
+	}
+
+	@Keyword
+	def static String getCurrentDayOfTheWeek(DateTimeFormatter formatter,TemporalAdjuster tempAdjuster){
+		return  LocalDate.now().with(tempAdjuster).format(formatter);
+	}
 
 	@Keyword
 	// Consigue la Fecha del Sistema.
@@ -51,7 +66,6 @@ public class ReportHelper {
 
 	@Keyword
 	def String getOperatingSystem () {
-		println System.getProperty('os.name')
 		return System.getProperty('os.name')
 	}
 
@@ -61,7 +75,6 @@ public class ReportHelper {
 		Capabilities caps = ((RemoteWebDriver) driver).getCapabilities()
 		String browserName = caps.getBrowserName().capitalize()
 		String browserVersion = caps.getVersion()
-		println browserName + ' ' + browserVersion
 		return browserName + ' ' + browserVersion
 	}
 
@@ -70,10 +83,9 @@ public class ReportHelper {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize()
 		Integer screenHeight = screenSize.height
 		Integer screenWidth = screenSize.width
-		println screenWidth + 'x' + screenHeight
 		return screenWidth + 'x' + screenHeight
 	}
-	
+
 	@Keyword
 	def Map<String,String> returnTestParametersForLog(Map<Integer,String> parametersMap){
 		Map<String,String> logParamMap = new HashMap<String,String>();
@@ -82,4 +94,6 @@ public class ReportHelper {
 		}
 		return logParamMap;
 	}
+
+
 }

@@ -86,28 +86,22 @@ testResultData.put(8,screenResolution);
 try {
 	WebUI.delay(2)
 
-	TestObject loginButton = CustomKeywords.'com.utils.AutomationUtils.clickAndReturnObject'(null, 'Login Button ', new TestObjectProperty(
-			XPATH_SELECTOR, equalsCondType, 'id(\'logIn\')'), 2)
-
-	TestObject userPinInput = CustomKeywords.'com.utils.AutomationUtils.findTestObject'('input_Bienvenido_user ', new TestObjectProperty(
-			XPATH_SELECTOR, equalsCondType, 'id(\'user\')'), 4)
-
-	TestObject userPasswordInput = CustomKeywords.'com.utils.AutomationUtils.findTestObject'('input_Bienvenido_password ',
-			new TestObjectProperty(XPATH_SELECTOR, equalsCondType, 'id(\'password\')'), 4)
-
-	WebUI.waitForElementVisible(userPinInput, 4)
-
-	WebUI.sendKeys(userPinInput, loginUser)
-
-	WebUI.sendKeys(userPasswordInput, loginPassword)
-
+	WebUI.waitForElementClickable(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/a_Login'), 2)
+	
+	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/a_Login'))
+	
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), 2)
+	
+	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), loginUser)
+	
+	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_password'), loginPassword)
+	
 	//click para entrar al sitio
-	CustomKeywords.'com.utils.AutomationUtils.clickAndReturnObject'(null, ' Button Entrar ', new TestObjectProperty(CSS_SELECTOR,
-			equalsCondType, '#btnEntrar'), 4)
+	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/button_Enter'))
 
 	WebUI.waitForElementPresent(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/Overview Button'), 2)
 
-	String overviewButton =  CustomKeywords.'com.utils.AutomationUtils.getObjectAttribute'(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/Overview Button'), "innerText", 2);
+	String overviewButton = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/Overview Button'), "innerText")
 
 	assert null != overviewButton
 

@@ -75,9 +75,9 @@ try {
 	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/div_MY ACCOUNT'))
 
 
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_REPORTS'), 2)
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.1 Reports/button_REPORTS'), 2)
 
-	String reportButtonName = WebUI.getAttribute(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_REPORTS'), "innerText", FailureHandling.STOP_ON_FAILURE)
+	String reportButtonName = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.1 Reports/button_REPORTS'), "innerText", FailureHandling.STOP_ON_FAILURE)
 
 
 	assert null != reportButtonName;

@@ -11,78 +11,6 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>8ad52545-f20e-4a50-8054-655b04ac661b</testSuiteGuid>
    <testCaseLink>
-      <guid>053e7f4d-fafa-4362-9144-51f4efb1a3d3</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.2 Password/2.1.2.1 Permiso Correcto/Error mediante la tecla enter si la clave es incorrecta C3840</testCaseId>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>9d09f186-297e-4d9a-accd-1bc680ab1114</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>a1af9de8-a4bf-4acd-8c11-53fbfdec6431</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>36dd5dc2-7a0c-4b5e-98ac-43e4202bedc3</variableId>
-      </variableLink>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>e99ce1e5-e28a-4556-a116-4476965bf0e5</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.2 Password/2.1.2.1 Permiso Correcto/Usuario no ingrese al sitio si la clave es incorrecta C3801</testCaseId>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>b26d9a6e-2a6e-4ab8-b3d9-1ad351219118</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>72c1fa5e-9476-493f-bbff-263050de024f</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>39af4e11-4e81-44a0-9338-ccd6729c75ed</variableId>
-      </variableLink>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>02667911-4c44-4b6c-8292-d76d98814862</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.2 Password/2.1.2.1 Permiso Correcto/Usuario no ingrese si el password no es ingresado C3811</testCaseId>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>9d09f186-297e-4d9a-accd-1bc680ab1114</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>a1af9de8-a4bf-4acd-8c11-53fbfdec6431</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId></variableId>
-      </variableLink>
-   </testCaseLink>
-   <testCaseLink>
       <guid>1210dbb3-9aa4-4ae8-8c22-c78ff6169c34</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -158,6 +86,102 @@
          <type>DEFAULT</type>
          <value></value>
          <variableId>d2a51d30-6a34-436a-8e85-2b03e70d3701</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>02667911-4c44-4b6c-8292-d76d98814862</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.2 Password/2.1.2.1 Permiso Correcto/Usuario no ingrese si el password no es ingresado C3811</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>9d09f186-297e-4d9a-accd-1bc680ab1114</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>a1af9de8-a4bf-4acd-8c11-53fbfdec6431</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId></variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>e99ce1e5-e28a-4556-a116-4476965bf0e5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.2 Password/2.1.2.1 Permiso Correcto/Usuario no ingrese al sitio si la clave es incorrecta C3801</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>b26d9a6e-2a6e-4ab8-b3d9-1ad351219118</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>72c1fa5e-9476-493f-bbff-263050de024f</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>39af4e11-4e81-44a0-9338-ccd6729c75ed</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>053e7f4d-fafa-4362-9144-51f4efb1a3d3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.2 Password/2.1.2.1 Permiso Correcto/Error mediante la tecla enter si la clave es incorrecta C3840</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>9d09f186-297e-4d9a-accd-1bc680ab1114</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>a1af9de8-a4bf-4acd-8c11-53fbfdec6431</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>36dd5dc2-7a0c-4b5e-98ac-43e4202bedc3</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>71e13f57-b7f6-4ee0-a006-4694e9203e27</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/Check box Remember Credentials funcione C3797</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>13701682-68f7-4476-a7a1-3cc5bc120e7f</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>4f1884d2-0818-46ce-ab2b-38033f760c8f</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>b12ff0ab-cc26-495a-be1b-6547da2b14a2</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

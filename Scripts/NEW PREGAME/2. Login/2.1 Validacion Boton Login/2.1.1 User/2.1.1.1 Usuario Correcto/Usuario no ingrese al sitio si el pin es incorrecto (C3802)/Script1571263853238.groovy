@@ -114,7 +114,7 @@ catch (AssertionError asserError) {
 	errorEnLaPrueba = true
 
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
-	testResultDescription ='El mensaje de error esperado debería ser ' + expectedErrorMesage;
+	testResultDescription ='El mensaje de error esperado debería ser ' + expectedErrorMesage+ ' pero actualmente es '+actualErrorMessage;
 
 	throw  asserError
 }
@@ -156,14 +156,13 @@ finally {
 		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation,testcaseId)
 	}
 	
-	if(!errorEnLaPrueba){  //Cierra el navegador si la prueba se ejecuto de forma individual
-		if (GlobalVariable.individualTestCase == true) {
+	if (GlobalVariable.individualTestCase == true) {
 			WebUI.closeBrowser()
 		}else{
 			WebUI.waitForElementClickable(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/button_closeLoginPage'),2)
 			WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/button_closeLoginPage'));
 		}
-	}
+	
 
 }
 

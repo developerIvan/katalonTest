@@ -62,13 +62,13 @@ try {
 
 
 
-	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/input_Welcome_chkRemember'))
+	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome_chkRemember'))
 
-	WebUI.sendKeys(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/input_Welcome Back_user'),customerPin)
+	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'),customerPin)
 
-	WebUI.sendKeys(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/input_Welcome Back_password'),password)
+	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_password'),password)
 
-	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/button_Enter'))
+	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/button_Enter'))
 
 	WebUI.waitForElementNotVisible(findTestObject('Repositorio Objetos Proyecto Premium/InitModal'), 4);
 	
@@ -82,19 +82,19 @@ try {
 
 	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/a_Login'));
 
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/input_Welcome_chkRemember'), 2)
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome_chkRemember'), 2)
 
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/input_Welcome_chkRemember'), FailureHandling.STOP_ON_FAILURE)
+	WebUI.verifyElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome_chkRemember'), FailureHandling.STOP_ON_FAILURE)
 
 	WebUI.waitForElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/span_RememberCredentials'), 2)
 
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/span_RememberCredentials'), FailureHandling.STOP_ON_FAILURE)
 
-	customerPin = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_user'), "value");
+	customerPin = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), "value");
 	
-	password = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/input_Welcome Back_password'), "value");
+	password = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_password'), "value");
 	
-	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/button_Enter'))
+	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/button_Enter'))
 	
 	WebUI.waitForElementNotVisible(findTestObject('Repositorio Objetos Proyecto Premium/InitModal'), 4);
 	

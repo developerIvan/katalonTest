@@ -75,11 +75,11 @@ try {
 	//Guarda resolucion de pantalla
 	testResultData.put(8, screenResolution)
 
-	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_REPORTS'))
+	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.1 Reports/button_REPORTS'))
 
 
 
-	String pendingButtonName = WebUI.getAttribute(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/MY ACCOUNT/Reports/button_Pendings'),
+	String pendingButtonName = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.1 Reports/button_Pendings'),
 			'className', FailureHandling.STOP_ON_FAILURE)
 
 

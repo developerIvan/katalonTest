@@ -2,7 +2,7 @@
 <TestCaseEntity>
    <description>Este caso de prueba valida que, si el usuario ingresa la contraseña correcta ,pero su pin es incorrecto, el sistema no debe permitir que pueda ingresar al sitio.</description>
    <name>Usuario no ingrese al sitio si el pin es incorrecto (C3802)</name>
-   <tag></tag>
+   <tag>C3802</tag>
    <comment></comment>
    <testCaseGuid>bf60ea9f-1f1d-4ce5-ad97-0d0c217d2439</testCaseGuid>
    <variable>

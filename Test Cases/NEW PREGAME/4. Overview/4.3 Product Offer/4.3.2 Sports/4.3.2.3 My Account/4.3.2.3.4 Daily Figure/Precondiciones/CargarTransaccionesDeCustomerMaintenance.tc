@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test case auxiliar para cargar los datos de las transacciones</description>
+   <name>CargarTransaccionesDeCustomerMaintenance</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a2d5d789-3e46-41d8-be72-627a8ea9f97f</testCaseGuid>
+   <variable>
+      <defaultValue>'PRAC06'</defaultValue>
+      <description>Id o ping del cliente</description>
+      <id>4927dcf8-1bdf-444e-8d90-ea8a77cdc501</id>
+      <masked>false</masked>
+      <name>customerId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Monday'</defaultValue>
+      <description>Dia de la semana de las transacciones dle daily figure</description>
+      <id>dd991512-0161-4521-a72b-837599ae72a3</id>
+      <masked>false</masked>
+      <name>dayOfTheWeek</name>
+   </variable>
+   <variable>
+      <defaultValue>false</defaultValue>
+      <description>Define si la dirección actual es de customer maintenance para que este sitio la carge nuevamente</description>
+      <id>ff52e1d7-7487-4ebd-9cbf-4a9d8e0b5964</id>
+      <masked>false</masked>
+      <name>CMIsCurrentUrl</name>
+   </variable>
+</TestCaseEntity>
