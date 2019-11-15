@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description>Carga los datos para los casos de prueba relacionados a la sección de Daily Figure</description>
+   <name>4.3.2.3.4 Daily Figure</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>91db46f4-55fe-44ad-8833-efde23dd5933</dataFileGUID>
+   <dataSourceUrl>C:\PROYECTOS\QAPregameNuevo\Data Files\Perfiles\DatosdePrueba.xls</dataSourceUrl>
+   <driver>ExcelFile</driver>
+   <isInternalPath>false</isInternalPath>
+   <query></query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName>4.3.2.3.4 Daily Figure</sheetName>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

@@ -86,31 +86,49 @@ try {
 
     WebUI.waitForElementNotPresent(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/InitModal'), 6)
 	
-    WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/div_Sports'), 2)
+    WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/div_Sports'), 4)
 
-	
-String permisoLive =	WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/div_Sports'), 'textContent', FailureHandling.STOP_ON_FAILURE)
+	String permisoSportbook =	WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/div_Sports'), 'textContent', FailureHandling.STOP_ON_FAILURE)
 
-
-    assert !(permisoLive.equals(null)) && !(permisoLive.isEmpty())
+     assert !(permisoSportbook.equals(null)) && !(permisoSportbook.isEmpty())
 
     //Guara estado de la prueba
     testStatus = 'Exitoso'
 
     //Guara descripci?n de la prueba
-    testResultDescription = (('Permiso de Sportbook ' + permisoLive) + ' es correctamente accesible para el usuario')
+    testResultDescription = (('Permiso de Sportbook ' + permisoSportbook) + ' es correctamente accesible para el usuario')
 }
 catch (StepFailedException step) {
     //Guara descripci?n de la prueba
-    testResultDescription = 'Validación de permiso Sportbook fallida por incumplimiento de verifaicación de elementos en la página'
+	
+	String errorCode = testcaseId+'-09'
+	
+	errorEnLaPrueba = true
+	
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, step)
+		
+    testResultDescription = 'Validación de permiso Sportbook fallida '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode)
 
-    throw new AssertionError('Error en la prueba Sportbook debido a que hay un paso que no se cumplio', step)
-} 
-catch (Exception ex) {
+    throw step
+}catch (AssertionError asserError) {
+	String errorCode = testcaseId+'-10'
+
+	errorEnLaPrueba = true
+
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
+
+	testResultDescription = "El enlace de sportbook no es visible para el usuario , favor revisar el log de katalon"
+
+	throw asserError
+} catch (Exception ex) {
+	String errorCode = testcaseId+'-99'
+	
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, ex)
     //Guara descripci?n de la prueba
-    testResultDescription = 'Validación de permiso fallida causado por comnportamiento anomalo en la prueba'
+    testResultDescription = 'Validación de permiso fallida causado por comnportamiento anomalo en la prueba'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(
+			errorCode)
 
-    throw new AssertionError('Error en la prueba Sporbbok ', ex)
+    throw  ex;
 } 
 finally { 
     //Guarda url o dirrecion del sitio según el ambiente

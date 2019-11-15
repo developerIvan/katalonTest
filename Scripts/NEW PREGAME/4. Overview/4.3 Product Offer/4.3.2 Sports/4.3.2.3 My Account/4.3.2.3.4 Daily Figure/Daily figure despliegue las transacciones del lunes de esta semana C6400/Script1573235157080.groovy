@@ -46,37 +46,36 @@ String testStartDate = CustomKeywords.'com.utils.ReportHelper.getDate'()
 
 String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
-String zeroMondayHour = ''
+String dailyFigureTransactionsDay = 'Monday'
 
-String dailyFigureTransactionsDay = "Monday"
-
-
-//Selectores css para las transacciones en pregame 
-String transactionId="";
+//Selectores css para las transacciones en pregame
+String transactionId = ''
 
 String transactionContainerCSS = null
 
-String descriptionLocatorCss =  null
+String descriptionLocatorCss = null
 
 String wagerTypeLocatorCss = null
 
 String wagerAmountLocatorCss = null
 
-final String CSS_SELECTOR_TYPE = "CSS";
+String CSS_SELECTOR_TYPE = 'CSS'
 
-final String INNER_TEXT_ATT = "innerText"
+String INNER_TEXT_ATT = 'innerText'
 
-List<TransactionDetail> customerTransacctionsFromCM = new ArrayList<TransactionDetail>();
+List<TransactionDetail> customerTransacctionsFromCM = new ArrayList<Integer>()
+
 try {
-	
 	//Registro fecha incio de la prueba
 	testResultData.put(3, testStartDate)
-	
+
 	//Registro  hora  incio de la prueba
 	testResultData.put(4, testStartHour)
+
+		WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/El jugador tenga configurado Monday Zero Out como daily figure C6405'),
+				[('customerPIN') : customerPIN, ('customerPass') : customerPass, ('expectedMondayConfiguration') : findTestData('TestData/Datos de Entrada/4.3.2.3.4 Daily Figure').getValue(2, 1)],
+				FailureHandling.STOP_ON_FAILURE)
 	
-	zeroMondayHour = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/Validar Jugador es de tipo zero balance'),
-			[('userId') : customerPIN], FailureHandling.STOP_ON_FAILURE)
 
 	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
 
@@ -84,7 +83,6 @@ try {
 
 	screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
 
-	
 	//Guarda Version del browser
 	testResultData.put(7, browserVersion)
 
@@ -93,72 +91,83 @@ try {
 
 	//Guarda resolucion de pantalla
 	testResultData.put(8, screenResolution)
-	
-	WebUI.verifyEqual(zeroMondayHour, 'Monday Zero Out')
-     customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/CargarTransaccionesDeCustomerMaintenance'),
-			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : true], FailureHandling.STOP_ON_FAILURE)
+
+	customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/CargarTransaccionesDeCustomerMaintenance'),
+			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : true, ('weekBefore') : 0],
+			FailureHandling.STOP_ON_FAILURE)
 
 	//Valida que el jugador tenga transacciones del día lunes
-	WebUI.verifyNotEqual(customerTransacctionsFromCM.size(), 0) 
+	WebUI.verifyNotEqual(customerTransacctionsFromCM.size(), 0)
 
 	//ir apregame y cargar la sección de daily figure
 	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Boton Daily Figure muestre los dias de la semana y Total C6398'),
-			[('url') : GlobalVariable.pregameUrl, ('customerPIN') : GlobalVariable.customerPIN, ('customerPass') : GlobalVariable.customerPassword],
-			FailureHandling.STOP_ON_FAILURE)
-	
+			[('url') : url, ('customerPIN') : customerPIN, ('customerPass') : customerPass], FailureHandling.STOP_ON_FAILURE)
+
 	//se presiona el monto que debe ser visible del día lunes
-	TestObject mondayTdAmountData = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("Monday Amount", 'css', 'tr.trReportDetail.show-data td[data-th="'+dailyFigureTransactionsDay+'"] a', 3) 
-	
-	WebUI.verifyElementClickable(mondayTdAmountData);
-	
-	WebUI.click(mondayTdAmountData);
-	
+	TestObject mondayTdAmountData = CustomKeywords.'com.utils.AutomationUtils.findTestObject'('Monday Amount', 'css', ('tr.trReportDetail.show-data td[data-th="' +
+			dailyFigureTransactionsDay) + '"] a', 3)
+
+	WebUI.verifyElementClickable(mondayTdAmountData)
+
+	WebUI.click(mondayTdAmountData)
+
 	//Se hace la comparación de cada transacción
-	for(TransactionDetail transaction:customerTransacctionsFromCM){
-		transactionId =transaction.getTicketId();
-		
+	for (TransactionDetail transaction : customerTransacctionsFromCM) {
+		transactionId = transaction.getTicketId()
+
 		//Clik en icono + para abrir la transacción
-		TestObject transactionOpenDetailIcon = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("Monday Amount", 'css', 'i[id^="'+transactionId+'"]', 2) 
-		
+		TestObject transactionOpenDetailIcon = CustomKeywords.'com.utils.AutomationUtils.findTestObject'('Monday Amount',
+				'css', ('i[id^="' + transactionId) + '"]', 2)
+
 		WebUI.click(transactionOpenDetailIcon)
-		
-		
-		 transactionContainerCSS = "div#wpr_contentWagerDiv_"+transactionId+" ";
-		
-		 descriptionLocatorCss =  transactionContainerCSS.concat("div.rightFloatDiv.table-cell")
-		
-		 wagerTypeLocatorCss = transactionContainerCSS.concat("div.leftFloatDiv.table-cell span:nth-child(1)")
-		
-		 wagerAmountLocatorCss = transactionContainerCSS.concat("div.leftFloatDiv.table-cell span:nth-child(3)")
-		 
-		TestObject transactionDescriptionObj = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("Transaction "+transactionId+" description",CSS_SELECTOR_TYPE, descriptionLocatorCss, 2) 
-		TestObject transactionAmountObj = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("Transaction "+transactionId+" lost/won amount", CSS_SELECTOR_TYPE, wagerAmountLocatorCss, 2)
-		TestObject transactionWagerType = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("Transaction "+transactionId+" type", CSS_SELECTOR_TYPE, wagerTypeLocatorCss, 2)
-		
-		String actualDescription = WebUI.getAttribute(transactionDescriptionObj,INNER_TEXT_ATT )
-		String actualAmount = WebUI.getAttribute(transactionAmountObj,INNER_TEXT_ATT )
-		String actualTransactionType = WebUI.getAttribute(transactionWagerType,INNER_TEXT_ATT )
-		
+
+		transactionContainerCSS = (('div#wpr_contentWagerDiv_' + transactionId) + ' ')
+
+		descriptionLocatorCss = transactionContainerCSS.concat('div.rightFloatDiv.table-cell')
+
+		wagerTypeLocatorCss = transactionContainerCSS.concat('div.leftFloatDiv.table-cell span:nth-child(1)')
+
+		wagerAmountLocatorCss = transactionContainerCSS.concat('div.leftFloatDiv.table-cell span:nth-child(3)')
+
+		TestObject transactionDescriptionObj = CustomKeywords.'com.utils.AutomationUtils.findTestObject'(('Transaction ' +
+				transactionId) + ' description', CSS_SELECTOR_TYPE, descriptionLocatorCss, 2)
+
+		TestObject transactionAmountObj = CustomKeywords.'com.utils.AutomationUtils.findTestObject'(('Transaction ' + transactionId) +
+				' lost/won amount', CSS_SELECTOR_TYPE, wagerAmountLocatorCss, 2)
+
+		TestObject transactionWagerType = CustomKeywords.'com.utils.AutomationUtils.findTestObject'(('Transaction ' + transactionId) +
+				' type', CSS_SELECTOR_TYPE, wagerTypeLocatorCss, 2)
+
+		String actualDescription = WebUI.getAttribute(transactionDescriptionObj, INNER_TEXT_ATT)
+
+		String actualAmount = WebUI.getAttribute(transactionAmountObj, INNER_TEXT_ATT)
+
+		String actualTransactionType = WebUI.getAttribute(transactionWagerType, INNER_TEXT_ATT)
+
 		//Validación de que los datos de las transacciones de customer maintenance sean visibles en pregame
-	    assert  actualDescription.contains(transaction.getTransactionDescription());
-		assert  actualAmount.contains(Double.toString(transaction.getTransacctionLostWonAmount()));
-		assert  actualTransactionType.contains(transaction.getTransacctionType());
-		
+		//    assert  actualDescription.contains(transaction.getTransactionDescription());
+		assert actualAmount.contains(Double.toString(transaction.getTransacctionLostWonAmount()))
+
+		assert actualTransactionType.contains(transaction.getTransacctionType())
 	}
+
+	testStatus = 'Exitoso'
+
+	testResultDescription = (('Las transacciones del jugador ' + customerPIN) + ' del día lunes de customer maintenance aparecen exitosamente en pregame ')
 	
-	testStatus = "Exitoso"
-	
-	testResultDescription = "Las transacciones del jugador "+customerPIN+ " del día lunes de customer maintenance aparecen exitosamente en pregame "
-}
-catch (com.kms.katalon.core.exception.StepFailedException stepE) {
+	//Se establece esta bandera en verdarero para otros casos de prueba que dependan de este cuando se ejecuta este caso de prueba en conjunto
+	GlobalVariable.MondayDailyFigureIsLoaded = true
+}catch (com.kms.katalon.core.exception.StepFailedException stepE) {
 	String errorCode = '-09'
 
 	errorEnLaPrueba = true
 
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
-	testResultDescription= 'El jugador ' + customerPIN + ' no tiene transacciones para el día lunes o su configuración de zero balance no es del lunes o algón procedimiento previ como ingreso a pregame no se pudo completar '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode)
 
-	throw new com.kms.katalon.core.exception.StepFailedException('Paso de la prueba  no completado', stepE)
+	testResultDescription = ((('El jugador ' + customerPIN) + ' no tiene transacciones para el día lunes o su configuración de zero balance no es del lunes o algún procedimiento previo como ingreso a pregame no se pudo completar ') +
+			CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode))
+
+	throw stepE
 }
 catch (AssertionError asserError) {
 	String errorCode = '-10'
@@ -167,7 +176,7 @@ catch (AssertionError asserError) {
 
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
 
-	testResultDescription = "Los datos de las transacciones de customer maintenace no cuadran con las transacciones que despliegua customer maintenace, favor revisar el log de katalon "
+	testResultDescription = 'Los datos de las transacciones de customer maintenace no cuadran con las transacciones que despliegua customer maintenace, favor revisar el log de katalon '
 
 	throw asserError
 }

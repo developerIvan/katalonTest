@@ -48,9 +48,9 @@ public class TransactionDetail {
 	private String transactionDescription = null;
 	private String transacctionType = null;
 	private double transacctionLostWonAmount = 0;
-    private String transactionDate = null;
-	
-	
+	private String transactionDate = null;
+
+
 	@Keyword
 	public TransactionDetail(){
 	}
@@ -95,7 +95,7 @@ public class TransactionDetail {
 	public void setTransactionDate(String transactionDate){
 		this.transactionDate = transactionDate
 	}
-	
+
 	/**
 	 * Devuevle la fecha de la transaccion (Solo si son apuestas resuetlas del dia especifico tendra datos, sino sera vacio)
 	 * @param transactionDate
@@ -103,7 +103,7 @@ public class TransactionDetail {
 	public String getTransactionDate(){
 		return this.transactionDate
 	}
-	
+
 	/**
 	 * Devuelve la descripcion de la transaccion Ej:Football - 473 New England Patriots/474 Baltimore Ravens - Game Spread - New England Patriots -3 -115
 	 * @param wagerType

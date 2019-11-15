@@ -113,16 +113,25 @@ try {
 
 }
 catch (com.kms.katalon.core.exception.StepFailedException stepE) {
-	String errorCode = '-01'
+	String errorCode = testcaseId.concat('-01')
 
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
 	testResultDescription = "El jugador no logró ingresar al Overwiew debido a un paso de la prueba o elmento de la página que no está visible."+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);;
 
 	throw stepE;
-}
-catch (Exception e) {
-	String errorCode = '-99'
+}catch (AssertionError asserError) {
+	String errorCode = testcaseId.concat('-10')
+
+	errorEnLaPrueba = true
+
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
+
+	testResultDescription = "El jugador no logra ingresar al overview debido auqe el boton Overview no es visible, favor revisar el log de katalon "
+
+	throw asserError
+}catch (Exception e) {
+	String errorCode = testcaseId.concat('-99')
 
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
 

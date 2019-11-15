@@ -104,4 +104,9 @@
       <initValue>false</initValue>
       <name>botonDailyFigureEsPresionado</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define si en pregame, en daily figure , las transacciones del dia lunes son visibles para que los casos de prueba que dependan de estas no tengan que arga las trnasacciones de nuevo</description>
+      <initValue>false</initValue>
+      <name>MondayDailyFigureIsLoaded</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

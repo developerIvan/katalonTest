@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que, al hacer click al botón de Daily Figure en la tabla de días de la semana, se debe ver la transacción(es) del día lunes de la semana pasada.</description>
+   <name>Daily Figure despliegue la transaccion(es) del lunes de la semana pasada C6401</name>
+   <tag>C6401</tag>
+   <comment></comment>
+   <testCaseGuid>20df3e1a-0c49-4ea0-bf81-64131edf4f14</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>Pin de usuario</description>
+      <id>31be4f8e-dd6c-4304-be19-8c7fa8f8568a</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>Dirección del sitio Web de pregame</description>
+      <id>072db8d3-8ff1-45d6-9059-7f4cf64dba8b</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave dle usuario</description>
+      <id>5fe63696-29b1-4317-b457-4271a7011aa8</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>0</defaultValue>
+      <description>Dias antes del dia actual</description>
+      <id>05031227-0148-432a-a707-9ce281830baa</id>
+      <masked>false</masked>
+      <name>daysBefore</name>
+   </variable>
+</TestCaseEntity>

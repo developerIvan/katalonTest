@@ -72,11 +72,11 @@ try {
 
     //Se hace click en el botón de Daily Figure
     if (!(GlobalVariable.botonDailyFigureEsPresionado)) {
-        WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Presionar boton Daily Figure'), 
+        WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/Presionar boton Daily Figure'), 
             [:], FailureHandling.STOP_ON_FAILURE)
     }
     
-    Map<String,String> daysOfWeekMap = 	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Validar visibilidad de dias de Daily Figure'),
+    Map<String,String> daysOfWeekMap = 	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/Validar visibilidad de dias de Daily Figure'),
 		[:], FailureHandling.STOP_ON_FAILURE)
 	
     String mondayDayDFTableHeader = daysOfWeekMap.get("monday");
@@ -127,7 +127,7 @@ catch (com.kms.katalon.core.exception.StepFailedException stepE) {
     testResultDescription = ('La tabla de días de la semana no muestra los días de la semana  debido a que un paso de la prueba no se completo o un elemento de la página que no está visible. ' + 
     CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode))
 
-    throw new com.kms.katalon.core.exception.StepFailedException('Paso de la prueba  no completado', stepE)
+    throw stepE
 } 
 catch (AssertionError asserError) {
     String errorCode = '-C6398_10'

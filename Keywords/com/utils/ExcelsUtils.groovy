@@ -115,6 +115,8 @@ public class ExcelsUtils {
 		XSSFWorkbook workbook =  null;
 		XSSFSheet sheet = null;
 
+
+
 		try{
 			excelFile = new File(locationFile);
 			inputFile = new FileInputStream(excelFile);
@@ -123,7 +125,9 @@ public class ExcelsUtils {
 
 			for(int currentRow:rows){
 				for(int cellPosition:cells.keySet()){
+
 					XSSFRow row = sheet.getRow(currentRow)!=null?sheet.getRow(currentRow):sheet.createRow(currentRow);
+					println "Dato a guradar "+row.toString();
 					row.createCell(cellPosition).setCellValue(cells.get(cellPosition));
 				}
 			}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que, al hacer click en el check &quot;Start From Tuesday&quot; el monto o las transacciones del día lunes deben de aparecer como ajustes de la semana pasada.</description>
+   <name>Monto Transaccion lunes de esta semana aparesca como ajuste de semana pasada C6403</name>
+   <tag>C6403</tag>
+   <comment></comment>
+   <testCaseGuid>7d59482c-0b5d-4a3a-8e80-3a0fa6c6ad10</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>url de pregame</description>
+      <id>e8a6c697-b3dc-4fe8-86e8-5f2d6056ba94</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>id del jugador</description>
+      <id>74810c80-206c-4826-84a3-bdeb41ed8546</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave del jugador</description>
+      <id>00e597a4-142a-4501-bc8a-8cb8e324be64</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

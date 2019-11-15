@@ -22,12 +22,17 @@ import org.openqa.selenium.support.ui.Select as Select
 import java.util.ArrayList as ArrayList
 import java.util.List as List
 import java.time.temporal.TemporalAdjusters;
-
+import java.time.temporal.TemporalAdjuster;
+import java.time.LocalDate;
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
 List<TransactionDetail> transaccionesDeCustomerMaintenace = new ArrayList<TransactionDetail>()
 //List<TransactionDetail> listTransact = new ArrayList<TransactionDetail>();
 String INNER_TEXT_ATT = 'innerText'
 
 DayOfWeek expectedDailyFigureDate = null
+
+
+TemporalAdjuster temAjuster = null;
 
 //Se define que dia se deben buscar las transacciones
 //Prueba
@@ -66,6 +71,30 @@ switch (dayOfTheWeek.toString().toUpperCase()) {
 		break
 }
 
+
+//Se define en que semana se deben buscar las transacciones
+
+switch(weekBefore){
+	case 0:
+		temAjuster = TemporalAdjusters.previousOrSame( expectedDailyFigureDate );
+		break;
+	case 1:
+		temAjuster = TemporalAdjusters.previousOrSame( expectedDailyFigureDate );
+		daysBefore = 7
+		break;
+	case 2:
+		temAjuster = TemporalAdjusters.previousOrSame( expectedDailyFigureDate );
+		daysBefore = 14
+		break;
+	case 3:
+		temAjuster = TemporalAdjusters.previousOrSame( expectedDailyFigureDate );
+		daysBefore = 27
+		break;
+
+	default://Seleccioanra la fecha de esta semana POR DEFECTO
+		temAjuster = TemporalAdjusters.previousOrSame( expectedDailyFigureDate );
+		break;
+}
 //ir a customer maitenance
 
 if(!CMIsCurrentUrl){
@@ -106,32 +135,8 @@ for (WebElement transactionEle : transactionsElements) {
 			transDetail =  convertWinLossWagersIntoTransactionDetail(transactionDoc.findElement(By.cssSelector('a')) ,expectedDailyFigureDate,wagerDate,transactionDescription);
 
 		} else if (transactionDescription.contains('Casino')){
-			String casinoAmount = null;
-			String casinoTickedId = null;
 			String casinoDate = transactionEle.findElement(By.cssSelector('td:nth-child(1) ')).getAttribute(INNER_TEXT_ATT);
-/*
-			DayOfWeek actualDayOfWeek = CustomKeywords.'com.utils.ReportHelper.getDayOfWeek'(casinoDate, DateTimeFormatter.ofPattern(
-					'MM/dd/yyyy'))*/
-
-			String expectedTransactionDate = CustomKeywords.'com.utils.ReportHelper.getCurrentDayOfTheWeek'(DateTimeFormatter.ofPattern(
-				'MM/dd/yyyy'),TemporalAdjusters.previousOrSame( expectedDailyFigureDate ))
-
-			//si la fecha de la transacci►2n es igual a la fehca requerida, esta se incluye
-			if(casinoDate.equals(expectedTransactionDate)){
-				transDetail = new TransactionDetail();
-				casinoTickedId = transactionDoc.getAttribute(INNER_TEXT_ATT).concat("_0");
-
-				if(transactionDescription.contains("Win")){
-					casinoAmount = transactionEle.findElement(By.cssSelector('td:nth-child(5)')).getAttribute(INNER_TEXT_ATT);
-				}else{
-					casinoAmount = transactionEle.findElement(By.cssSelector('td:nth-child(6)')).getAttribute(INNER_TEXT_ATT);
-				}
-
-				transDetail.setTicketId(casinoTickedId)
-				transDetail.setTransacctionType("Casino");
-				transDetail.setTransactionDescription(transactionDescription);
-				transDetail.setTransacctionLostWonAmount(Double.parseDouble(casinoAmount));
-			}
+			transDetail =   converCasinoWagerIntoTransaction( casinoDate, temAjuster, transactionEle, transactionDoc, transactionDescription   );
 		}
 	}
 
@@ -140,8 +145,44 @@ for (WebElement transactionEle : transactionsElements) {
 	}
 }
 
+//Limpieza de banderas debido a que es necesario hacer el proceso completo de login
+GlobalVariable.usuarioLogeado = false
+GlobalVariable.pregameSiteEsVisible = false;
+GlobalVariable.MondayDailyFigureIsLoaded = false;
 
 return transaccionesDeCustomerMaintenace
+
+def TransactionDetail converCasinoWagerIntoTransaction(String casinoDate,TemporalAdjuster temAjuster,WebElement transactionEle,WebElement transactionDoc,String transactionDescription   ){
+	TransactionDetail transDetail = null;
+	String casinoAmount = null;
+	String casinoTickedId = null;
+	final String INNER_TEXT_ATT = 'innerText';
+	String expectedTransactionDate = CustomKeywords.'com.utils.ReportHelper.getCurrentDayOfTheWeek'(DateTimeFormatter.ofPattern(
+			'MM/dd/yyyy'),temAjuster,daysBefore)
+
+	//si la fecha de la transacci►2n es igual a la fehca requerida, esta se incluye
+	if(casinoDate.equals(expectedTransactionDate)){
+		transDetail = new TransactionDetail();
+		casinoTickedId = transactionDoc.getAttribute(INNER_TEXT_ATT).concat("_0");
+
+		if(transactionDescription.contains("Win")){
+			casinoAmount = transactionEle.findElement(By.cssSelector('td:nth-child(5)')).getAttribute(INNER_TEXT_ATT);
+		}else{
+			casinoAmount = transactionEle.findElement(By.cssSelector('td:nth-child(6)')).getAttribute(INNER_TEXT_ATT);
+		}
+
+		transDetail.setTicketId(casinoTickedId)
+		transDetail.setTransacctionType("Casino");
+		transDetail.setTransactionDescription(transactionDescription);
+		transDetail.setTransacctionLostWonAmount(Double.parseDouble(casinoAmount));
+	}
+
+	return transDetail;
+}
+
+
+
+
 
 /*
  * WebElement creditOrDebitAjustment  Objecto que contiene enlace para ir a prefomance y cargar el detalle de la apuesta
@@ -150,7 +191,7 @@ return transaccionesDeCustomerMaintenace
  * wagerResult: deine si la apuesta fue ganadora o perdedora
  * */
 
-def TransactionDetail convertWinLossWagersIntoTransactionDetail(WebElement winOrLossWagerWebElement,DayOfWeek expectedDailyFigureDate,String wagerDate,String wagerResult){
+def TransactionDetail convertWinLossWagersIntoTransactionDetail(WebElement winOrLossWagerWebElement,TemporalAdjuster temAjuster,String wagerDate,String wagerResult){
 	TransactionDetail transDetail = null;
 	TestObject wagerDetailTable = null;
 	TestObject closeButton = null;
@@ -158,15 +199,17 @@ def TransactionDetail convertWinLossWagersIntoTransactionDetail(WebElement winOr
 
 	final String INNER_TEXT_ATT =  "innerText";
 	String transctionTicketId = null;
-	String transactionWagerNumber = null;
+	String wagerNumber = null;
 	String transactionDescription = "";
 	String transactionAmount = null
 	String transactionType = null;
 	WebElement wagerDetailTableWeb = null;
 
 	String expectedTransactionDate = CustomKeywords.'com.utils.ReportHelper.getCurrentDayOfTheWeek'(DateTimeFormatter.ofPattern(
-			'MM/dd/yyyy'),TemporalAdjusters.previousOrSame( expectedDailyFigureDate ))
+			'MM/dd/yyyy'),temAjuster,daysBefore)
 	/*Si el dia de la apuesta no es el mismo que el esperado no se procede a convertir la transacción */
+	println"Transaccion de apuestas "+transactionDescription
+	println"Daily figure date "+wagerDate+" vs "+expectedTransactionDate
 	if(!wagerDate.equals(expectedTransactionDate)){
 		return null;
 	}
@@ -178,7 +221,7 @@ def TransactionDetail convertWinLossWagersIntoTransactionDetail(WebElement winOr
 
 	transctionTicketId =  WebUI.getAttribute(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/Wagers/td_ticketNumber'), INNER_TEXT_ATT)
 
-	transactionWagerNumber =  WebUI.getAttribute(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/Wagers/td_WagerNumber'), INNER_TEXT_ATT)
+	wagerNumber =  WebUI.getAttribute(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/Wagers/td_WagerNumber'), INNER_TEXT_ATT)
 
 	transactionType = WebUI.getAttribute(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/Wagers/td_WagerType'), INNER_TEXT_ATT)
 
@@ -192,18 +235,20 @@ def TransactionDetail convertWinLossWagersIntoTransactionDetail(WebElement winOr
 	}
 
 
-
+	if(transactionType.equalsIgnoreCase("G")){
+		transactionType = 'HORSE RACE';
+	}
 	//Se carga la transsacion
 	transDetail = new TransactionDetail()
 
-	transDetail.setTicketId(transctionTicketId)
+	transDetail.setTicketId(transctionTicketId.concat("_").concat(wagerNumber))
 
 	transDetail.setTransacctionType(transactionType)
 
 	transDetail.setTransacctionLostWonAmount(Double.parseDouble(transactionAmount))
 
 	transDetail.setTransactionDescription(transactionDescription)
-	
+
 	transDetail.setTransactionDate(wagerDate)
 
 	//Se cieera el detalle de la apuesta
@@ -227,7 +272,7 @@ def TransactionDetail convertWinLossWagersIntoTransactionDetail(WebElement winOr
  * transacctionType : tipo de transaccion:Debit or Credit adjustmet
  * */
 
-def TransactionDetail convertCreditOrDebitAdjIntoTransactionDetail(WebElement creditOrDebitAjustment, DayOfWeek expectedDailyFigureDate,String transactionDescription) {
+def TransactionDetail convertCreditOrDebitAdjIntoTransactionDetail(WebElement creditOrDebitAjustment, TemporalAdjuster temAjuster,String transactionDescription) {
 	TransactionDetail transDetail = null
 
 	String transactionAmountWeb = null
@@ -238,6 +283,9 @@ def TransactionDetail convertCreditOrDebitAdjIntoTransactionDetail(WebElement cr
 
 	//Se muestra lla tabla de detalle de la transacción
 	creditOrDebitAjustment.click()
+
+	TestObject botonXCerrar =     CustomKeywords.'com.utils.AutomationUtils.findTestObject'('Boton X par cerrar adjustment detail',
+			'Css', 'button#cl1', 2)
 
 
 	TestObject tablaTDetalleTransaccion = CustomKeywords.'com.utils.AutomationUtils.findTestObject'('Tabla detalle de la transaccion',
@@ -250,9 +298,11 @@ def TransactionDetail convertCreditOrDebitAdjIntoTransactionDetail(WebElement cr
 			'value')
 
 	String expectedTransactionDate = CustomKeywords.'com.utils.ReportHelper.getCurrentDayOfTheWeek'(DateTimeFormatter.ofPattern(
-			'MM/dd/yyyy'),TemporalAdjusters.previousOrSame( expectedDailyFigureDate ))
+			'MM/dd/yyyy'),TemporalAdjusters.previousOrSame( temAjuster ),daysBefore)
+
 	/*Si el dia de la apuesta no es el mismo que el esperado no se procede a convertir la transacción */
 	if(!dailyFigureDate.equals(expectedTransactionDate)){
+		WebUI.click(botonXCerrar)
 		return null;
 	}
 
@@ -281,9 +331,6 @@ def TransactionDetail convertCreditOrDebitAdjIntoTransactionDetail(WebElement cr
 	transDetail.setTransactionDescription(transactionDescription)
 
 	//Cierrar ventana que carga la infomación de la transacción
-	TestObject botonXCerrar =     CustomKeywords.'com.utils.AutomationUtils.findTestObject'('Boton X par cerrar adjustment detail',
-			'Css', 'button#cl1', 2)
-
 	WebUI.click(botonXCerrar)
 
 	transactionAmountWeb = null

@@ -81,7 +81,7 @@ try {
     testResultData.put(8, screenResolution)
 
 	//Consulta los dias de la semana
-	Map<String, String> daysOfWeekMap = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Validar visibilidad de dias de Daily Figure'),
+	Map<String, String> daysOfWeekMap = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/Validar visibilidad de dias de Daily Figure'),
 	[:], FailureHandling.STOP_ON_FAILURE)
 
 	expectedDaysOrder.append(daysOfWeekMap.get("tuesday")+",")
@@ -95,9 +95,9 @@ try {
 	
 	
     //Presiona el check de "Start from tuesday"
-    WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/input_Open Bets_br_startDaySelector'))
+    WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/input_check_StartTuesdayDay'))
 
-	strDaysCheckboxDesc = WebUI.getAttribute(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/byStartDayDescription'), 'value')	
+	strDaysCheckboxDesc = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/byStartTuesdayDescription'), 'value')	
 	
 	//Consulta los dias reordenados
     webEReOrderedDaysOfWeek = CustomKeywords.'com.utils.AutomationUtils.returnElementsObjects'( "cSS", "tr.trReportDetail.show-data th", 2);

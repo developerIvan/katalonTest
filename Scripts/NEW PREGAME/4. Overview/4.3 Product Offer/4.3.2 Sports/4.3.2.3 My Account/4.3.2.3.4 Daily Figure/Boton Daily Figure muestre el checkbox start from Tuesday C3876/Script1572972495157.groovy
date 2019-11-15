@@ -71,17 +71,17 @@ try {
 
 	//Se hace click en el botón de Daily Figure
 	if(!GlobalVariable.botonDailyFigureEsPresionado){
-		WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Presionar boton Daily Figure'),
+		WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/Presionar boton Daily Figure'),
 				[:], FailureHandling.STOP_ON_FAILURE)
 
 	}
 	//Se verifica que el checkbox "Start from tuesday es visible"
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/input_Open Bets_br_startDaySelector'), 2)
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/input_check_StartTuesdayDay'), 2)
 	
-	WebUI.verifyElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/input_Open Bets_br_startDaySelector'))
+	WebUI.verifyElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/input_check_StartTuesdayDay'))
 	
 	//Se vefirica que la etiqueta "Start From Tuesday" sea visible 
-	String startByDayDesc = WebUI.getAttribute(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/byStartDayDescription'), "value");
+	String startByDayDesc = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/byStartTuesdayDescription'), "value");
 	
 	
 	assert null != startByDayDesc;
