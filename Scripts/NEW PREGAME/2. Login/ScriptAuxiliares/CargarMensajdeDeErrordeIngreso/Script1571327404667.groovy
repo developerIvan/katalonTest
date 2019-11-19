@@ -16,11 +16,11 @@ import internal.GlobalVariable as GlobalVariable
 
 def loginResult = ['errorMgs': '', 'userId':'', 'password': '']
 
-WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), 2)
+WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), 2)
 
-	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), userPin)
+	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), userPin)
 
-	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_password'), userPass)
+	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_password'), userPass)
 
 	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/button_Enter'))
 
@@ -28,8 +28,8 @@ WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium
 	
 	loginResult.errorMgs = actualErrorMessage;
 	
-	loginResult.userId = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), "value");
+	loginResult.userId = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), "value");
 	
-	loginResult.password = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_password'), "value");
+	loginResult.password = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_password'), "value");
 	
 	return loginResult;

@@ -75,4 +75,10 @@ public class ConstantsUtil {
 	def String getCustomErrorMessageForStepExceptions(String errorCode){
 		return " Para ver que elemento faltó, o que pasó no se cumplió, favor ir a la consola de katalon con el siguiente código  ".concat(errorCode);
 	}
+
+
+	@Keyword
+	def String getCustomErrorMessageForStepExceptions(String errorCode, String... testcasesId){
+		return " Para ver que elemento faltó, o que pasó no se cumplió, favor ir a la consola de katalon con el siguiente código  ".concat(errorCode)+ " o revisar el resultado de los siguientes casos de prueba "+testcasesId+" en el archivo excel de resultados de prueba para verificar si alguna precondición del caso de prueba falló ";
+	}
 }

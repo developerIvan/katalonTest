@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este script auxiliar tnegra la función de sumar los montos de cada dia de la semana y retornar el total</description>
+   <name>SumarElTotalDeTransaccionesDeLaSemana</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fcd720a4-9c42-4099-bf58-ec2cbdf62694</testCaseGuid>
+</TestCaseEntity>

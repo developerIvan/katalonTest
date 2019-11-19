@@ -109,4 +109,19 @@
       <initValue>false</initValue>
       <name>MondayDailyFigureIsLoaded</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Devuelve las transacciones del dia lunes del jugador</description>
+      <initValue>findTestObject(null)</initValue>
+      <name>mondayDailyFigureTransactions</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Alamcena un pin invalido para las pruebas</description>
+      <initValue>findTestData('TestData/Datos de Entrada/2.1.1.1 Usuario Correcto').getValue(1, 1)</initValue>
+      <name>invalidCustomerPIN</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Almacena la clave incorrecta de usuario apra la prueba</description>
+      <initValue>findTestData('TestData/Datos de Entrada/2.1.2.1 Permiso Correcto').getValue(1, 1)</initValue>
+      <name>invalidCustomerPassword</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

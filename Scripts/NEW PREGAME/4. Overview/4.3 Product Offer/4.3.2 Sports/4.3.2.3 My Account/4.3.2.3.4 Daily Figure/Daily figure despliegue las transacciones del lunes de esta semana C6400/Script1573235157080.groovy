@@ -72,6 +72,7 @@ try {
 	//Registro  hora  incio de la prueba
 	testResultData.put(4, testStartHour)
 
+	//Valida que el jugador tenga monday zero out como configuración de tipo zero balance
 		WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/El jugador tenga configurado Monday Zero Out como daily figure C6405'),
 				[('customerPIN') : customerPIN, ('customerPass') : customerPass, ('expectedMondayConfiguration') : findTestData('TestData/Datos de Entrada/4.3.2.3.4 Daily Figure').getValue(2, 1)],
 				FailureHandling.STOP_ON_FAILURE)
@@ -92,7 +93,7 @@ try {
 	//Guarda resolucion de pantalla
 	testResultData.put(8, screenResolution)
 
-	customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/CargarTransaccionesDeCustomerMaintenance'),
+	customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/CargarTransaccionesDeCustomerMaintenance'),
 			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : true, ('weekBefore') : 0],
 			FailureHandling.STOP_ON_FAILURE)
 
@@ -157,6 +158,7 @@ try {
 	
 	//Se establece esta bandera en verdarero para otros casos de prueba que dependan de este cuando se ejecuta este caso de prueba en conjunto
 	GlobalVariable.MondayDailyFigureIsLoaded = true
+	
 }catch (com.kms.katalon.core.exception.StepFailedException stepE) {
 	String errorCode = '-09'
 
@@ -165,7 +167,7 @@ try {
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
 	testResultDescription = ((('El jugador ' + customerPIN) + ' no tiene transacciones para el día lunes o su configuración de zero balance no es del lunes o algún procedimiento previo como ingreso a pregame no se pudo completar ') +
-			CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode))
+			CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode,'C6405'))
 
 	throw stepE
 }

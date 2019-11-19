@@ -137,30 +137,6 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>053e7f4d-fafa-4362-9144-51f4efb1a3d3</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/NEW PREGAME/2. Login/2.1 Validacion Boton Login/2.1.2 Password/2.1.2.1 Permiso Correcto/Error mediante la tecla enter si la clave es incorrecta C3840</testCaseId>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>9d09f186-297e-4d9a-accd-1bc680ab1114</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>a1af9de8-a4bf-4acd-8c11-53fbfdec6431</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>36dd5dc2-7a0c-4b5e-98ac-43e4202bedc3</variableId>
-      </variableLink>
-   </testCaseLink>
-   <testCaseLink>
       <guid>71e13f57-b7f6-4ee0-a006-4694e9203e27</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

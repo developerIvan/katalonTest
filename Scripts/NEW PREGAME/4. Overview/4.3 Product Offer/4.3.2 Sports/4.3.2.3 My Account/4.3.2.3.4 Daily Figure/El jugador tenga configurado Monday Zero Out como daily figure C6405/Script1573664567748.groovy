@@ -53,7 +53,7 @@ String mondayZeroOutBalance = ''
 
 try {
     //Va a customer maintenace para consultar zero balance 
-	 mondayZeroOutBalance = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/Validar Jugador es de tipo zero balance'),
+	 mondayZeroOutBalance = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/Validar Jugador es de tipo zero balance'),
 		[('userId') : GlobalVariable.customerPIN], FailureHandling.STOP_ON_FAILURE)
 	
     OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()

@@ -127,7 +127,6 @@ public class ExcelsUtils {
 				for(int cellPosition:cells.keySet()){
 
 					XSSFRow row = sheet.getRow(currentRow)!=null?sheet.getRow(currentRow):sheet.createRow(currentRow);
-					println "Dato a guradar "+row.toString();
 					row.createCell(cellPosition).setCellValue(cells.get(cellPosition));
 				}
 			}

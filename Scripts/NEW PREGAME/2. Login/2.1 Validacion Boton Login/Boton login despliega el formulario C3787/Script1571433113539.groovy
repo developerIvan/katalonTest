@@ -67,36 +67,41 @@ try {
 
 	WebUI.click(loginButton)
 
-	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), 2)
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), 2)
 
-	actualUserInputBackGroundTxt = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'),
-			'placeholder')
-
-	assert expectedUserInputBackgroundText.equals(actualUserInputBackGroundTxt)
-
+	//Verifica que el input user pin or email es visible
+	WebUI.verifyElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'))
+	
+	//Verifica que el input password es visible
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/2.1 Login/input_user_password'))
+	
+	//Verifica que el input checkbox de 'remember credentials' es visible
+	WebUI.verifyElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_chkRememberCredentials'))
+	
+	//Verifica que la descripción de input checkbox de 'remember credentials' es visible
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/2.1 Login/span_rememberCredentials_Desc'))
+	
+	//Verifica que el botón de login sea visible
+	WebUI.verifyElementVisible(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/2.1 Login/button_Enter'))
+	
 	testStatus = 'Exitoso';
 
+	testResultDescription = "El formulario de login es desplegado exitosamente con los siguientes campos:  User PIn or Email, Password,Remeber Credentials y botón <Login>"
 }catch (com.kms.katalon.core.exception.StepFailedException stepE) {
 	String errorCode = '-01'
 
 	errorEnLaPrueba = true
 
      KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
-	testResultDescription = 'El sistema no pudo validar que el usuario pudiera entrar al sistema usando la tecla enter '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
+	testResultDescription = 'El botón login no desplegó el formulario correctamente, o alguno de los siguientes elementos no están visible: User PIn or Email, Password,Remeber Credentials y botón <Login> '+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode,'C3783');
 
 	throw stepE;
 	testResultDescription = 'el formulario de ingreso es visible';
-} catch(java.lang.AssertionError asserError){
-	tomarInstantanea = true;
-	
-	KeywordLogger.getInstance(this.class).logger.error("-10", asserError)
-	testResultDescription = 'El formulario debería ser visible, pero actualmente no lo es. lo cual indica que, o el  o fue modificado, lo cual cuasa que la prueba automatizada no lo pueda encontrar';
-	throw asserError;
 }catch(Exception e){
       String errorCode = '-99'
 	tomarInstantanea = true;
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
-	testResultDescription = 'El formaulrio de ingreso deberia ser visible, pero actualmente no lo es debido a un comportanmiento anomalo'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);;
+	testResultDescription = 'El formaulrio de ingreso deberia ser visible, pero actualmente no lo es debido a un comportanmiento anomalo'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);
 	throw e;
 }finally{
 

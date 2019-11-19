@@ -81,7 +81,7 @@ try {
     testResultData.put(8, screenResolution)
 
 	//Consulta los dias de la semana
-	Map<String, String> daysOfWeekMap = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/Validar visibilidad de dias de Daily Figure'),
+	Map<String, String> daysOfWeekMap = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/Validar visibilidad de dias de Daily Figure'),
 	[:], FailureHandling.STOP_ON_FAILURE)
 
 	expectedDaysOrder.append(daysOfWeekMap.get("tuesday")+",")

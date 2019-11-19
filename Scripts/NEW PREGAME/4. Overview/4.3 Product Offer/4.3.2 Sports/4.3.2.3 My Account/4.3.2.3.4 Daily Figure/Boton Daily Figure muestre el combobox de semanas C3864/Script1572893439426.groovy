@@ -71,7 +71,7 @@ try {
 
 	//Se hace click en el botón de Daily Figure
 	if(!GlobalVariable.botonDailyFigureEsPresionado){
-		WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/Presionar boton Daily Figure'),
+		WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/Presionar boton Daily Figure'),
 				[:], FailureHandling.STOP_ON_FAILURE)
 
 	}

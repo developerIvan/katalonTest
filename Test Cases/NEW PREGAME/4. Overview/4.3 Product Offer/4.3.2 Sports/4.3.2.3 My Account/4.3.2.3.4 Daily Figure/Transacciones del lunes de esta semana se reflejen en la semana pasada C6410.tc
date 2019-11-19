@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que las transacciones del lunes de esta semana que tenga el jugador en customer maintenace se reflejen en pregame cuando el jugador tenga configurado el día Martes como zero out balance</description>
+   <name>Transacciones del lunes de esta semana se reflejen en la semana pasada C6410</name>
+   <tag>C6410</tag>
+   <comment></comment>
+   <testCaseGuid>8bf3bf72-a240-4c23-84a9-e335b1626ea3</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>Pin del jugador</description>
+      <id>b60b52f8-0f25-47cd-abdb-63fdc497a1c6</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>Sitio de pregame de prueba según el ambiente</description>
+      <id>84ff09a7-a0d6-45d4-928b-60e2306399d2</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Password del jugador</description>
+      <id>761c7399-9ea9-4aa2-875c-11088b55cc1e</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

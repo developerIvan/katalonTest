@@ -33,7 +33,7 @@ rows.add(1)
 
 HashMap<Integer, String> testResultData = new HashMap<Integer, String>()
 
-String testcaseId = 'C6408'
+String testcaseId = 'C6406'
 
 String actualErrorMessage = ''
 
@@ -53,7 +53,7 @@ String tuesdayZeroOutBalance = ''
 
 try {
 	//Va a customer maintenace para consultar zero balance
-	 tuesdayZeroOutBalance = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/Validar Jugador es de tipo zero balance'),
+	 tuesdayZeroOutBalance = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/Validar Jugador es de tipo zero balance'),
 		[('userId') : customerPIN], FailureHandling.STOP_ON_FAILURE)
 	
 	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()

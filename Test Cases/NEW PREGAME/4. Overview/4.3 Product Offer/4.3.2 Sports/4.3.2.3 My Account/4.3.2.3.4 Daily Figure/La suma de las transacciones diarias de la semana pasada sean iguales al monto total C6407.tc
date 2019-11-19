@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>El jugador tenga, al menos, dos o más dias con transacciones mayores a 0</description>
+   <name>La suma de las transacciones diarias de la semana pasada sean iguales al monto total C6407</name>
+   <tag>C6407</tag>
+   <comment></comment>
+   <testCaseGuid>2e7323d8-27f0-40ad-b7a3-99c6e705dfc7</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>url del sitio de pregam según el ambiente</description>
+      <id>1b356908-d94c-4eee-8e1b-04f9da50a6dc</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin del jugador</description>
+      <id>484ae977-495c-4ba3-ada0-b4dcccb3a78c</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave del jugador</description>
+      <id>1f92ce0f-b321-4518-8758-1080546d803d</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

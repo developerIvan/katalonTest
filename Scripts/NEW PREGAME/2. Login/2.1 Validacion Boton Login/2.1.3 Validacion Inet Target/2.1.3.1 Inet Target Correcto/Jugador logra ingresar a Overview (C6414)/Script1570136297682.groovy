@@ -90,11 +90,11 @@ try {
 	
 	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/a_Login'))
 	
-	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), 2)
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), 2)
 	
-	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), loginUser)
+	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), loginUser)
 	
-	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_password'), loginPassword)
+	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_password'), loginPassword)
 	
 	//click para entrar al sitio
 	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/button_Enter'))

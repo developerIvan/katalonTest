@@ -14,11 +14,11 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), 2)
+WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), 2)
 
-WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), loginUser)
+WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), loginUser)
 
-WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_password'), loginPassword)
+WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_password'), loginPassword)
 
 def loginResult = ['errorMgs': '', 'userId':'', 'password': '']
 
@@ -34,8 +34,8 @@ String actualErrorMessage = WebUI.getAttribute(findTestObject('Repositorio Objet
 
 loginResult.errorMgs = actualErrorMessage;
 
-loginResult.userId = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), "value");
+loginResult.userId = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), "value");
 
-loginResult.password = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_password'), "value");
+loginResult.password = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_password'), "value");
 
 return loginResult;

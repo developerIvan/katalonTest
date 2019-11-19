@@ -15,6 +15,7 @@ import com.utils.TransactionDetail as TransactionDetail
 import internal.GlobalVariable as GlobalVariable
 import java.util.List as List
 import java.util.ArrayList as ArrayList
+
 TransactionDetail transact = CustomKeywords.'com.utils.TransactionDetail.getNewTransactionDetail'()
 
 transact.cadenaDeCarateres()
@@ -27,12 +28,30 @@ transact.setTransacctionType('Contest')
 
 transact.setTransactionDescription('Ejemplo Transaction')
 
+List<TransactionDetail> listTransact = new ArrayList<Integer>()
+
+listTransact.add(transact)
+
+for (TransactionDetail trans : listTransact) {
+    println('' + trans.printCammpos())
+}
+
+TestCase test = GlobalVariable.mondayDailyFigureTransactions
+
+if (null == test) {
+    println('Objecto vacio ')
+}
+
+GlobalVariable.mondayDailyFigureTransactions = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/CargarTransaccionesDeCustomerMaintenance'), 
+    [('customerId') : 'PRAC06', ('dayOfTheWeek') : 'Monday', ('CMIsCurrentUrl') : false, ('daysBefore') : 0, ('weekBefore') : 0], 
+    FailureHandling.STOP_ON_FAILURE)
 
 
-List<TransactionDetail> listTransact = new ArrayList<TransactionDetail>();
-listTransact.add(transact);
 
-for(TransactionDetail trans:listTransact){
-	println ""+trans.printCammpos();
+listTransact = GlobalVariable.mondayDailyFigureTransactions;
+
+
+for (TransactionDetail trans : listTransact) {
+	println('' + trans.printCammpos())
 }
 

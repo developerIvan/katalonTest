@@ -48,19 +48,6 @@ String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
 String dailyFigureTransactionsDay = 'Monday'
 
-//Selectores css para las transacciones en pregame
-String transactionId = ''
-
-String transactionContainerCSS = null
-
-String descriptionLocatorCss = null
-
-String wagerTypeLocatorCss = null
-
-String wagerAmountLocatorCss = null
-
-String CSS_SELECTOR_TYPE = 'CSS'
-
 String INNER_TEXT_ATT = 'innerText'
 
 List<TransactionDetail> customerTransacctionsFromCM = new ArrayList<Integer>()
@@ -77,6 +64,7 @@ try {
 	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Daily figure despliegue las transacciones del lunes de esta semana C6400'),
 		[('url') : url, ('customerPIN') : customerPIN, ('customerPass') : customerPass],
 		FailureHandling.STOP_ON_FAILURE)
+	
 	}
 
     OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()

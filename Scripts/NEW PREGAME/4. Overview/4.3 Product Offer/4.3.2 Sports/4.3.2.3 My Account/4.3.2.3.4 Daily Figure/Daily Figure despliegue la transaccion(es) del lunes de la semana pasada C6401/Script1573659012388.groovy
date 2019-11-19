@@ -93,7 +93,7 @@ try {
 	//Guarda resolucion de pantalla
 	testResultData.put(8, screenResolution)
 	
-     customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Precondiciones/CargarTransaccionesDeCustomerMaintenance'),
+     customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/CargarTransaccionesDeCustomerMaintenance'),
 			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : true,('weekBefore') : 1,"daysBefore" : 0], FailureHandling.STOP_ON_FAILURE)
 
 	//Valida que el jugador tenga transacciones del día lunes

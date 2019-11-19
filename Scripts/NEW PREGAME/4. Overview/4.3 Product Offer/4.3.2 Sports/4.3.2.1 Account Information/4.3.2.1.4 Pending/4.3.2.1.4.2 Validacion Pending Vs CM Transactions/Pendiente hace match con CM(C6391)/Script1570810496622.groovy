@@ -123,13 +123,13 @@ try{
 
 	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/a_Login'))
 
-	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), 2)
+	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), 2)
 
-	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_user'), UserId_Pendient)
+	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), UserId_Pendient)
 
 	WebUI.delay(2)
 
-	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_Welcome Back_password'), Password_Pendient)
+	WebUI.setText(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_password'), Password_Pendient)
 
 	WebUI.delay(2)
 

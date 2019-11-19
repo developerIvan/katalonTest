@@ -129,7 +129,7 @@ catch (com.kms.katalon.core.exception.StepFailedException stepE) {
     KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
     testResultDescription = ((('El monto de la transacciones del jugador ' + customerPIN) + ' del lunes de esta semana no se ve reflejado correctamente en la semana pasada') + 
-    CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode))
+    CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode,'C6406'))
 
     throw stepE
 } 

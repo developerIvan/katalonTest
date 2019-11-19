@@ -104,4 +104,9 @@
       <initValue>false</initValue>
       <name>MondayDailyFigureIsLoaded</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Devuelve las transacciones del dia lunes del jugador</description>
+      <initValue>findTestObject(null)</initValue>
+      <name>mondayDailyFigureTransactions</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
