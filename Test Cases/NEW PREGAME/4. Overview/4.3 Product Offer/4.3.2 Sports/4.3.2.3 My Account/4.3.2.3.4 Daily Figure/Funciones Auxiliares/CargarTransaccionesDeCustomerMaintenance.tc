@@ -27,17 +27,24 @@
       <name>CMIsCurrentUrl</name>
    </variable>
    <variable>
-      <defaultValue>0</defaultValue>
-      <description></description>
-      <id>4fee6301-19cf-4e9e-aac1-7a481ce9e6e4</id>
-      <masked>false</masked>
-      <name>daysBefore</name>
-   </variable>
-   <variable>
-      <defaultValue>1</defaultValue>
+      <defaultValue>2</defaultValue>
       <description>Define que semana se deben buscar las transacciones. Donde 0 es esta semana, 1 la semana pasada y 2 la semana antepasada </description>
       <id>f3f188b5-14de-457d-88e9-d6e131171751</id>
       <masked>false</masked>
       <name>weekBefore</name>
+   </variable>
+   <variable>
+      <defaultValue>0</defaultValue>
+      <description></description>
+      <id>d4dbf649-37e8-4e05-80e1-075c6ba977bf</id>
+      <masked>false</masked>
+      <name>daysBefore</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Fecha esperada</description>
+      <id>72c3a677-80a6-4a4d-b2dd-be1d533e894b</id>
+      <masked>false</masked>
+      <name>expectedTransactionDate</name>
    </variable>
 </TestCaseEntity>

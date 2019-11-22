@@ -18,31 +18,33 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
-String testEndHour = '';
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
 
-String browserVersion = '';
+String testEndHour = ''
 
-String screenResolution = '';
+String browserVersion = ''
 
-String OsName = '';
+String screenResolution = ''
 
-String testStatus = 'Fallido';
+String OsName = ''
 
-String testResultDescription = '';
+String testStatus = 'Fallido'
 
-ArrayList<Integer> rows = new ArrayList<Integer>();
-rows.add(1);
+String testResultDescription = ''
 
-HashMap<Integer,String> testResultData = new  HashMap();
+ArrayList<Integer> rows = new ArrayList<Integer>()
 
-String testcaseId = "C6414";
+rows.add(1)
 
-boolean tomarInstantanea = false;
+HashMap<Integer, String> testResultData = new HashMap<Integer, String>()
 
-String testStartDate = CustomKeywords.'com.utils.ReportHelper.getDate'();
+String testcaseId = 'C6414'
 
-String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'();
+boolean hayErrorEnlaPrueba = false
+
+String testStartDate = CustomKeywords.'com.utils.ReportHelper.getDate'()
+
+String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
 ConditionType equalsCondType = CustomKeywords.'com.utils.ConstantsUtil.getEqualsConditionType'()
 
@@ -53,18 +55,17 @@ String CSS_SELECTOR = CustomKeywords.'com.utils.ConstantsUtil.getCSSSelectorId'(
 String XPATH_SELECTOR = CustomKeywords.'com.utils.ConstantsUtil.getXPathSelectorId'()
 
 //Registro fecha de la prueba
-testResultData.put(3,testStartDate);
+testResultData.put(3, testStartDate)
 
 //Registro  hora  incio de la prueba
-testResultData.put(4,testStartHour);
+testResultData.put(4, testStartHour)
 
-if(GlobalVariable.pregameSiteEsVisible == false){
-	WebUI.callTestCase(findTestCase('NEW PREGAME/1. Site/1.1 Validacion del tipode sitio Classic Premium/Usuario visualice el boton LOGIN correctamente (C3783)'),
-			[('url') : url], FailureHandling.STOP_ON_FAILURE)
+if (GlobalVariable.pregameSiteEsVisible == false) {
+   WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/Boton login despliega el formulario C3787'), 
+    [('url') : url], FailureHandling.STOP_ON_FAILURE)
 }
 
-
-WebUI.maximizeWindow();
+WebUI.maximizeWindow()
 
 OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
 
@@ -73,97 +74,101 @@ browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
 screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
 
 //Guarda Version del browser
-testResultData.put(7,browserVersion);
+testResultData.put(7, browserVersion)
 
 //Guarda Version del sistema operativo
-testResultData.put(6,OsName);
+testResultData.put(6, OsName)
 
 //Guarda resolucion de pantalla
-testResultData.put(8,screenResolution);
-
-
+testResultData.put(8, screenResolution)
 
 try {
-	WebUI.delay(2)
-
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/a_Login'), 2)
 	
-	WebUI.click(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/a_Login'))
-	
-	WebUI.waitForElementVisible(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), 2)
-	
-	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), loginUser)
-	
-	WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_password'), loginPassword)
-	
-	//click para entrar al sitio
-	WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/button_Enter'))
+    WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_pin_or_email'), loginUser)
 
-	WebUI.waitForElementPresent(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/Overview Button'), 2)
+    WebUI.sendKeys(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/input_user_password'), loginPassword)
 
-	String overviewButton = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/Overview Button'), "innerText")
+    //click para entrar al sitio
+    WebUI.click(findTestObject('Repositorio Objetos Proyecto Premium/2.1 Login/button_Enter'))
 
-	assert null != overviewButton
+    WebUI.waitForElementPresent(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/Overview Button'), 2)
 
-	//Result passed
-	//Guara estado de la prueba
-	testStatus = 'Exitoso';
+    String overviewButton = WebUI.getAttribute(findTestObject('Repositorio Objetos Proyecto Premium/Page_Sportbook/Overview Button'), 
+        'innerText')
 
-	testResultDescription ="El jugador logró ingresar al Overwiew";
+    assert null != overviewButton
 
+    //Guara estado de la prueba
+    testStatus = 'Exitoso'
+
+    testResultDescription = 'El jugador logró ingresar al Overwiew'
 }
 catch (com.kms.katalon.core.exception.StepFailedException stepE) {
-	String errorCode = testcaseId.concat('-01')
+    hayErrorEnlaPrueba = true
 
-	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
+    String errorCode = testcaseId.concat('-01')
 
-	testResultDescription = "El jugador no logró ingresar al Overwiew debido a un paso de la prueba o elmento de la página que no está visible."+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);;
+    KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
-	throw stepE;
-}catch (AssertionError asserError) {
-	String errorCode = testcaseId.concat('-10')
+    testResultDescription = ('El jugador no logró ingresar al Overwiew debido a un paso de la prueba o elmento de la página que no está visible.' + 
+    CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode))
 
-	errorEnLaPrueba = true
+    throw stepE
+} 
+catch (AssertionError asserError) {
+    hayErrorEnlaPrueba = true
 
-	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
+    String errorCode = testcaseId.concat('-10')
 
-	testResultDescription = "El jugador no logra ingresar al overview debido auqe el boton Overview no es visible, favor revisar el log de katalon "
+    errorEnLaPrueba = true
 
-	throw asserError
-}catch (Exception e) {
-	String errorCode = testcaseId.concat('-99')
+    KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
 
-	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
+    testResultDescription = 'El jugador no logra ingresar al overview debido auqe el boton Overview no es visible, favor revisar el log de katalon '
 
-	testResultDescription = "El jugador no logró ingresar al Overwiew debido a un error anomalo en la prueba."+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode);
+    throw asserError
+} 
+catch (Exception e) {
+    hayErrorEnlaPrueba = true
 
-	throw e;
-}finally{
-	//Guarda url o dirrecion del sitio según el ambiente
-	testResultData.put(0,url);
+    String errorCode = testcaseId.concat('-99')
 
-	//Guarda pin del jugador que se usó para la prueba
-	testResultData.put(1,loginUser);
+    KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
 
-	//Guarda password del jugador que se usó para la prueba
-	testResultData.put(2,loginPassword);
+    testResultDescription = ('El jugador no logró ingresar al Overwiew debido a un error anomalo en la prueba.' + CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(
+        errorCode))
 
-	//Guarda hora final de la prueba
-	testEndHour =  CustomKeywords.'com.utils.ReportHelper.getHours'();
-	testResultData.put(5,testEndHour);
+    throw e
+} 
+finally { 
+    //Guarda url o dirrecion del sitio según el ambiente
+    testResultData.put(0, url)
 
-	//Guarda Resultado de la prueba
-	testResultData.put(9,testStatus);
+    //Guarda pin del jugador que se usó para la prueba
+    testResultData.put(1, loginUser)
 
-	//GuardaDescrpipción del  Resultado de la prueba
-	testResultData.put(10,testResultDescription);
+    //Guarda password del jugador que se usó para la prueba
+    testResultData.put(2, loginPassword)
 
-	//Guarda resultado de prueba
-	CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
+    //Guarda hora final de la prueba
+    testEndHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
-	//toma screenshot en caso de error
-	if(tomarInstantanea == true){
-		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation,testcaseId)
-	}
+    testResultData.put(5, testEndHour)
 
+    //Guarda Resultado de la prueba
+    testResultData.put(9, testStatus)
+
+    //GuardaDescrpipción del  Resultado de la prueba
+    testResultData.put(10, testResultDescription)
+
+    //Guarda resultado de prueba
+    CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
+
+    //toma screenshot en caso de error
+    if (hayErrorEnlaPrueba == true) {
+        CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation, testcaseId)
+    }
 }
+
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este test case tiene el propósito de validar la lista de transacciones de customer maintenance en la sección de Daily Figure.</description>
+   <name>ValidarTransaccionesDeCMEnPregame</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>cfa50906-13eb-4b0b-a6c9-e55c8ce58fe1</testCaseGuid>
+   <variable>
+      <defaultValue>[]</defaultValue>
+      <description>lista de transacciones de custoemr maintenance</description>
+      <id>3760558e-bddd-4ed6-80d6-e3947d57c1c3</id>
+      <masked>false</masked>
+      <name>transaccionesDeCustomerMaintenance</name>
+   </variable>
+</TestCaseEntity>

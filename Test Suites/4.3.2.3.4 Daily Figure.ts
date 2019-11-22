@@ -35,30 +35,6 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>f1cf8411-c919-42e3-a9a0-ed3be7fc9e38</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Transaccion lunes de esta semana desaparesca con Start from tuesday C6402</testCaseId>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>95f39d87-7252-4730-9496-1429e63fc398</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>3fd0db31-17c2-4941-a791-307dc9589bb5</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>bc5edef2-d79b-4fc3-be7c-71a58bcf3223</variableId>
-      </variableLink>
-   </testCaseLink>
-   <testCaseLink>
       <guid>916fb22e-df17-4d03-b062-3afc7f22745a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -86,6 +62,30 @@
          <type>DEFAULT</type>
          <value></value>
          <variableId>05031227-0148-432a-a707-9ce281830baa</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f1cf8411-c919-42e3-a9a0-ed3be7fc9e38</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Transaccion lunes de esta semana desaparesca con Start from tuesday C6402</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>95f39d87-7252-4730-9496-1429e63fc398</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>3fd0db31-17c2-4941-a791-307dc9589bb5</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>bc5edef2-d79b-4fc3-be7c-71a58bcf3223</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

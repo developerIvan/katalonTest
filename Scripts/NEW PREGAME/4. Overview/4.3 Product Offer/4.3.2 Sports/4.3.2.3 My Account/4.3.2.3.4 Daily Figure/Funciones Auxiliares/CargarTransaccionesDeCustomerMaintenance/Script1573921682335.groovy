@@ -34,6 +34,7 @@ DayOfWeek expectedDailyFigureDate = null
 
 TemporalAdjuster temAjuster = null;
 
+int daysBefore = 0;
 //Se define que dia se deben buscar las transacciones
 //Prueba
 switch (dayOfTheWeek.toString().toUpperCase()) {
@@ -121,16 +122,20 @@ if(daysBefore>= 7 && daysBefore<14){
 
 
 //2 semanas antes
-if(daysBefore> 14 && daysBefore<27){
+if(daysBefore>= 14 && daysBefore<27){
 	WebUI.selectOptionByLabel(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/select_Display_Days'), "15 Days",false)
 	WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/select_Display_Days'),"15 Days",false, 30)
 }
 
 //3 semanas antes
-if(daysBefore> 27 && daysBefore<30){
+if(daysBefore>= 27 && daysBefore<30){
 	WebUI.selectOptionByLabel(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/select_Display_Days'), "30 Days",false)
 	WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/select_Display_Days'),"30 Days",false, 30)
 }
+
+//
+expectedTransactionDate = CustomKeywords.'com.utils.ReportHelper.getCurrentDayOfTheWeek'(DateTimeFormatter.ofPattern(
+	'MM/dd/yyyy'), temAjuster ,daysBefore)
 
 //Verifica que la tabla de transacciones es visible
 TestObject tablaTransaciones = CustomKeywords.'com.utils.AutomationUtils.findTestObject'('Tabla Transacciones', 'Css', 'table#tlbContentScroll1',
@@ -182,8 +187,8 @@ def TransactionDetail converCasinoWagerIntoTransaction(String casinoDate,Tempora
 	String casinoAmount = null;
 	String casinoTickedId = null;
 	final String INNER_TEXT_ATT = 'innerText';
-	String expectedTransactionDate = CustomKeywords.'com.utils.ReportHelper.getCurrentDayOfTheWeek'(DateTimeFormatter.ofPattern(
-			'MM/dd/yyyy'),temAjuster,daysBefore)
+/*	String expectedTransactionDate = CustomKeywords.'com.utils.ReportHelper.getCurrentDayOfTheWeek'(DateTimeFormatter.ofPattern(
+			'MM/dd/yyyy'),temAjuster,daysBefore)*/
 
 	//si la fecha de la transacci►2n es igual a la fehca requerida, esta se incluye
 	if(casinoDate.equals(expectedTransactionDate)){
@@ -230,11 +235,11 @@ def TransactionDetail convertWinLossWagersIntoTransactionDetail(WebElement winOr
 	String transactionType = null;
 	WebElement wagerDetailTableWeb = null;
 
-	String expectedTransactionDate = CustomKeywords.'com.utils.ReportHelper.getCurrentDayOfTheWeek'(DateTimeFormatter.ofPattern(
-			'MM/dd/yyyy'),temAjuster,daysBefore)
+	/*String expectedTransactionDate = CustomKeywords.'com.utils.ReportHelper.getCurrentDayOfTheWeek'(DateTimeFormatter.ofPattern(
+			'MM/dd/yyyy'),temAjuster,daysBefore)*/
+	
 	/*Si el dia de la apuesta no es el mismo que el esperado no se procede a convertir la transacción */
-	println"Transaccion de apuestas "+transactionDescription
-	println"Daily figure date "+wagerDate+" vs "+expectedTransactionDate
+
 	if(!wagerDate.equals(expectedTransactionDate)){
 		return null;
 	}
@@ -321,11 +326,14 @@ def TransactionDetail convertCreditOrDebitAdjIntoTransactionDetail(WebElement cr
 
 	String dailyFigureDate = tablaDetailTransactionElement.findElement(By.cssSelector('tr:nth-child(3) input#fecha')).getAttribute(
 			'value')
-
+/*
 	String expectedTransactionDate = CustomKeywords.'com.utils.ReportHelper.getCurrentDayOfTheWeek'(DateTimeFormatter.ofPattern(
-			'MM/dd/yyyy'),TemporalAdjusters.previousOrSame( temAjuster ),daysBefore)
+			'MM/dd/yyyy'),TemporalAdjusters.previousOrSame( temAjuster ),daysBefore)*/
 
 	/*Si el dia de la apuesta no es el mismo que el esperado no se procede a convertir la transacción */
+	
+	println"Dias before "+daysBefore
+	println"Daily figure date "+dailyFigureDate+" vs "+expectedTransactionDate
 	if(!dailyFigureDate.equals(expectedTransactionDate)){
 		WebUI.click(botonXCerrar)
 		return null;

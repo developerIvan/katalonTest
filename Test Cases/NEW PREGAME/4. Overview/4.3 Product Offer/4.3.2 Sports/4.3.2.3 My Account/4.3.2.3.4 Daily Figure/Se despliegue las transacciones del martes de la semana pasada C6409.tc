@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que el  daily figure de pregame muestre la transacción o transacciones de la semana pasada.</description>
+   <name>Se despliegue las transacciones del martes de la semana pasada C6409</name>
+   <tag>C6409</tag>
+   <comment></comment>
+   <testCaseGuid>58596eba-4f9c-4b89-955f-4ae48f9134ba</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>Dirección url del sitio de pregame</description>
+      <id>279a2a8f-e2b3-407d-a172-c24c217e5d43</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave dle usuario</description>
+      <id>a4e52bcf-ce3c-457e-a8a6-24517d097825</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>PIN del usuario</description>
+      <id>682e0e3b-e7f5-4cf2-abde-50649cfdd3a9</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+</TestCaseEntity>

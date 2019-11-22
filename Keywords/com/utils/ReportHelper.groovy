@@ -39,19 +39,14 @@ import java.time.temporal.TemporalAdjuster
  */
 public class ReportHelper {
 
-	@Keyword
-	def static DayOfWeek getDayOfWeek(String dateString,DateTimeFormatter dayTimeFormater){
-		LocalDate customDate = LocalDate.parse(dateString,dayTimeFormater);
-		return customDate.getDayOfWeek();
-	}
 
 	@Keyword
 	def static String getCurrentDayOfTheWeek(DateTimeFormatter formatter,TemporalAdjuster tempAdjuster,int daysBefore){
 		if(daysBefore>0){
-		  LocalDate weekBefore =  LocalDate.now().minusDays(daysBefore).with(tempAdjuster);
-		 return  weekBefore.format(formatter);
+			LocalDate weekBefore =  LocalDate.now().minusDays(daysBefore).with(tempAdjuster);
+			return  weekBefore.format(formatter);
 		}else{
-		  return LocalDate.now().with(tempAdjuster).format(formatter);
+			return LocalDate.now().with(tempAdjuster).format(formatter);
 		}
 	}
 

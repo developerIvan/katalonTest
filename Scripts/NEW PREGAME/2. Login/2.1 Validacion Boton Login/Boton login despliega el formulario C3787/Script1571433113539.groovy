@@ -31,33 +31,13 @@ rows.add(1);
 
 HashMap<Integer,String> testResultData = new  HashMap();
 
-
-
-
 boolean tomarInstantanea=false;
-
-String expectedUserInputBackgroundText = findTestData('TestData/Datos de Entrada/1.1 Validacion del tipode sitio Classic Premium').getValue(
-		1, 1)
-
-String actualUserInputBackGroundTxt = '';
-
-//Guarda url o dirrecion del sitio según el ambiente
-testResultData.put(0,url);
-//Registro fecha incio de la prueba
-testResultData.put(1,testDate);
-
-
-//Registro  hora  incio de la prueba
-testResultData.put(2,testStartHour);
-
-
 
 
 TestObject loginButton =null;
 try {
 	
-
-		loginButton = WebUI.callTestCase(findTestCase('NEW PREGAME/1. Site/1.1 Validacion del tipode sitio Classic Premium/Usuario visualice el boton LOGIN correctamente (C3783)'),
+    loginButton = WebUI.callTestCase(findTestCase('NEW PREGAME/1. Site/1.1 Validacion del tipode sitio Classic Premium/Usuario visualice el boton LOGIN correctamente (C3783)'),
 				[('url') : url], FailureHandling.STOP_ON_FAILURE)
 	
 
@@ -109,6 +89,16 @@ try {
 		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation,testcaseId)
 	}
 
+	
+	//Guarda url o dirrecion del sitio según el ambiente
+	testResultData.put(0,url);
+	//Registro fecha incio de la prueba
+	testResultData.put(1,testDate);
+	
+	
+	//Registro  hora  incio de la prueba
+	testResultData.put(2,testStartHour);
+	
 
 	//Guarda Version del sistema operativo
 	testResultData.put(4,OsName);

@@ -110,7 +110,7 @@ try {
     //Se hace la comparación de cada transacción
     testStatus = 'Exitoso'
 
-    testResultDescription = (('La sumatoria de las transacciones diarias  del jugador ' + customerPIN) + ' son iguales al monto toal reflejado ')
+    testResultDescription = (('La sumatoria de las transacciones diarias  del jugador ' + customerPIN) + ' son iguales al monto total reflejado ')
 }
 catch (com.kms.katalon.core.exception.StepFailedException stepE) {
     String errorCode = testcaseId+'-09'

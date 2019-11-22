@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba vailda que, al hacer click al botón de Daily Figure en la tabla de días de la semana, deben ser visible las transacciones del día martes de esta semana.</description>
+   <name>Daily figure despliegue las transacciones del martes de esta semana C3877</name>
+   <tag>C3877</tag>
+   <comment></comment>
+   <testCaseGuid>b53a07d5-ed5f-400c-b798-77320ae6af89</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>dirección ip del sitio de pregame</description>
+      <id>a8614fb4-64d4-4a81-987b-1c2560af7c18</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>PIN o ID del jugador</description>
+      <id>e643c1ce-a73e-4e47-8162-21b80b14d249</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave o contraseña del jugador</description>
+      <id>f37abf2f-5c1f-4c5b-b10d-4f60c3af30c4</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

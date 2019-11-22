@@ -73,29 +73,25 @@ try {
 	//Registro  hora  incio de la prueba
 	testResultData.put(4, testStartHour)
 	
-  WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/El jugador tenga configurado Monday Zero Out como daily figure C6405'), 
-    [('customerPIN') : customerPIN, ('customerPass') : customerPass, ('expectedMondayConfiguration') : findTestData('TestData/Datos de Entrada/4.3.2.3.4 Daily Figure').getValue(2, 1)], 
-    FailureHandling.STOP_ON_FAILURE)
-
-	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
-
-	browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
-
-	screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
-
-	
-	//Guarda Version del browser
-	testResultData.put(7, browserVersion)
-
-	//Guarda Version del sistema operativo
-	testResultData.put(6, OsName)
-
-	//Guarda resolucion de pantalla
-	testResultData.put(8, screenResolution)
-	
      customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/CargarTransaccionesDeCustomerMaintenance'),
-			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : true,('weekBefore') : 1,"daysBefore" : 0], FailureHandling.STOP_ON_FAILURE)
+			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : false,('weekBefore') : 1,"daysBefore" : 0], FailureHandling.STOP_ON_FAILURE)
 
+		 OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
+	 
+		 browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
+	 
+		 screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
+	 
+		 
+		 //Guarda Version del browser
+		 testResultData.put(7, browserVersion)
+	 
+		 //Guarda Version del sistema operativo
+		 testResultData.put(6, OsName)
+	 
+		 //Guarda resolucion de pantalla
+		 testResultData.put(8, screenResolution)
+		 
 	//Valida que el jugador tenga transacciones del día lunes
 	WebUI.verifyNotEqual(customerTransacctionsFromCM.size(), 0) 
 
@@ -116,36 +112,9 @@ try {
 	
 	WebUI.click(mondayTdAmountData);
 	
-	//Se hace la comparación de cada transacción
-	for(TransactionDetail transaction:customerTransacctionsFromCM){
-		transactionId =transaction.getTicketId();
-		
-		//Clik en icono + para abrir la transacción
-		TestObject transactionOpenDetailIcon = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("Monday Amount", 'css', 'i[id^="'+transactionId+'"]', 2) 
-		
-		WebUI.click(transactionOpenDetailIcon)
-		
-		
-		 transactionContainerCSS = "div#wpr_contentWagerDiv_"+transactionId+" ";
-		
-		 descriptionLocatorCss =  transactionContainerCSS.concat("div.rightFloatDiv.table-cell")
-		
-		 wagerTypeLocatorCss = transactionContainerCSS.concat("div.leftFloatDiv.table-cell span:nth-child(1)")
-		
-		 wagerAmountLocatorCss = transactionContainerCSS.concat("div.leftFloatDiv.table-cell span:nth-child(3)")
-		 
-		TestObject transactionDescriptionObj = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("Transaction "+transactionId+" description",CSS_SELECTOR_TYPE, descriptionLocatorCss, 2) 
-		TestObject transactionAmountObj = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("Transaction "+transactionId+" lost/won amount", CSS_SELECTOR_TYPE, wagerAmountLocatorCss, 2)
-		TestObject transactionWagerType = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("Transaction "+transactionId+" type", CSS_SELECTOR_TYPE, wagerTypeLocatorCss, 2)
-		
-		String actualDescription = WebUI.getAttribute(transactionDescriptionObj,INNER_TEXT_ATT )
-		String actualAmount = WebUI.getAttribute(transactionAmountObj,INNER_TEXT_ATT )
-		String actualTransactionType = WebUI.getAttribute(transactionWagerType,INNER_TEXT_ATT )
-		
-		assert  actualAmount.contains(Double.toString(transaction.getTransacctionLostWonAmount()));
-		assert  actualTransactionType.contains(transaction.getTransacctionType());
 	
-	}
+	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/ValidarTransaccionesDeCMEnPregame'),
+		[('transaccionesDeCustomerMaintenance') : customerTransacctionsFromCM], FailureHandling.STOP_ON_FAILURE)
 	
 	testStatus = "Exitoso"
 	

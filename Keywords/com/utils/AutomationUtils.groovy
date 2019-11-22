@@ -157,16 +157,16 @@ public class AutomationUtils {
 				testOjbPropertyType = new TestObjectProperty( "css", ConditionType.EQUALS, searchLocator);
 				break;
 			case "XPATH":
-				testOjbPropertyType = new TestObjectProperty( "xpath", ConditionType.CONTAINS, searchLocator);
+				testOjbPropertyType = new TestObjectProperty( "xpath", ConditionType.EQUALS, searchLocator);
 				break;
 			case "NAME":
-				testOjbPropertyType = new TestObjectProperty( "name", ConditionType.CONTAINS, searchLocator);
+				testOjbPropertyType = new TestObjectProperty( "name", ConditionType.EQUALS, searchLocator);
 				break;
 			case "NAME":
-				testOjbPropertyType = new TestObjectProperty( "name", ConditionType.CONTAINS, searchLocator);
+				testOjbPropertyType = new TestObjectProperty( "name", ConditionType.EQUALS, searchLocator);
 				break;
 			case "ID":
-				testOjbPropertyType = new TestObjectProperty( "id", ConditionType.CONTAINS, searchLocator);
+				testOjbPropertyType = new TestObjectProperty( "id", ConditionType.EQUALS, searchLocator);
 			default:
 				testOjbPropertyType = new TestObjectProperty("Empty Property "+selectorType+" "+searchLocator);
 				break;
@@ -215,23 +215,6 @@ public class AutomationUtils {
 		return WebUI.verifyElementNotPresent(object, waitTime);
 	}
 
-	@Keyword
-	def TestObject findTestObject(String testObjectId,TestObjectProperty objProperty,int waitTime){
-		try{
-			TestObject object = new TestObject(testObjectId);
-			object.addProperty(objProperty);
-
-			WebUI.waitForElementPresent(object,waitTime);
-			WebUI.waitForElementVisible(object,waitTime);
-			return object;
-		}catch(com.kms.katalon.core.exception.StepFailedException step){
-			KeywordUtil.logger.logError(step.getMessage());
-			return NullTestObject;
-		}
-	}
-
-
-
 
 	/**
 	 * Funcion que traer una lista de elementos Web
@@ -274,7 +257,7 @@ public class AutomationUtils {
 	@Keyword
 	def String createSnapshop(String folderLocation,String testCaseId){
 		try{
-			String screenshotname =testCaseId+"_"+LocalTime.now().toString().replace(":","-").replace(".","-");
+			String screenshotname =testCaseId+"_"+LocalDateTime.now().toString().replace(":","-").replace(".","-");
 			return WebUI.takeScreenshot(folderLocation+screenshotname+".png")
 		}catch(Exception e){
 			KeywordUtil.logger.logError("Error al generar el screenshot usando la ruta "+folderLocation+" y el test case id "+testCaseId);

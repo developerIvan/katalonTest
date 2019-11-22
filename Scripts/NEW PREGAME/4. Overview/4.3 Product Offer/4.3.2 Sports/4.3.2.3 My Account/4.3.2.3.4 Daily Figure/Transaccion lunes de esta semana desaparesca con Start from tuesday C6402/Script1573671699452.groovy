@@ -60,12 +60,10 @@ try {
     testResultData.put(4, testStartHour)
 
 	//Revisa que el jugador tenga transacciones para el día lunes
-	if(!GlobalVariable.MondayDailyFigureIsLoaded){
 	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Daily figure despliegue las transacciones del lunes de esta semana C6400'),
 		[('url') : url, ('customerPIN') : customerPIN, ('customerPass') : customerPass],
 		FailureHandling.STOP_ON_FAILURE)
 	
-	}
 
     OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
 

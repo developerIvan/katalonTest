@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que si el jugador tenga transacciones del día martes de la semana antepasada, estas se reflejen correctamente en Daily Figure de pregame.</description>
+   <name>Daily Figure despliegue transacciones del martes de la semana antepasada C3880</name>
+   <tag>C3880</tag>
+   <comment></comment>
+   <testCaseGuid>d0d134fc-db06-4ee9-b3da-31f3728b4a52</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>id del usuario</description>
+      <id>f9979134-794e-4384-8a64-bb7c206f07e2</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Password del jugador</description>
+      <id>407003be-b15e-47b9-b9ed-5f62ba6ccdac</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>site de pregame</description>
+      <id>0196b37c-c797-40b7-8e96-86e2994dc488</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+</TestCaseEntity>

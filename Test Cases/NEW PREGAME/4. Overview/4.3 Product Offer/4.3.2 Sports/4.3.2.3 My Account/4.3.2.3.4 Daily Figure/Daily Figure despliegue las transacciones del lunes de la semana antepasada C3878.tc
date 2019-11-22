@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que Daily Fgiure despliegue las transacciones de las emana pasada.</description>
+   <name>Daily Figure despliegue las transacciones del lunes de la semana antepasada C3878</name>
+   <tag>C3878</tag>
+   <comment></comment>
+   <testCaseGuid>97fa3c23-46ac-4495-909a-93946f46e64f</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>dirección del sitio de pregame </description>
+      <id>f1057df1-8319-47f2-952f-69c3071fabe0</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>Pin del jugador</description>
+      <id>c67734b5-8d54-492f-aaac-648f654e1b68</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clavbe dle usuario</description>
+      <id>1a552075-4b3d-4e95-aa1a-ff6772b3a238</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>
