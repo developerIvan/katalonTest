@@ -52,7 +52,7 @@ for (TransactionDetail transaction : transaccionesDeCustomerMaintenance) {
 	String actualTransactionType = WebUI.getAttribute(transactionWagerType, INNER_TEXT_ATT)
 
 	//Validación de que los datos de las transacciones de customer maintenance sean visibles en pregame
-	//    assert  actualDescription.contains(transaction.getTransactionDescription());
+ //  assert  actualDescription.contains(transaction.getTransactionDescription());
 	assert actualAmount.contains(Double.toString(transaction.getTransacctionLostWonAmount()))
 
 	assert actualTransactionType.contains(transaction.getTransacctionType())

@@ -65,7 +65,7 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>f1cf8411-c919-42e3-a9a0-ed3be7fc9e38</guid>
+      <guid>a3e17338-7c4e-4047-85af-855ee4bd3625</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Transaccion lunes de esta semana desaparesca con Start from tuesday C6402</testCaseId>

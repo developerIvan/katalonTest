@@ -13,26 +13,39 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
+import java.lang.AssertionError ;
+import com.kms.katalon.core.exception.StepFailedException as StepFailedException
 
 String testStartDate = CustomKeywords.'com.utils.ReportHelper.getDate'();
 String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'();
 
 String testEndHour = '';
+
 String browserVersion = '';
+
 String screenResolution = '';
+
 String testcaseId = 'C3783';
+
 String OsName = '';
+
 String testStatus = 'Fallido';
+
 String testResultDescription = '';
-ArrayList<Integer> rows = new ArrayList<Integer>();
+
+ArrayList<Integer> rows = new ArrayList<Integer>(1);
+
 rows.add(1);
 
 HashMap<Integer,String> testResultData = new  HashMap();
 
 boolean tomarInstantanea=false;
 
+String exceptionMessageDesc = "Caso de prueba "+testcaseId+ " Fallido. Código de error";
 //Guarda url o dirrecion del sitio según el ambiente
 testResultData.put(0,url);
+
 //Registro fecha incio de la prueba
 testResultData.put(1,testStartDate);
 
@@ -72,7 +85,7 @@ try {
 	//Guarda Version del sistema operativo
 	testResultData.put(6,screenResolution);
 
-	assert !loginButton.equals(CustomKeywords.'com.utils.AutomationUtils.getNullObject'());
+	assert loginButton.equals(CustomKeywords.'com.utils.AutomationUtils.getNullObject'());
 
 	GlobalVariable.pregameSiteEsVisible = true;
 
@@ -81,19 +94,21 @@ try {
 	testResultDescription = 'El botón login es visible';
 
 } catch(java.lang.AssertionError asserError){
-	tomarInstantanea = true;
-	KeywordUtil.logger.logError('Error code: -10' + ' error message :' + asserError.getMessage())
-	testResultDescription = 'El botón login debería ser visible, pero actualmente no lo es. lo cual indica que, o el botón desaparecio  o fue modificado, lo cual causa que la prueba automatizada no lo pueda encontrar. Favor buscar en el log de katalon con el código  -10';
+	String errorCode = testcaseId + '-09'
 
-	throw asserError;
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
+	tomarInstantanea = true;
+	testResultDescription = 'El botón login debería ser visible, pero actualmente no lo es. lo cual indica que, o el botón desaparecio  o fue modificado, lo cual causa que la prueba automatizada no lo pueda encontrar. Favor buscar en el log de katalon';
+	throw new StepFailedException(exceptionMessageDesc.concat(errorCode) ,asserError);
 }  catch(Exception e){
+	String errorCode = testcaseId + '-99'
 	tomarInstantanea = true;
-	KeywordUtil.logger.logError('Error code: -99' + ' error message :') + e.getMessage()
 
-	//	CustomKeywords.'com.utils.ExcelsUtils.saveDataOnExcel'(1, 10, )
-	testResultDescription = 'El botón login debería ser visible, pero actualmente no lo es debido a un comportanmiento anomalo. Favor revisar el log de katalon con el código de error -99';
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
+	testResultDescription = 'El botón login debería ser visible, pero actualmente no lo es debido a un comportanmiento anomalo.'+ CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(
+			errorCode);
 
-	throw e;
+	throw new StepFailedException(exceptionMessageDesc.concat(errorCode),e);
 }finally{
 	//Guarda resultado de la prueba
 	testResultData.put(7,testStatus);

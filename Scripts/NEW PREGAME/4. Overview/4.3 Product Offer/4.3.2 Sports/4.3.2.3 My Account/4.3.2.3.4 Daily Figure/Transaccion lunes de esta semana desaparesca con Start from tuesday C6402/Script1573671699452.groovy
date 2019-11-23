@@ -106,7 +106,7 @@ catch (com.kms.katalon.core.exception.StepFailedException stepE) {
 
     KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
-    testResultDescription = 'El botón de  ' +  startTuesdayLabel + ' no remueve las transacciones del día lunes del jugador '+customerPIN+ 
+    testResultDescription = 'Las transacción (o transacciones) del lunes  del jugador '+customerPIN+' no desaprecen con el botón "Start from tuesday"'+ 
     CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode)
 
     throw stepE

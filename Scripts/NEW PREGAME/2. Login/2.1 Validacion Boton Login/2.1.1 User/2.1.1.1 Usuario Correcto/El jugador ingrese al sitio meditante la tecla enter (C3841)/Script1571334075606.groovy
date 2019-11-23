@@ -21,6 +21,8 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger;
+import com.kms.katalon.core.exception.StepFailedException as StepFailedException
+
 String testEndHour = ''
 
 String browserVersion = ''
@@ -49,43 +51,47 @@ String testStartDate = CustomKeywords.'com.utils.ReportHelper.getDate'()
 
 String testStartHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
+String exceptionMessageDesc = "Caso de prueba "+testcaseId+ " Fallido. Código de error";
+
+ConditionType equalsCondType = CustomKeywords.'com.utils.ConstantsUtil.getEqualsConditionType'()
+
+String textContentAtribute = CustomKeywords.'com.utils.ConstantsUtil.getHtmlTextContentAtt'()
+
+String XPATH_SELECTOR = CustomKeywords.'com.utils.ConstantsUtil.getXPathSelectorId'()
+
 //Registro fecha incio de la prueba
 testResultData.put(3, testStartDate)
 
 //Registro  hora  incio de la prueba
 testResultData.put(4, testStartHour)
 
-if (GlobalVariable.pregameSiteEsVisible == false) {
-	WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/Boton login despliega el formulario C3787'),
-			[:], FailureHandling.STOP_ON_FAILURE)
-}
-
-WebUI.maximizeWindow()
-
-OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
-
-browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
-
-screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
-
-//Guarda Version del browser
-testResultData.put(7,browserVersion);
-
-//Guarda Version del sistema operativo
-testResultData.put(6,OsName);
-
-//Guarda resolucion de pantalla
-testResultData.put(8,screenResolution);
-
-ConditionType equalsCondType = CustomKeywords.'com.utils.ConstantsUtil.getEqualsConditionType'()
-
-String textContentAtribute = CustomKeywords.'com.utils.ConstantsUtil.getHtmlTextContentAtt'()
-
-String CSS_SELECTOR = CustomKeywords.'com.utils.ConstantsUtil.getCSSSelectorId'()
-
-String XPATH_SELECTOR = CustomKeywords.'com.utils.ConstantsUtil.getXPathSelectorId'()
 
 try {
+	if (GlobalVariable.pregameSiteEsVisible == false) {
+		WebUI.callTestCase(findTestCase('NEW PREGAME/2. Login/2.1 Validacion Boton Login/Boton login despliega el formulario C3787'),
+				[:], FailureHandling.STOP_ON_FAILURE)
+	}
+
+	WebUI.maximizeWindow()
+
+	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
+
+	browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
+
+	screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
+
+	//Guarda Version del browser
+	testResultData.put(7,browserVersion);
+
+	//Guarda Version del sistema operativo
+	testResultData.put(6,OsName);
+
+	//Guarda resolucion de pantalla
+	testResultData.put(8,screenResolution);
+
+
+
+
 	TestObject loginButton = CustomKeywords.'com.utils.AutomationUtils.clickAndReturnObject'(null, 'Login Button ', new TestObjectProperty(
 			XPATH_SELECTOR, equalsCondType, 'id(\'logIn\')'), 2)
 
@@ -122,14 +128,14 @@ try {
 
 }
 catch (com.kms.katalon.core.exception.StepFailedException stepE) {
-	String errorCode = '-09'
+	String errorCode = testcaseId+'-09'
 
 	errorEnLaPrueba = true
 
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
-	testResultDescription =  'El jugador no logró ingresar al sitio de pregame con la tecla enter debido a un paso de la prueba o elmento de la página que no está visible.'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode);
+	testResultDescription =  'El jugador no logró ingresar al sitio de pregame con la tecla enter debido a un paso de la prueba o elmento de la página que no está visible.'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode,'C3787');
 
-	throw  stepE;
+	throw new StepFailedException(exceptionMessageDesc.concat(errorCode),stepE);
 }
 catch (AssertionError asserError) {
 	String errorCode = '-10'
@@ -141,7 +147,7 @@ catch (AssertionError asserError) {
 	testResultDescription = 'El jugador no logró ingresar al sitio de pregame con la tecla enter, la pagina esperada debería tener el domino o sección sportbook pero actualmente es: ' +
 			WebUI.getUrl().toString();
 
-	throw new LoginException('Ingreso mediante la tecla enter fallido', asserError, errorCode)
+	throw new StepFailedException(exceptionMessageDesc.concat(errorCode),asserError);
 }
 catch (Exception e) {
 	String errorCode = '-99'
@@ -151,7 +157,7 @@ catch (Exception e) {
 	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
 	testResultDescription ='El jugador no logró ingresar al sitio de pregame con la tecla enter debido a un error anomalo en la prueba.'+CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(errorCode)
 
-	throw  e;
+	throw new StepFailedException(exceptionMessageDesc.concat(errorCode),e);
 }
 finally {
 	//Guarda url o dirrecion del sitio según el ambiente

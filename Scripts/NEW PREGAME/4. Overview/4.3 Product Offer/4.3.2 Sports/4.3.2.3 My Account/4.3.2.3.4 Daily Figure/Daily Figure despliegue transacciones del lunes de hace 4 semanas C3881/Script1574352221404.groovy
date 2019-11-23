@@ -32,7 +32,7 @@ String testStatus = 'Fallido'
 
 String testResultDescription = ''
 
-ArrayList<Integer> rows = new ArrayList<Integer>()
+ArrayList<Integer> rows = new ArrayList<Integer>(1)
 
 rows.add(1)
 
@@ -57,11 +57,12 @@ try {
 	//Registro  hora  incio de la prueba
 	testResultData.put(4, testStartHour)
 
-   //Valida que el jugador tenga configurado el día lunes como Zero out balance
-	WebUI.callTestCase(findTestCase('NEW PREGAME/6. Otros/6.3 Customer Maintenance/El jugador tenga configurado Monday Zero Out como daily figure C6405'),
-			[('customerPIN') : customerPIN, ('customerPass') : customerPass, ('expectedMondayConfiguration') : findTestData('TestData/Datos de Entrada/4.3.2.3.4 Daily Figure').getValue(2, 1)],
-			FailureHandling.STOP_ON_FAILURE)
 
+
+	customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/CargarTransaccionesDeCustomerMaintenance'),
+			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : false,('weekBefore') : 3], FailureHandling.STOP_ON_FAILURE)
+
+	
 	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
 
 	browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
@@ -77,10 +78,7 @@ try {
 
 	//Guarda resolucion de pantalla
 	testResultData.put(8, screenResolution)
-
-	customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/CargarTransaccionesDeCustomerMaintenance'),
-			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : true,('weekBefore') : 3], FailureHandling.STOP_ON_FAILURE)
-
+	
 	//Valida que el jugador tenga transacciones del día lunes
 	WebUI.verifyNotEqual(customerTransacctionsFromCM.size(), 0)
 
@@ -89,10 +87,10 @@ try {
 			[('url') : url, ('customerPIN') : customerPIN, ('customerPass') : customerPass],
 			FailureHandling.STOP_ON_FAILURE)
 
-	//Se selecciona la opción de last week del select de semanas
-	WebUI.selectOptionByValue(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/select_DailyFigureWeeks'), "3",false)
+	//Se selecciona la opción de 3 weeks ago del select de semanas
+	WebUI.selectOptionByValue(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/select_DailyFigureWeeks'), "4",false)
 
-	WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/select_DailyFigureWeeks'),"3",false, 30)
+	WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Repositorio Objetos Proyecto Premium/4.3.2.3 MY ACCOUNT/4.3.2.3.4 Daily Figure/select_DailyFigureWeeks'),"4",false, 30)
 
 	//se presiona el monto que debe ser visible del día lunes
 	TestObject mondayTdAmountData = CustomKeywords.'com.utils.AutomationUtils.findTestObject'("Monday Amount", 'css', 'tr.trReportDetail.show-data td[data-th="'+dailyFigureTransactionsDay+'"] a', 3)

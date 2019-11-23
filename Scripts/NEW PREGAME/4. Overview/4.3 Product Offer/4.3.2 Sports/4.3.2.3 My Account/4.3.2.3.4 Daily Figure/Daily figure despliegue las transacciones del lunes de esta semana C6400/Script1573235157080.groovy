@@ -66,124 +66,118 @@ String INNER_TEXT_ATT = 'innerText'
 List<TransactionDetail> customerTransacctionsFromCM = new ArrayList<TransactionDetail>()
 
 try {
-    //Registro fecha incio de la prueba
-    testResultData.put(3, testStartDate)
+	//Registro fecha incio de la prueba
+	testResultData.put(3, testStartDate)
 
-    //Registro  hora  incio de la prueba
-    testResultData.put(4, testStartHour)
+	//Registro  hora  incio de la prueba
+	testResultData.put(4, testStartHour)
 
-    //Valida que el jugador tenga monday zero out como configuración de tipo zero balance
-    WebUI.callTestCase(findTestCase('NEW PREGAME/6. Otros/6.3 Customer Maintenance/El jugador tenga configurado Monday Zero Out como daily figure C6405'), 
-        [('customerPIN') : customerPIN, ('customerPass') : customerPass, ('expectedMondayConfiguration') : findTestData(
-                'TestData/Datos de Entrada/4.3.2.3.4 Daily Figure').getValue(2, 1)], FailureHandling.STOP_ON_FAILURE)
+	customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/CargarTransaccionesDeCustomerMaintenance'),
+			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : false, ('weekBefore') : 0],
+			FailureHandling.STOP_ON_FAILURE)
 
-    OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
+	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
 
-    browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
+	browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
 
-    screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
+	screenResolution = CustomKeywords.'com.utils.ReportHelper.getScreenResolution'()
 
-    //Guarda Version del browser
-    testResultData.put(7, browserVersion)
+	//Guarda Version del browser
+	testResultData.put(7, browserVersion)
 
-    //Guarda Version del sistema operativo
-    testResultData.put(6, OsName)
+	//Guarda Version del sistema operativo
+	testResultData.put(6, OsName)
 
-    //Guarda resolucion de pantalla
-    testResultData.put(8, screenResolution)
+	//Guarda resolucion de pantalla
+	testResultData.put(8, screenResolution)
+	//Valida que el jugador tenga transacciones del día lunes
+	WebUI.verifyNotEqual(customerTransacctionsFromCM.size(), 0)
 
-    customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/CargarTransaccionesDeCustomerMaintenance'), 
-        [('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : true, ('weekBefore') : 0], 
-        FailureHandling.STOP_ON_FAILURE)
+	//ir apregame y cargar la sección de daily figure
+	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Boton Daily Figure muestre los dias de la semana y Total C6398'),
+			[('url') : url, ('customerPIN') : customerPIN, ('customerPass') : customerPass], FailureHandling.STOP_ON_FAILURE)
 
-    //Valida que el jugador tenga transacciones del día lunes
-    WebUI.verifyNotEqual(customerTransacctionsFromCM.size(), 0)
+	//se presiona el monto que debe ser visible del día lunes
+	TestObject mondayTdAmountData = CustomKeywords.'com.utils.AutomationUtils.findTestObject'('Monday Amount', 'css', ('tr.trReportDetail.show-data td[data-th="' +
+			dailyFigureTransactionsDay) + '"] a', 3)
 
-    //ir apregame y cargar la sección de daily figure
-    WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Boton Daily Figure muestre los dias de la semana y Total C6398'), 
-        [('url') : url, ('customerPIN') : customerPIN, ('customerPass') : customerPass], FailureHandling.STOP_ON_FAILURE)
+	WebUI.verifyElementClickable(mondayTdAmountData)
 
-    //se presiona el monto que debe ser visible del día lunes
-    TestObject mondayTdAmountData = CustomKeywords.'com.utils.AutomationUtils.findTestObject'('Monday Amount', 'css', ('tr.trReportDetail.show-data td[data-th="' + 
-        dailyFigureTransactionsDay) + '"] a', 3)
-
-    WebUI.verifyElementClickable(mondayTdAmountData)
-
-    WebUI.click(mondayTdAmountData)
+	WebUI.click(mondayTdAmountData)
 
 	WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/ValidarTransaccionesDeCMEnPregame'),
-		[('transaccionesDeCustomerMaintenance') : customerTransacctionsFromCM], FailureHandling.STOP_ON_FAILURE)
-	
-    //Se hace la comparación de cada transacción
-  
-    testStatus = 'Exitoso'
+			[('transaccionesDeCustomerMaintenance') : customerTransacctionsFromCM], FailureHandling.STOP_ON_FAILURE)
 
-    testResultDescription = (('Las transacciones del jugador ' + customerPIN) + ' del día lunes de customer maintenance aparecen exitosamente en pregame ')
+	//Se hace la comparación de cada transacción
 
-    //Se establece esta bandera en verdarero para otros casos de prueba que dependan de este cuando se ejecuta este caso de prueba en conjunto
-    GlobalVariable.MondayDailyFigureIsLoaded = true
+	testStatus = 'Exitoso'
+
+	testResultDescription = (('Las transacciones del jugador ' + customerPIN) + ' del día lunes de customer maintenance aparecen exitosamente en pregame ')
+
+	//Se establece esta bandera en verdarero para otros casos de prueba que dependan de este cuando se ejecuta este caso de prueba en conjunto
+	GlobalVariable.MondayDailyFigureIsLoaded = true
 }
 catch (com.kms.katalon.core.exception.StepFailedException stepE) {
-    String errorCode = '-09'
+	String errorCode = '-09'
 
-    errorEnLaPrueba = true
+	errorEnLaPrueba = true
 
-    KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, stepE)
 
-    testResultDescription = ((('El jugador ' + customerPIN) + ' no tiene transacciones para el día lunes o su configuración de zero balance no es del lunes o algún procedimiento previo como ingreso a pregame no se pudo completar ') + 
-    CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode, 'C6405', 'C6398'))
+	testResultDescription = ((('El jugador ' + customerPIN) + ' no tiene transacciones para el día lunes o su configuración de zero balance no es del lunes o algún procedimiento previo como ingreso a pregame no se pudo completar ') +
+			CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForStepExceptions'(errorCode,  'C6398'))
 
-    throw stepE
-} 
+	throw stepE
+}
 catch (AssertionError asserError) {
-    String errorCode = '-10'
+	String errorCode = '-10'
 
-    errorEnLaPrueba = true
+	errorEnLaPrueba = true
 
-    KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, asserError)
 
-    testResultDescription = 'Los datos de las transacciones de customer maintenace no cuadran con las transacciones que despliegua customer maintenace, favor revisar el log de katalon '
+	testResultDescription = 'Los datos de las transacciones de customer maintenace no cuadran con las transacciones que despliegua customer maintenace, favor revisar el log de katalon '
 
-    throw asserError
-} 
+	throw asserError
+}
 catch (Exception e) {
-    String errorCode = '-99'
+	String errorCode = '-99'
 
-    errorEnLaPrueba = true
+	errorEnLaPrueba = true
 
-    KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
+	KeywordLogger.getInstance(this.class).logger.error(errorCode, e)
 
-    testResultDescription = ('La prueba no se pudo realizar debido a un fallo anomalo en la prueba ' + CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(
-        errorCode))
+	testResultDescription = ('La prueba no se pudo realizar debido a un fallo anomalo en la prueba ' + CustomKeywords.'com.utils.ConstantsUtil.getCustomErrorMessageForGeneralExceptions'(
+			errorCode))
 
-    throw e
-} 
-finally { 
-    //Guarda url o dirrecion del sitio según el ambiente
-    testResultData.put(0, url)
+	throw e
+}
+finally {
+	//Guarda url o dirrecion del sitio según el ambiente
+	testResultData.put(0, url)
 
-    //Guarda pin del jugador que se  para la prueba
-    testResultData.put(1, customerPIN)
+	//Guarda pin del jugador que se  para la prueba
+	testResultData.put(1, customerPIN)
 
-    //Guarda password del jugador que se usó para la prueba
-    testResultData.put(2, customerPass)
+	//Guarda password del jugador que se usó para la prueba
+	testResultData.put(2, customerPass)
 
-    //Guarda hora final
-    testEndHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
+	//Guarda hora final
+	testEndHour = CustomKeywords.'com.utils.ReportHelper.getHours'()
 
-    testResultData.put(5, testEndHour)
+	testResultData.put(5, testEndHour)
 
-    //Guarda Resultado de la prueba
-    testResultData.put(9, testStatus)
+	//Guarda Resultado de la prueba
+	testResultData.put(9, testStatus)
 
-    //GuardaDescrpipción del  Resultado de la prueba
-    testResultData.put(10, testResultDescription)
+	//GuardaDescrpipción del  Resultado de la prueba
+	testResultData.put(10, testResultDescription)
 
-    //Guarda resultado de prueba
-    CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
+	//Guarda resultado de prueba
+	CustomKeywords.'com.utils.ExcelsUtils.saveTestResult'(GlobalVariable.excelReportFileLocation, testcaseId, rows, testResultData)
 
-    //toma screenshot en caso de error
-    if (errorEnLaPrueba == true) {
-        CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation, testcaseId)
-    }
+	//toma screenshot en caso de error
+	if (errorEnLaPrueba == true) {
+		CustomKeywords.'com.utils.AutomationUtils.createSnapshop'(GlobalVariable.screenshotLocation, testcaseId)
+	}
 }

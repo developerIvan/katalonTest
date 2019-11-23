@@ -89,7 +89,7 @@ switch(weekBefore){
 		break;
 	case 3:
 		temAjuster = TemporalAdjusters.previousOrSame( expectedDailyFigureDate );
-		daysBefore = 27
+		daysBefore = 21
 		break;
 
 	default://Seleccioanra la fecha de esta semana POR DEFECTO
@@ -122,13 +122,13 @@ if(daysBefore>= 7 && daysBefore<14){
 
 
 //2 semanas antes
-if(daysBefore>= 14 && daysBefore<27){
+if(daysBefore>= 14 && daysBefore<21){
 	WebUI.selectOptionByLabel(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/select_Display_Days'), "15 Days",false)
 	WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/select_Display_Days'),"15 Days",false, 30)
 }
 
 //3 semanas antes
-if(daysBefore>= 27 && daysBefore<30){
+if(daysBefore>= 21 && daysBefore<30){
 	WebUI.selectOptionByLabel(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/select_Display_Days'), "30 Days",false)
 	WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Repositorio Objetos Customer Maintenance/Transactions/select_Display_Days'),"30 Days",false, 30)
 }

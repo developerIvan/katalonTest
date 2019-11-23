@@ -57,11 +57,15 @@ try {
 	//Registro  hora  incio de la prueba
 	testResultData.put(4, testStartHour)
 
-	//Valida que el jugador tenga configurado el día martes como Zero out balance
-	WebUI.callTestCase(findTestCase('NEW PREGAME/6. Otros/6.3 Customer Maintenance/Jugador tenga configurado Tuesday Zero Out como daily figure C6406'),
-			[('customerPIN') : customerPIN, ('expectedTuesdayConfiguration') : findTestData('TestData/Datos de Entrada/4.3.2.3.4 Daily Figure').getValue(2, 2)],
-			FailureHandling.STOP_ON_FAILURE)
 
+
+
+	customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/CargarTransaccionesDeCustomerMaintenance'),
+			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : false, ('weekBefore') : 2
+				, ('daysBefore') : 0], FailureHandling.STOP_ON_FAILURE)
+
+	
+	
 	OsName = CustomKeywords.'com.utils.ReportHelper.getOperatingSystem'()
 
 	browserVersion = CustomKeywords.'com.utils.ReportHelper.getBrowserAndVersion'()
@@ -76,11 +80,7 @@ try {
 
 	//Guarda resolucion de pantalla
 	testResultData.put(8, screenResolution)
-
-	customerTransacctionsFromCM = WebUI.callTestCase(findTestCase('NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Funciones Auxiliares/CargarTransaccionesDeCustomerMaintenance'),
-			[('customerId') : customerPIN, ('dayOfTheWeek') : dailyFigureTransactionsDay, ('CMIsCurrentUrl') : true, ('weekBefore') : 2
-				, ('daysBefore') : 0], FailureHandling.STOP_ON_FAILURE)
-
+	
 	//Valida que el jugador tenga transacciones del día martes
 	WebUI.verifyNotEqual(customerTransacctionsFromCM.size(), 0)
 
