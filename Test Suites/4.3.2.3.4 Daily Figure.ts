@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>4.3.2.3.4 Daily Figure</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>2b4d2f67-6b25-4cb6-8ecd-c460e3cdff32</testSuiteGuid>
+   <testCaseLink>
+      <guid>4ec2e29f-9167-4f23-94a2-9c65782edeac</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Daily figure despliegue los rubros de un dia en especifico C6400</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>d9896dbc-528a-4c65-993c-12299788e749</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/TestData/Datos de Entrada/JugadoresDailyFgiure</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>91310968-602f-444d-8838-0bfaee378b99</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>d9896dbc-528a-4c65-993c-12299788e749</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>PlayerPIN</value>
+         <variableId>98ffe2f1-6c3c-401b-b546-2e000ed71bb9</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>d9896dbc-528a-4c65-993c-12299788e749</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>customerPassword</value>
+         <variableId>3d7b018a-304c-4e4b-b911-2597cf3e2de2</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>d9896dbc-528a-4c65-993c-12299788e749</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Día de daily Fgiure</value>
+         <variableId>5af30455-3ca7-4dba-a10d-64dd7ae65ee7</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>d9896dbc-528a-4c65-993c-12299788e749</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Semana de daily figure</value>
+         <variableId>5f00579e-1fd4-42f1-9f4b-e05d34dc8235</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>acee829c-375c-42eb-8562-d0e33c1d8230</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/La suma de las rubros de los dias de la semana sean iguales al monto total C6407</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>b365f303-3b3a-496b-aa1d-915927df14bb</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/TestData/Datos de Entrada/JugadoresDailyFgiure</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>1b356908-d94c-4eee-8e1b-04f9da50a6dc</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>b365f303-3b3a-496b-aa1d-915927df14bb</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>PlayerPIN</value>
+         <variableId>484ae977-495c-4ba3-ada0-b4dcccb3a78c</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>b365f303-3b3a-496b-aa1d-915927df14bb</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>customerPassword</value>
+         <variableId>1f92ce0f-b321-4518-8758-1080546d803d</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>b365f303-3b3a-496b-aa1d-915927df14bb</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Día de daily Fgiure</value>
+         <variableId>557d6419-e3c0-437e-92e5-b680c5a907c3</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>b365f303-3b3a-496b-aa1d-915927df14bb</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Semana de daily figure</value>
+         <variableId>f9d3af7f-4def-431f-a458-750ae3d53f21</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>24b7b450-ae20-4089-bd49-f02f5e14c2eb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Los rubros del dia seleccionado coincidan con aquellos en cm C3877</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>234f3c86-7c2b-4d05-a653-be9fa5015fce</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/TestData/Datos de Entrada/JugadoresDailyFgiure</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>a8614fb4-64d4-4a81-987b-1c2560af7c18</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>234f3c86-7c2b-4d05-a653-be9fa5015fce</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>PlayerPIN</value>
+         <variableId>e643c1ce-a73e-4e47-8162-21b80b14d249</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>234f3c86-7c2b-4d05-a653-be9fa5015fce</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>customerPassword</value>
+         <variableId>f37abf2f-5c1f-4c5b-b10d-4f60c3af30c4</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>234f3c86-7c2b-4d05-a653-be9fa5015fce</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Semana de daily figure</value>
+         <variableId>2742da16-46a5-4622-a24a-6dff05cdb34a</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>234f3c86-7c2b-4d05-a653-be9fa5015fce</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Día de daily Fgiure</value>
+         <variableId>4cf8484e-d032-4637-a8a6-1969c1105890</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1d21cc62-47e0-4f98-a371-5f1ff147f66a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/monto total de la semana sea congruente al monto que esta reflejado en el total C3881</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>42d72e13-a526-4321-b1e5-a3371fd3d700</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/TestData/Datos de Entrada/JugadoresDailyFgiure</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>42d72e13-a526-4321-b1e5-a3371fd3d700</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>PlayerPIN</value>
+         <variableId>78470f9a-5f3e-4a93-96bf-1845591d4cba</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>42d72e13-a526-4321-b1e5-a3371fd3d700</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>customerPassword</value>
+         <variableId>f5f7c3a4-28b2-4ba4-98fe-87e8ff59a0c4</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>4d28a7af-bb1a-4941-9991-bca8e4d3b3f5</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>42d72e13-a526-4321-b1e5-a3371fd3d700</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Día de daily Fgiure</value>
+         <variableId>055f1f6d-fcfb-4d7d-9597-b1d2a5ecfa6e</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>42d72e13-a526-4321-b1e5-a3371fd3d700</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Semana de daily figure</value>
+         <variableId>bbc03ec6-7837-44b9-8471-9d2c29754cd3</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>90454e73-a124-4c33-9372-5bdce994876b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Suma de los rubros de un dia selecionado sean iguales al monto reflejado C3878</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>e4c1a1b9-9cd0-4a72-8f88-bc96a4182c51</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/TestData/Datos de Entrada/JugadoresDailyFgiure</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>f1057df1-8319-47f2-952f-69c3071fabe0</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>e4c1a1b9-9cd0-4a72-8f88-bc96a4182c51</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>PlayerPIN</value>
+         <variableId>c67734b5-8d54-492f-aaac-648f654e1b68</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>e4c1a1b9-9cd0-4a72-8f88-bc96a4182c51</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>customerPassword</value>
+         <variableId>1a552075-4b3d-4e95-aa1a-ff6772b3a238</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>e4c1a1b9-9cd0-4a72-8f88-bc96a4182c51</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Día de daily Fgiure</value>
+         <variableId>8f3497ef-9431-454f-8b76-e4b541dd321f</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>e4c1a1b9-9cd0-4a72-8f88-bc96a4182c51</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Semana de daily figure</value>
+         <variableId>913aa7da-6f29-45bb-a3c5-781f2963d552</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>75ab040f-51d1-4d17-bcb9-41527f1099b0</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/NEW PREGAME/4. Overview/4.3 Product Offer/4.3.2 Sports/4.3.2.3 My Account/4.3.2.3.4 Daily Figure/Total de los rubros de un dia en daily figure concuerde con el monto neto CM C6401</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>4c06aa19-2d2e-4ed9-ae29-a49f63aa5e45</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/TestData/Datos de Entrada/JugadoresDailyFgiure</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>4c06aa19-2d2e-4ed9-ae29-a49f63aa5e45</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>PlayerPIN</value>
+         <variableId>31be4f8e-dd6c-4304-be19-8c7fa8f8568a</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>072db8d3-8ff1-45d6-9059-7f4cf64dba8b</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>4c06aa19-2d2e-4ed9-ae29-a49f63aa5e45</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>customerPassword</value>
+         <variableId>5fe63696-29b1-4317-b457-4271a7011aa8</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>4c06aa19-2d2e-4ed9-ae29-a49f63aa5e45</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Semana de daily figure</value>
+         <variableId>05031227-0148-432a-a707-9ce281830baa</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>4c06aa19-2d2e-4ed9-ae29-a49f63aa5e45</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Día de daily Fgiure</value>
+         <variableId>40d5fac8-e4cc-40e3-a6f2-40a63673182b</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

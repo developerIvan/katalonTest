@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Esta función se encargara de seleccionar la opción de sub deporte que forma parte del deporte, ejemplo deporte Soccer subdeporte Spain</description>
+   <name>SeleccionarSubDeporte</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2a793e77-3521-418b-9c37-f26e71f07fe9</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Categoría de deporte ejemplo: Soccer</description>
+      <id>472abae2-4ef4-4f41-bc8f-8f84056faa08</id>
+      <masked>false</masked>
+      <name>sportName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Sucategoria  o sub deporte ejemplo Costa Rica</description>
+      <id>c7ab14cc-44ce-42ff-911c-a3577bef2789</id>
+      <masked>false</masked>
+      <name>subSportName</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SeleccionarBotonDeTipoDeApuesta</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4bdb55b7-fbc9-471f-be71-f74e933a0072</testCaseGuid>
+   <variable>
+      <defaultValue>'Straight Bet'</defaultValue>
+      <description>Define el tipo de apuesta a realizar</description>
+      <id>790184bd-9a9f-4474-be5b-becbfd610235</id>
+      <masked>false</masked>
+      <name>wagerType</name>
+   </variable>
+</TestCaseEntity>

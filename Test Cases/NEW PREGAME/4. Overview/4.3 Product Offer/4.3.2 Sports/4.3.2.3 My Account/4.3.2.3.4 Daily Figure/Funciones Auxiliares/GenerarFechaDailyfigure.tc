@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Esdtas función devulve la fecha de daily figure según el día y la semana :
+Por ejemplo, si la semana a buscar es la semana pasada y la fecha de la semanan actual es el 12/2/2019, la fecha devuelta será el  11/25/2019</description>
+   <name>GenerarFechaDailyfigure</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3b634326-1a59-4c4b-bfe8-7c14bc59529d</testCaseGuid>
+   <variable>
+      <defaultValue>'T'</defaultValue>
+      <description>abrevatura dia de la semana donde M es para Monday,
+          K es para Tuesday,W es para Wendesday,T es para Tuesday,F es para Friday, S es para Saturday, E es para Sunday </description>
+      <id>f850aa07-37a1-427d-aea4-82db7151bd1b</id>
+      <masked>false</masked>
+      <name>dayOfTheWeek</name>
+   </variable>
+   <variable>
+      <defaultValue>3</defaultValue>
+      <description>Define la semana a ser seleccionada, donde 0 igual a This Week, 1 Last Week , 2 : 2 Weeks Ago, 3  weeks ago</description>
+      <id>cf6d54c2-8f5a-429a-92ba-1f1be16d69a2</id>
+      <masked>false</masked>
+      <name>dailyFigureWeekNumber</name>
+   </variable>
+</TestCaseEntity>

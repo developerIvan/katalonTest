@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>ValidateCrhistmasEventMessage</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f6d4318f-2117-4a6e-85cf-ce8c9f37f265</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>6349b3f5-bb9d-43fa-99c6-e0a6087d569d</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+</TestCaseEntity>

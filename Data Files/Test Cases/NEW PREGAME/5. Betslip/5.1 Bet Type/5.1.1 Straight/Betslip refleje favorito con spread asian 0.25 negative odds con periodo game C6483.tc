@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validar que se muestre la línea correctamente en el betslip cuando la selección es Game Asian Spread Favorite negative odds .25 y el wager type sea Straight.</description>
+   <name>Betslip refleje favorito con spread asian 0.25 negative odds con periodo game C6483</name>
+   <tag>C6483</tag>
+   <comment></comment>
+   <testCaseGuid>7958f23e-286c-41b9-9246-de4caf994a4f</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame </description>
+      <id>bac87a58-8781-4c42-a115-865446a1d33a</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>130ec856-c709-4f38-9b76-0b009009d567</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>46adaf0a-c5bd-415b-96d2-144be1833b80</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Soccer'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>630fe6fb-a0da-47a0-ad90-51cb9416d539</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Spain'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>33201f78-c25c-47a5-895d-0e81d88d0ef0</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'FC Barcelona'</defaultValue>
+      <description>Equipo con la línea asian </description>
+      <id>c2d43ccd-63fe-462b-a2eb-f7e04740a54f</id>
+      <masked>false</masked>
+      <name>favoriteTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'LaLiga'</defaultValue>
+      <description>torneo o competición  de la sub categoria, ejemplo FA Cup</description>
+      <id>5532d4e9-1308-4cf7-ba9e-72a784a39a85</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+</TestCaseEntity>

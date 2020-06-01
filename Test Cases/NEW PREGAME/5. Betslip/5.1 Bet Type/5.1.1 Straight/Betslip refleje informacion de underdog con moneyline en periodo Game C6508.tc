@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validar que se muestre la lí­nea correctamente en el betslip cuando la seleccion es Game Moneyline Underdog y el wager type sea Straight.</description>
+   <name>Betslip refleje informacion de underdog con moneyline en periodo Game C6508</name>
+   <tag>C6508</tag>
+   <comment></comment>
+   <testCaseGuid>baaa11ee-7867-4647-b1d0-70a31287d1fb</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>7ff0cf68-a11f-48ed-8a87-3f854d02a422</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>dd815b18-16f1-43af-baf8-8b93b664f805</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>5fcd39d3-a071-4398-83db-25afe74dfde7</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Hockey'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>c8f68c38-b1e8-4b43-bbcf-9d812274d04d</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Austria'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>8b4692e0-8076-42b3-88ad-66f5819da35a</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'EC Villacher SV'</defaultValue>
+      <description>Equipo con la línea asian positiva</description>
+      <id>9588408d-c518-41c7-b6a9-183efe62760f</id>
+      <masked>false</masked>
+      <name>underdogTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'EHL'</defaultValue>
+      <description>torneo o competición  de la sub categoria, ejemplo FA Cup, en caso de deportes que no tienen liga como nba, por ejemplo: dejar en blanco</description>
+      <id>8b322129-9f16-46de-8759-c4e29ff2edfd</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+</TestCaseEntity>

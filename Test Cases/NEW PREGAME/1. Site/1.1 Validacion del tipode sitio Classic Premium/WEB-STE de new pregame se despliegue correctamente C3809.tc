@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida si el sitio new pregam se abre correctamente cuando se accede a la URL</description>
+   <name>WEB-STE de new pregame se despliegue correctamente C3809</name>
+   <tag>C3809</tag>
+   <comment></comment>
+   <testCaseGuid>4c6f8b3f-9bb9-4ee2-9c62-fdb28a446347</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>Dirreción url de pregame</description>
+      <id>c73d7dbd-e36d-4303-936b-ba02ca3c89f4</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+</TestCaseEntity>

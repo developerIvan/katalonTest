@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba vailda que, los rubros del día seleccionado coincidan con los rubros almacenados en customer maintenance.</description>
+   <name>Los rubros del dia seleccionado coincidan con aquellos en cm C3877</name>
+   <tag>C3877</tag>
+   <comment></comment>
+   <testCaseGuid>b53a07d5-ed5f-400c-b798-77320ae6af89</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>dirección ip del sitio de pregame</description>
+      <id>a8614fb4-64d4-4a81-987b-1c2560af7c18</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>PIN o ID del jugador</description>
+      <id>e643c1ce-a73e-4e47-8162-21b80b14d249</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave o contraseña del jugador</description>
+      <id>f37abf2f-5c1f-4c5b-b10d-4f60c3af30c4</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'3'</defaultValue>
+      <description>Define la semana a ser seleccionada, donde 0 igual a This Week, 1 Last Week , 2 : 2 Weeks Ago, 3  weeks ago</description>
+      <id>2742da16-46a5-4622-a24a-6dff05cdb34a</id>
+      <masked>false</masked>
+      <name>dailyFigureWeekNumber</name>
+   </variable>
+   <variable>
+      <defaultValue>'K'</defaultValue>
+      <description>    Día del daily figure, donde M es para Monday,
+          K es para Tuesday,
+          W es para Wendesday,
+          T es para Tuesday,
+          F es para Friday, 
+          S es para Saturday,
+          E es para Sunday</description>
+      <id>4cf8484e-d032-4637-a8a6-1969c1105890</id>
+      <masked>false</masked>
+      <name>dailyFigureDay</name>
+   </variable>
+</TestCaseEntity>

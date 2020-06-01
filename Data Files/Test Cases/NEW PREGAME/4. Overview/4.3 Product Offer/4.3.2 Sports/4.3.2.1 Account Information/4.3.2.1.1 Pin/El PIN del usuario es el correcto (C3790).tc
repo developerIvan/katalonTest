@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>El PIN del usuario es el correcto (C3790)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0a20eed5-160f-4bd0-8ada-e1660eb47495</testCaseGuid>
+</TestCaseEntity>

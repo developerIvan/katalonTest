@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que se muestre la línea correctamente en el betslip cuando la selección es Period Asian Spread underdog positive odds .75 y el wager type sea Straight.</description>
+   <name>Betslip refleje underdog con spread asian 0.75 con positive odds en cualquier periodo C6502</name>
+   <tag>C6502</tag>
+   <comment></comment>
+   <testCaseGuid>00dd4b20-fa9a-4d86-b673-b1ec2898a6ef</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>56d34c36-1d7a-4afb-b5b4-7a11d8192d91</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>0fbf15ab-9dfa-42b1-90d5-e0e7901b4738</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>c2b5e68a-9da1-4301-8fd3-f33de5b36cdc</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Soccer'</defaultValue>
+      <description></description>
+      <id>0e79960e-c373-4d5a-ab87-5d6da23fe7d3</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'France'</defaultValue>
+      <description></description>
+      <id>8b4819bd-8cc5-4949-b82a-b5aa1f3118b1</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Olympique Lyonnais'</defaultValue>
+      <description></description>
+      <id>b4253477-78c0-4d90-8dd9-fdf285d672ae</id>
+      <masked>false</masked>
+      <name>underdogTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'Coupe de France'</defaultValue>
+      <description></description>
+      <id>1336c187-bf94-4a01-9405-877e4be29c46</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>31316f15-d235-4de5-8d32-5802b9fbf53a</id>
+      <masked>false</masked>
+      <name>periodNumer</name>
+   </variable>
+</TestCaseEntity>

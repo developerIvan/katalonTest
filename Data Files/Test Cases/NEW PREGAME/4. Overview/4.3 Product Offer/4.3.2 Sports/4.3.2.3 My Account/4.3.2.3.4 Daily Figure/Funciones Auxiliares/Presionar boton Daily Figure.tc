@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Funcion auxiliar que servirá para presionar el botón de daily figure .
+
+Esto con el proposito de no repetir la misma función de presionar dicho botón en los test cases relacioandos a la sección 4.3.2.3.4</description>
+   <name>Presionar boton Daily Figure</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8c3e3d85-e2fc-43d1-88fc-cb59d7da6b0c</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Sitio de pregame </description>
+      <id>a56cb28f-32f3-4d4c-9503-1d40af3ff020</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>PIN del usuario</description>
+      <id>ae66d8a0-aca0-442e-a6d5-d5e068352dc2</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Password del jugador</description>
+      <id>65ab1454-86ea-4484-a4b1-cf0e9c73682c</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

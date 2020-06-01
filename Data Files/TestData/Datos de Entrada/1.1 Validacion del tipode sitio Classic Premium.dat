@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>1.1 Validacion del tipode sitio Classic Premium</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>61d00264-c8f6-45db-92a4-3ec2079167b8</dataFileGUID>
+   <dataSourceUrl>C:\PROYECTOS\QAPregameNuevo\Data Files\Perfiles\DatosdePrueba.xls</dataSourceUrl>
+   <driver>ExcelFile</driver>
+   <isInternalPath>false</isInternalPath>
+   <query></query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName>1.1 Validacion tipo de sitio</sheetName>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

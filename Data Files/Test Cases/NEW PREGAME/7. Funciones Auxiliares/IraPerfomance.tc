@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Script auxiliar para seleccionar la sección d eperfomance de customer maintenance</description>
+   <name>IraPerfomance</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>85068d3f-cd14-4eda-aaff-dd896be8e06f</testCaseGuid>
+   <variable>
+      <defaultValue>'dummy'</defaultValue>
+      <description>pin del cliente</description>
+      <id>1ddcb853-237e-487e-a9e4-7f45526eac53</id>
+      <masked>false</masked>
+      <name>customerId</name>
+   </variable>
+</TestCaseEntity>

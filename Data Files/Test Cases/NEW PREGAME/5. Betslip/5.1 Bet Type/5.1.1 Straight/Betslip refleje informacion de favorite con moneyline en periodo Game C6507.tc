@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que se muestre la línea correctamente en el betslip cuando la seleccion es un Game Moneyline Favorite y el wager type sea Straight.</description>
+   <name>Betslip refleje informacion de favorite con moneyline en periodo Game C6507</name>
+   <tag>C6507</tag>
+   <comment></comment>
+   <testCaseGuid>12571fa2-2703-42ef-bb07-5338e551c790</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>89af292e-d5e2-4ff6-a519-b49925a59fab</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>4d94aa0f-620a-48e4-86b5-83c912788f85</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>d4391784-2be4-4cca-93a6-c1f26c5312f2</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Soccer'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>ab59303d-7145-4ff9-be3f-3ef7b1e24c9e</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Mexico'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>a73b3472-46af-4345-9c6d-4c7779720f44</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'CF America'</defaultValue>
+      <description>Equipo con la línea asian positiva</description>
+      <id>c035bf4f-e6b6-4d7b-aef3-387d45f8b934</id>
+      <masked>false</masked>
+      <name>favoriteTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'Primera Division Clausura'</defaultValue>
+      <description>torneo o competición  de la sub categoria, ejemplo FA Cup</description>
+      <id>bdd5844d-1aa9-4d50-9c2b-ed4bad827f8a</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validar que se muestre la lÃínea correctamente en el betslip cuando la seleccion es Period Asian Spread Favorite negative odds .25 y el wager type sea Straight.</description>
+   <name>Betslip refleje favorito con spread asian 0.25 negative odds con cualquier periodo C6495</name>
+   <tag>C6495</tag>
+   <comment></comment>
+   <testCaseGuid>39c66f60-b8a3-43aa-83fe-60f9e39a3518</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>4b40b46c-a3e6-423d-83b0-5a05ffab0e8c</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>42f80614-1047-43dd-bc27-3cae06bf605c</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>4534c547-3803-4b06-87e2-07795f0b004d</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Esports'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>09c8659e-d0b7-4323-bbad-9b71f013989a</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'LoL'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>3a4a067c-0cf6-444d-907a-75bf7e21aa6b</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'DragonX'</defaultValue>
+      <description>Equipo  favorito</description>
+      <id>2196b13e-8153-4fec-b774-16ff6b19f3e1</id>
+      <masked>false</masked>
+      <name>favoriteTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'Lck Season 2020  Spring Split'</defaultValue>
+      <description>Torneo o liga del subdeporte</description>
+      <id>eae68a39-95af-4dab-9abb-c720eb8f6f9e</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'0'</defaultValue>
+      <description>Numero o id del periodo</description>
+      <id>96e73832-3b01-4839-8023-07f96f217b68</id>
+      <masked>false</masked>
+      <name>peridodNumber</name>
+   </variable>
+</TestCaseEntity>

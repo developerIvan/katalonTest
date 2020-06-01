@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Free Play hace match con CM (C3792)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>67a38c50-5ce8-408d-a270-fb501577dfb5</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>direcciónh web de pregame</description>
+      <id>71505da2-fc0f-441a-a276-327598c3b0ae</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>PIN del jugador o cliente</description>
+      <id>6de14b99-7d57-4abd-ae46-fb93bb5bb6de</id>
+      <masked>false</masked>
+      <name>userPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave dle cliente o jugador</description>
+      <id>a96642d7-ef0e-4bcf-bbc4-841dd57973e4</id>
+      <masked>false</masked>
+      <name>userPassword</name>
+   </variable>
+</TestCaseEntity>

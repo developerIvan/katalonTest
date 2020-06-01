@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Esta función se encargará de tomar el equipo home y away d ela línea seleccioanda para definir el match experado (Ej: Atletico de Madrid vs UD Levante)</description>
+   <name>DefinirMatchExperado</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f72f5bff-0f65-4bde-8afd-bc11ba728756</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Numero de juego</description>
+      <id>b9abe16e-a3e3-4e1d-b62d-b9cefc471b78</id>
+      <masked>false</masked>
+      <name>gameNum</name>
+   </variable>
+</TestCaseEntity>

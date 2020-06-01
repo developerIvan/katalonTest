@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validar que se muestre la línea correctamente en el betslip cuando la seleccion es Period Spread Underdog negative odds y el wager type sea Straight.</description>
+   <name>Betslip refleje Spread underdog con negative odds en cualquier periodo C6493</name>
+   <tag>C6493</tag>
+   <comment></comment>
+   <testCaseGuid>9eeeeebb-9a0a-4261-98ae-1caf21aaf47d</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>cba8d757-0702-4e69-b050-41fd2b47b862</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>4d92edce-f224-4bac-9bb4-961fea1ea7b8</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>c50a126c-429c-427f-9fed-18c2ea83841d</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Basketball'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>6f1b926c-aba1-46d9-af47-4bdc92c2ab4b</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'NBA'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>02a625ca-eb3f-41c7-9598-bfb8b34e7060</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'New York Knicks'</defaultValue>
+      <description>Equipo no favorito</description>
+      <id>a640edb4-6d08-4c3f-a218-a727b0f27002</id>
+      <masked>false</masked>
+      <name>underdogTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Torneo o liga del subdeporte</description>
+      <id>dcf40f9a-e27b-4d4b-baba-55abc31f8048</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description>Número o id del periodo</description>
+      <id>47560770-4b31-4579-b7cb-9fd75c519690</id>
+      <masked>false</masked>
+      <name>peridodNumber</name>
+   </variable>
+</TestCaseEntity>

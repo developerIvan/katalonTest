@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Selecciona la liga del deporte ejemplo: 
+
+Deporte Soccer, liga Bundesliga</description>
+   <name>SeleccionarLiga</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c068ca10-9740-40ef-b8b9-87ba1fde14ca</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Deporte ejemplo: SOCCER</description>
+      <id>b4ecb198-8de8-47bd-942d-3040789bb5f6</id>
+      <masked>false</masked>
+      <name>sportName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>SubDeporte ejemplo: GERMANY</description>
+      <id>756806b5-931e-4ab4-9d3a-139ff17b5df5</id>
+      <masked>false</masked>
+      <name>subDeportName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Liga del deporte: ejemplo: BUNDESLIGA</description>
+      <id>e98eaca5-2347-4142-995d-b924ae20ee04</id>
+      <masked>false</masked>
+      <name>leagueName</name>
+   </variable>
+</TestCaseEntity>

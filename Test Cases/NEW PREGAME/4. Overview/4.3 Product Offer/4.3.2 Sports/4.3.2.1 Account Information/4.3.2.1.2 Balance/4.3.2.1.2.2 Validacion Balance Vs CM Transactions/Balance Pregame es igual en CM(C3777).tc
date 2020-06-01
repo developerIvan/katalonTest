@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Balance Pregame es igual en CM(C3777)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ec7f5aff-5fb0-4ad7-82bc-ae774205e191</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>Sitio Pregame </description>
+      <id>9fe154f6-91db-4cde-bc8b-991c573b8973</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>PIN del usuario</description>
+      <id>2bbfd418-7f29-4e1d-918d-3a3e94e58841</id>
+      <masked>false</masked>
+      <name>userPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave del cliente</description>
+      <id>1f73099a-d4ac-4ba7-ab90-664b99aa792c</id>
+      <masked>false</masked>
+      <name>userPassword</name>
+   </variable>
+</TestCaseEntity>

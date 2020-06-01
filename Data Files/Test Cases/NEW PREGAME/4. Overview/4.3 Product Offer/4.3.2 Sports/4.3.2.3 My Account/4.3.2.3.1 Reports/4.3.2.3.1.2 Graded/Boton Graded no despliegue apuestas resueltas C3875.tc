@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que cuando el usuario presiona sobre el botón &lt;Graded> no despliegue la información de ninguna apuesta.</description>
+   <name>Boton Graded no despliegue apuestas resueltas C3875</name>
+   <tag>C3875</tag>
+   <comment></comment>
+   <testCaseGuid>417eb3b1-a4c1-438d-937f-7004eaaa39b5</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>b2ec0bcb-81dd-4fd1-b315-820da7b5f7cc</id>
+      <masked>false</masked>
+      <name>customerPin</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>d6229708-fc07-43dd-b1cd-191aca2ed0c5</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>30</defaultValue>
+      <description>Define los dias para atras apartir de la fecha actual para buscar apuestas resueltas en Customer maintenance</description>
+      <id>8648b970-e434-482a-8f5d-2052d450e94a</id>
+      <masked>false</masked>
+      <name>gradedDaysInterval</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>79be667a-eb82-4c89-a3ba-b8bbe411d147</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+</TestCaseEntity>

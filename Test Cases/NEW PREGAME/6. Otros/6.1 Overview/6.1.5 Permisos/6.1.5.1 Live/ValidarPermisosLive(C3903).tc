@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Precondicion:
+El usuario de pruebas tenga el permiso Live habilitado en Customer Maintenace</description>
+   <name>ValidarPermisosLive(C3903)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f3304ea6-349d-419c-a3f3-7cee63255a59</testCaseGuid>
+</TestCaseEntity>

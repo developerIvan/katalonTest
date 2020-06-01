@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validar que se muestre la lí­nea correctamente en el betslip cuando la seleccion es Period Moneyline Draw (3way lines) y el wager type sea Straight.</description>
+   <name>Betslip refleje seleccion Moneyline Draw en cualqiuer periodo C6512</name>
+   <tag>C6512</tag>
+   <comment></comment>
+   <testCaseGuid>a11e60ca-e36a-4ea3-bf9c-20cc0b80ce61</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>ea28e82c-9758-440b-93a7-61a9515abd48</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>399636d0-b5d6-49aa-b068-f07e224fea61</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>07b7454a-7403-4008-9c8f-0967a1fb763a</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Soccer'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>a0db38e5-d421-4452-9bbb-319e222c031e</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Spain'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>3d42738a-2628-4926-aed8-6e5d072adade</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'LaLiga'</defaultValue>
+      <description>torneo o competición  de la sub categoria, ejemplo FA Cup</description>
+      <id>41968be0-4aa6-41f5-9151-4da82fd7552c</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description>id o numero del periodod</description>
+      <id>ae9beb0c-4e09-434d-885e-c217d38e40f8</id>
+      <masked>false</masked>
+      <name>periodNumber</name>
+   </variable>
+   <variable>
+      <defaultValue>'158378715'</defaultValue>
+      <description>id del juego</description>
+      <id>b87a2a89-c6c6-4773-b194-8469ce8f88d9</id>
+      <masked>false</masked>
+      <name>gamenum</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba vailda que, al hacer click al botón de Daily Figure y al seleciono el enlace habilitado de montos de un día en especifico muestre los rubros  del mismo  día.</description>
+   <name>Daily figure despliegue los rubros de un dia en especifico C6400</name>
+   <tag>C6400</tag>
+   <comment></comment>
+   <testCaseGuid>7b00d840-ac57-4b7c-b013-f5008b5eee5e</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>Dirección ip del sitio de pregame</description>
+      <id>91310968-602f-444d-8838-0bfaee378b99</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>Id del jugador</description>
+      <id>98ffe2f1-6c3c-401b-b546-2e000ed71bb9</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave del jugador</description>
+      <id>3d7b018a-304c-4e4b-b911-2597cf3e2de2</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'F'</defaultValue>
+      <description>
+          Día del daily figure,
+           donde M es para Monday,
+          K es para Tuesday,
+          W es para Wendesday,
+          T es para Tuesday,
+          F es para Friday, 
+          S es para Saturday y
+          E es para Sunday
+     </description>
+      <id>5af30455-3ca7-4dba-a10d-64dd7ae65ee7</id>
+      <masked>false</masked>
+      <name>dailyFigureDay</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description>Define la semana a ser seleccionada, donde 0 igual a This Week, 1 Last Week , 2 : 2 Weeks Ago, 3  weeks ago</description>
+      <id>5f00579e-1fd4-42f1-9f4b-e05d34dc8235</id>
+      <masked>false</masked>
+      <name>dailyFigureWeekNumber</name>
+   </variable>
+</TestCaseEntity>

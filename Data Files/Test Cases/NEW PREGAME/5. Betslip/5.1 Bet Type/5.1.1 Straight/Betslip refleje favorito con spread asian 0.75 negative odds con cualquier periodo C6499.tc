@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validar que se muestre la línea correctamente en el betslip cuando la seleccion con cualquier Periodo Asian Spread Favorite negative odds .75 y el wager type sea Straight.</description>
+   <name>Betslip refleje favorito con spread asian 0.75 negative odds con cualquier periodo C6499</name>
+   <tag>C6499</tag>
+   <comment></comment>
+   <testCaseGuid>bed2c4d2-b329-48d3-947b-5d02f8c4d05a</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>b406f225-9769-430b-9ae5-bd46a713eb72</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>8c404642-d6df-454c-b053-1fc6e62e1e48</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>41d33f3c-fd79-41e5-a785-6ff59e76f8ef</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Soccer'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>1b55739f-153a-4acc-b204-a7bfce306f51</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'France'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>7b26a210-6d66-4997-95d2-f7eacddc1175</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'FC Stade Rennes'</defaultValue>
+      <description>equipofavorito</description>
+      <id>17906039-3ebb-41cb-b355-351fc2c0b68c</id>
+      <masked>false</masked>
+      <name>favoriteTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'Coupe de France'</defaultValue>
+      <description>torneo o competición  de la sub categoria, ejemplo FA Cup</description>
+      <id>0c2b3910-c8fe-4aca-8993-8da3f650ec46</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description>Id o numero de periodo</description>
+      <id>dd43ba9c-2e73-4a1f-ae82-68b0d69ca03d</id>
+      <masked>false</masked>
+      <name>periodNumer</name>
+   </variable>
+</TestCaseEntity>

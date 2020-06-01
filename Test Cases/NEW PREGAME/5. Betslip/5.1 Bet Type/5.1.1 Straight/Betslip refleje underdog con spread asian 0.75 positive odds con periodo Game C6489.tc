@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que se muestre la línea correctamente en el betslip cuando la seleccion es Game Asian Spread underdog negative odds .75 y el wager type sea Straight.</description>
+   <name>Betslip refleje underdog con spread asian 0.75 positive odds con periodo Game C6489</name>
+   <tag>C6489</tag>
+   <comment></comment>
+   <testCaseGuid>97d0bff4-2dcd-4fe6-b51c-2fbd5b33e2d4</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>358f753d-f28e-45c4-a8e4-ec188265a41e</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>fc203dbe-14d4-4199-8ca4-087f91be7214</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>91b06a9c-23b2-4bd4-b530-39edb26bef77</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Soccer'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>0a49417c-a5cd-4ad5-97bb-2a4f9916d4fc</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Mexico'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>c3e85a62-86c9-4afa-8eac-7cdd8756e6f6</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Queretaro FC'</defaultValue>
+      <description>Equipo con la línea asian positiva</description>
+      <id>0d421eaa-25d6-4359-854a-0ade0d047535</id>
+      <masked>false</masked>
+      <name>underdogTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'Copa MX'</defaultValue>
+      <description>torneo o competición  de la sub categoria, ejemplo FA Cup</description>
+      <id>a44c0348-3daf-476c-9637-80874c1859b2</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+</TestCaseEntity>

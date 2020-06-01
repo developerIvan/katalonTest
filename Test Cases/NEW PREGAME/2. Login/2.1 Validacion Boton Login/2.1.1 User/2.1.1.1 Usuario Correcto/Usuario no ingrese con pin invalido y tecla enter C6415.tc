@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Usuario no ingrese con pin invalido y tecla enter C6415</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e188451c-89de-461d-81bc-fdb923191a0d</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>a2a96fc8-164d-4edd-a6e1-c64ab2e16c64</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>f9a164f2-9ab0-45bd-9051-1398f2dcb8aa</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.invalidCustomerPIN</defaultValue>
+      <description></description>
+      <id>1a8c7de5-7761-4eca-940a-cc72a6f9860d</id>
+      <masked>false</masked>
+      <name>invalidPin</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>ValidarRubrosEnCustomerMaintenance</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d653f22d-f9eb-449a-9e43-7b49653cb5a6</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c8cd5683-78e4-4b3e-8a57-eb7e07b821a4</id>
+      <masked>false</masked>
+      <name>customerId</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestObject(null)</defaultValue>
+      <description></description>
+      <id>d6f7f903-e406-4584-97a5-3af983a9aea2</id>
+      <masked>false</masked>
+      <name>dailyFigureContainer</name>
+   </variable>
+   <variable>
+      <defaultValue>false</defaultValue>
+      <description>Define si actualmetne el sitio actual es de custoemr maitneance para que no  realice el proceso de uignreso a dicha plataforma nuevamente</description>
+      <id>093092dd-906f-49fe-9d44-e02a8a49bc02</id>
+      <masked>false</masked>
+      <name>currentUrlIsCm</name>
+   </variable>
+</TestCaseEntity>

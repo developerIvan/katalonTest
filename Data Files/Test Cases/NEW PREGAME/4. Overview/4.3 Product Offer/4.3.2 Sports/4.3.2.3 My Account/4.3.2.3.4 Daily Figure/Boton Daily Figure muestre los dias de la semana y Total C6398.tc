@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que, al hacer click al botón &lt;Daily Figure>, se visualice la tabla de los dias de la semana junto con el encabezado del total.</description>
+   <name>Boton Daily Figure muestre los dias de la semana y Total C6398</name>
+   <tag>C6398</tag>
+   <comment></comment>
+   <testCaseGuid>86f58b68-950e-4bc5-9193-01575780d3d7</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>dirección web del sitio de pregame</description>
+      <id>a77ff7b8-a5b3-4458-a9ca-dd11afc9abac</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id del cliente</description>
+      <id>892faa8e-e9cb-43b2-8a5c-554082a679cc</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>password del jugador</description>
+      <id>73bbe8f5-17a4-4c6f-b30b-4652417c64a2</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('TestData/Datos de Entrada/4.3.2.3.4 Daily Figure').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>1cfa9686-c556-4156-bd6b-58e981176453</id>
+      <masked>false</masked>
+      <name>resultadoEsperado</name>
+   </variable>
+</TestCaseEntity>

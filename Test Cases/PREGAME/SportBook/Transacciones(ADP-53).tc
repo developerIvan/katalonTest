@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Verifica que la tabla de descripción de transacciones (Documento,Fecha,Decripción etc) se visuaize correctamente tanto con los botones &quot;Todo&quot; y &quot;jugadas de cortesia&quot;</description>
-   <name>Transacciones(ADP-53)</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>8ba0e25d-f734-4b60-9fd6-beafb8e03c3a</testCaseGuid>
-</TestCaseEntity>

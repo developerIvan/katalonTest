@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que, cuando se sumen los montos de las transacciones de cada día:
+Lunes,Martes.Miercoles, Jueves , viernes , Sadado y Domingo, el resultado sea igual al monto reflejado en la columna del total</description>
+   <name>La suma de las rubros de los dias de la semana sean iguales al monto total C6407</name>
+   <tag>C6407</tag>
+   <comment></comment>
+   <testCaseGuid>2e7323d8-27f0-40ad-b7a3-99c6e705dfc7</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>url del sitio de pregam según el ambiente</description>
+      <id>1b356908-d94c-4eee-8e1b-04f9da50a6dc</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin del jugador</description>
+      <id>484ae977-495c-4ba3-ada0-b4dcccb3a78c</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave del jugador</description>
+      <id>1f92ce0f-b321-4518-8758-1080546d803d</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'K'</defaultValue>
+      <description>Día del daily figure</description>
+      <id>557d6419-e3c0-437e-92e5-b680c5a907c3</id>
+      <masked>false</masked>
+      <name>dailyFigureDay</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description>Define la semana a ser seleccionada, donde 0 igual a This Week, 1 Last Week , 2 : 2 Weeks Ago, 3  weeks ago</description>
+      <id>f9d3af7f-4def-431f-a458-750ae3d53f21</id>
+      <masked>false</masked>
+      <name>dailyFigureWeekNumber</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description>Cargará los datos para que las pruebas se ejecuten en el ambiente de Soporte</description>
+   <name>DatosDePruebaSoporte</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>1517481b-82cd-4a18-8ba4-6a0dab091c84</dataFileGUID>
+   <dataSourceUrl>C:\PROYECTOS\QAPregameNuevo\Data Files\Perfiles\DatosdePrueba.xls</dataSourceUrl>
+   <driver>ExcelFile</driver>
+   <isInternalPath>false</isInternalPath>
+   <properties>
+      <entry>
+         <key>readAsString</key>
+         <value>true</value>
+      </entry>
+   </properties>
+   <query></query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName>Soporte</sheetName>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

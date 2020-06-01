@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que se muestre la línea correctamente en el betslip cuando la seleccion es Period Asian Spread underdog negative odds .25 y el wager type sea Straight.</description>
+   <name>Betslip refleje underdog con spread asian 0.25 negative odds con cualquier periodo C6497</name>
+   <tag>C6497</tag>
+   <comment></comment>
+   <testCaseGuid>d47b690e-bdc9-4dde-a5d4-0a1dbdbda9c5</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame </description>
+      <id>e976727a-3f4a-4a5c-9cb6-b6fa6fdf2833</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>0d8c9526-943e-481f-9c71-5436558437f5</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>d2eec49e-a5ab-48a0-9da7-a2feec2f1b6d</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Baseball'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>aea76b98-e9c9-4fba-92c9-c47e4ee33620</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Internationa'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>ea4a788e-09dd-4369-8874-0d78f97e2656</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Astronautas (PAN)'</defaultValue>
+      <description>Equipo con la línea asian</description>
+      <id>5f127160-52fb-43bc-a02c-433c9b76cab3</id>
+      <masked>false</masked>
+      <name>underdogTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'BASEBALL  SERIE DEL CARIBE'</defaultValue>
+      <description>torneo o competición  de la sub categoria, ejemplo FA Cup</description>
+      <id>5949551c-325e-46a5-816c-3cf9fb282de1</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'2'</defaultValue>
+      <description>Numero o id del periodo Ej: Game:0 , 1st half :1 etc</description>
+      <id>78b3e92d-4f7b-4734-9f47-b3202a93a803</id>
+      <masked>false</masked>
+      <name>periodNumber</name>
+   </variable>
+</TestCaseEntity>

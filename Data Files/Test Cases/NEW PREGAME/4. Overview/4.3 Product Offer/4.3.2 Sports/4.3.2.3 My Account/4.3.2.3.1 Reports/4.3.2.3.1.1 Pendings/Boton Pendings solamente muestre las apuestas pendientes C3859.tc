@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que cuando el usuario presiona sobre el botón &lt;Pendings>, este despliega solamente la(s) apuesta(s) pendiente(s).</description>
+   <name>Boton Pendings solamente muestre las apuestas pendientes C3859</name>
+   <tag>C3859</tag>
+   <comment></comment>
+   <testCaseGuid>40d868bb-5809-4dd6-8d2e-993c79c867a9</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>e92085d8-d0f1-4e3b-acef-cc081891e0dd</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>3015d970-3c6d-468d-8b0a-b2b217c9ac69</id>
+      <masked>false</masked>
+      <name>customerId</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>eb83a0d0-83ea-4e80-b13d-7dc544fb9906</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>

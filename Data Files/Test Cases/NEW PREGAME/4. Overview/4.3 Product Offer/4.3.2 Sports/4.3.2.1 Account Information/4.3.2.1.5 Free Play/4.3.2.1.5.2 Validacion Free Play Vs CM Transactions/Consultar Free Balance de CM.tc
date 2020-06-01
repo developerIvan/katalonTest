@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Consultar Free Balance de CM</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c6d23722-2aaf-484b-a859-441c70d67a8b</testCaseGuid>
+   <variable>
+      <defaultValue>'4Fku01'</defaultValue>
+      <description></description>
+      <id>6fb47987-6b71-426d-95ac-8c85713ca451</id>
+      <masked>false</masked>
+      <name>PlayerPin</name>
+   </variable>
+</TestCaseEntity>

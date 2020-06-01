@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Esta función se encargar de leer los rubros de pregame y agruparlos en una lsit apara la comparación cruzada con Customer Maintenance</description>
+   <name>CargarRubrosEnPregame</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dca732cb-323a-4592-a824-58279210fbf1</testCaseGuid>
+</TestCaseEntity>

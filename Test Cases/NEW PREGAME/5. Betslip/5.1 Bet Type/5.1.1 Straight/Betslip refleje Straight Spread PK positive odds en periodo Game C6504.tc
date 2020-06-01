@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validar que se muestre la lí­nea correctamente en el betslip cuando la selección por defecto (Game) es Spread PK positive odds y el wager type sea Straight.</description>
+   <name>Betslip refleje Straight Spread PK positive odds en periodo Game C6504</name>
+   <tag>C6504</tag>
+   <comment></comment>
+   <testCaseGuid>16f430ae-01d3-40ec-94fd-b683a6c822f7</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>69d3d048-b6d6-4ee0-ab97-3ea8f46f5537</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>65ea5cdf-1571-4c13-add6-f3b95dcf6d9d</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>GlobalVariable.customerPassword</description>
+      <id>7b0137f2-2e90-4b54-9135-a2855070f44c</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'ESports'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>14265174-b93c-4361-88de-ad4783280853</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'LOL'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>985ba1d9-f6cb-4852-8cf6-4af2f48dd300</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Afreeca Freecs'</defaultValue>
+      <description>Equipo seleccionado de la linea pk</description>
+      <id>604a609e-227b-4b9c-aacf-1412a87a7956</id>
+      <masked>false</masked>
+      <name>selectedTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'Lck Season 2020  Spring Split'</defaultValue>
+      <description>Torneo o liga del juego</description>
+      <id>2714477f-3aac-4e94-94f0-ce78caacfa93</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+</TestCaseEntity>

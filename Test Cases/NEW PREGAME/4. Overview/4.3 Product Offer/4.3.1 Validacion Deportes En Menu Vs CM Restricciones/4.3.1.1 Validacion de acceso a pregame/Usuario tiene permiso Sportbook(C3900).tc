@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Precondicion:
+El usuario de pruebas tenga el permiso sportbook habilitado en Customer Maintenace</description>
+   <name>Usuario tiene permiso Sportbook(C3900)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8d03441c-5156-4199-9044-480b3a58e420</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>59b6fd35-f203-45db-bfd7-3a752a683fde</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>c1645526-4947-4f37-833a-f871ed633dce</id>
+      <masked>false</masked>
+      <name>userName</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>76e62e98-f183-4c81-a798-ef96b6ad28e1</id>
+      <masked>false</masked>
+      <name>userPassword</name>
+   </variable>
+</TestCaseEntity>

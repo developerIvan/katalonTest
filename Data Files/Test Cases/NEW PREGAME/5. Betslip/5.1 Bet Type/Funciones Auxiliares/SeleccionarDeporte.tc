@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este script definirá una función generica para seleccionar el deporte en la parte lateral en pregame</description>
+   <name>SeleccionarDeporte</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ffea71f5-b6ca-4b93-9dc9-e29025d6575f</testCaseGuid>
+   <variable>
+      <defaultValue>'Basketball'</defaultValue>
+      <description>Deporte deseado.</description>
+      <id>2115a18a-9b37-4569-91b6-0cf95773e9b5</id>
+      <masked>false</masked>
+      <name>sportName</name>
+   </variable>
+</TestCaseEntity>

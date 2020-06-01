@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que el usuario tenga configurado el campo de Zero Balance con el valor de Monday Zero Out</description>
+   <name>El jugador tenga configurado Monday Zero Out como daily figure C6405</name>
+   <tag>C6405</tag>
+   <comment></comment>
+   <testCaseGuid>869a90da-f3a8-4536-b3d9-38d985949f3c</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>Id del Jugador </description>
+      <id>ffca538a-4095-4ddd-8209-666436cdddb4</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave dle jugador</description>
+      <id>5402876a-1bd3-498d-88d6-3ea62d61994c</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('TestData/Datos de Entrada/4.3.2.3.4 Daily Figure').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>7e603c42-1233-426f-ba3a-8662d19237de</id>
+      <masked>false</masked>
+      <name>expectedMondayConfiguration</name>
+   </variable>
+</TestCaseEntity>

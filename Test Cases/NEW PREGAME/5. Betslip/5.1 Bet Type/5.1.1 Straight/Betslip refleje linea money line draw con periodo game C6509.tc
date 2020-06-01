@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que se muestre la línea correctamente en el betslip cuando la seleccion es Game Moneyline Draw (3way lines) y el wager type sea Straight.</description>
+   <name>Betslip refleje linea money line draw con periodo game C6509</name>
+   <tag>C6509</tag>
+   <comment></comment>
+   <testCaseGuid>e57eb2a9-c376-4a85-b29b-011ff153ee4a</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>cc56ff3d-fbc6-4899-91a9-d5cf44f6c3fe</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>e778e8ec-912b-4728-a249-74852e2896b8</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>27fd94b4-6a3f-4e11-9684-8b13389599ce</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Soccer'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>625cc985-889a-4fe3-9343-02d3bd24c932</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Spain'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>ce0888bc-959c-4a05-b6dd-12c21d236036</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Copa del Rey'</defaultValue>
+      <description>torneo o competición  de la sub categoria, ejemplo FA Cup</description>
+      <id>a01ce98f-d8ca-4aa2-8ae3-8fcef02c0549</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'158644473'</defaultValue>
+      <description>id del juego</description>
+      <id>013d5323-1152-49b6-ad9d-5e837b9f7cf7</id>
+      <masked>false</masked>
+      <name>gamenum</name>
+   </variable>
+</TestCaseEntity>

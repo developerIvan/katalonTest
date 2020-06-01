@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba almacena isntrucciones recurrentes para los casos de prueba C3802, C3810, las cuales son cargar el usuario y contraseña según los paramtros que reciba
+ </description>
+   <name>CargarMensajdeDeErrordeIngreso</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c0d09e6a-36c4-4717-8e25-07e2ff0a2535</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>64a6fd4f-24e8-46d5-806c-5621b0eb255b</id>
+      <masked>false</masked>
+      <name>userPin</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>cadce8db-d973-4c81-8e38-8628fe44dc1f</id>
+      <masked>false</masked>
+      <name>userPass</name>
+   </variable>
+</TestCaseEntity>

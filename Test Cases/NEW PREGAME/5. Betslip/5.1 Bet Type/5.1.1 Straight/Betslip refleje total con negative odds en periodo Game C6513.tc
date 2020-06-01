@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validar que se muestre la línea correctamente en el betslip cuando la seleccion es un Game Total negative odds y el wager type sea Straight.</description>
+   <name>Betslip refleje total con negative odds en periodo Game C6513</name>
+   <tag>C6513</tag>
+   <comment></comment>
+   <testCaseGuid>dacab2d6-a4ab-47f3-894d-d2b97686d396</testCaseGuid>
+</TestCaseEntity>

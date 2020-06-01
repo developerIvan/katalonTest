@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Función que devuelve el día según el parámetro recibido.
+
+Ejemplo:
+  M devuelve Monday
+  K  devuelve Tuesday
+  W devuelve Wendesday
+  T devuelve Tuesday
+  F devuleve Friday 
+  S devuelve Saturday 
+  E devuelve Sunday</description>
+   <name>SeleccionarDia</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c7b4b8f2-8e8c-4a21-a0a1-e009f99c0309</testCaseGuid>
+   <variable>
+      <defaultValue>'M'</defaultValue>
+      <description>Devuelve el día de la semana según el parametro recibido.    M para Monday,   K para Tuesday,   W para Wendesday,  T para Tuesday,   F para Friday,  S para Saturday,   E para Sunday </description>
+      <id>f11ffa49-7e2d-4e73-8834-96c0fe236262</id>
+      <masked>false</masked>
+      <name>day</name>
+   </variable>
+</TestCaseEntity>

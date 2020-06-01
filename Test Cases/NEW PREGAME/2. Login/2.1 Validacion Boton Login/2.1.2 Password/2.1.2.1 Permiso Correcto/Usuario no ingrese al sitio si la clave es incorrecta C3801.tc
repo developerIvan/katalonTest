@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Usuario no ingrese al sitio si la clave es incorrecta C3801</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ae13e369-2efd-465f-b771-65bab7f7f10f</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>b26d9a6e-2a6e-4ab8-b3d9-1ad351219118</id>
+      <masked>false</masked>
+      <name>loginUser</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('TestData/Datos de Entrada/2.1.1.1 Usuario Correcto').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>72c1fa5e-9476-493f-bbff-263050de024f</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>39af4e11-4e81-44a0-9338-ccd6729c75ed</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+</TestCaseEntity>

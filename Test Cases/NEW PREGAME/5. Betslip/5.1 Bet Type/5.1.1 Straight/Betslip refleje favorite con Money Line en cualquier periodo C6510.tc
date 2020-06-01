@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validar que se muestre la línea correctamente en el betslip cuando la seleccion es Period Moneyline Favorite y el wager type sea Straight.</description>
+   <name>Betslip refleje favorite con Money Line en cualquier periodo C6510</name>
+   <tag>C6510</tag>
+   <comment></comment>
+   <testCaseGuid>19aa4bc1-3676-48e6-99e3-cda9377ad6b9</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>f3457656-79ee-411f-9375-0c5b5703c756</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin del cliente</description>
+      <id>51474b4a-c39a-4a84-9ac7-62e00df0cf73</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>pin de la clave</description>
+      <id>5cd7ae33-d4ba-4841-b615-53768d8a1f0c</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Soccer'</defaultValue>
+      <description>deporte principal</description>
+      <id>1a6f6cb9-f638-48ea-8b74-4215eb225902</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Costa Rica'</defaultValue>
+      <description>subdeporte </description>
+      <id>3dc7e1f1-f4aa-4c5a-87cd-320575c2ebfe</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Primera Division Clausura'</defaultValue>
+      <description></description>
+      <id>1e170707-6076-4126-970d-14366f1d0da1</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>f4f47d15-7137-4e6d-a063-a9099e11b0ac</id>
+      <masked>false</masked>
+      <name>periodo</name>
+   </variable>
+   <variable>
+      <defaultValue>'CS Herediano'</defaultValue>
+      <description></description>
+      <id>a4b136ef-92da-4f80-add4-eb6aa8cc7bdf</id>
+      <masked>false</masked>
+      <name>favoriteTeam</name>
+   </variable>
+</TestCaseEntity>

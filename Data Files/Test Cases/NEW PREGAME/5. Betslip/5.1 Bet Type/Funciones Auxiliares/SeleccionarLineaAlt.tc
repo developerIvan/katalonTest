@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Version alternativa de la funcion linea</description>
+   <name>SeleccionarLineaAlt</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>815df1db-d398-4911-842c-3035a363f205</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Tipo de apuesta , donde S igual aSpread, M = nomeyLine, T igual a total, TO igal a Total Ovewr y TU igual total Under </description>
+      <id>51ef13fe-bb8f-4237-9aac-620838e23ddf</id>
+      <masked>false</masked>
+      <name>betType</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Equipo de la línea seleccionada</description>
+      <id>8d596ad8-19f9-4fac-9a9b-541c10b547a1</id>
+      <masked>false</masked>
+      <name>selectedTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Liga donde está la línea</description>
+      <id>42e11667-06be-4f6d-b316-102ff7b89851</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>numero del periodod del juego</description>
+      <id>1c2cfddc-836f-4135-9df4-bab12f4ac057</id>
+      <masked>false</masked>
+      <name>period</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>iddel juego</description>
+      <id>b4d8ff4b-074d-4a5c-83bc-d287957d8b9b</id>
+      <masked>false</masked>
+      <name>gamenum</name>
+   </variable>
+</TestCaseEntity>

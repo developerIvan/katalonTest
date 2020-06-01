@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Esta función se encargará de seleccionar el periodo dentro de la liga , ejemplo: en caso de football game, fisrt half ,Second Hlalf etc</description>
+   <name>SeleccionarPeriodoDelJuego</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c9293847-1b74-4a52-b6e7-ad5f7150a750</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description> Nombre del deporte Ejemplo Soccer</description>
+      <id>1cd78bb6-33e7-4c1f-8553-bb6d24d69916</id>
+      <masked>false</masked>
+      <name>sportName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description> Nombre del subdeporte o país del deporte. Ejemplo Spain</description>
+      <id>a00a03df-5770-4567-82f6-069c5f44fe4f</id>
+      <masked>false</masked>
+      <name>subSportName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description> Nombre de la liga del deporte  Ejemplo La liga</description>
+      <id>dde2d21d-f305-49c2-9007-9af171a90692</id>
+      <masked>false</masked>
+      <name>leagueName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>Ejemplo: 0 Game , 1 1ht half etc.</description>
+      <id>959519b3-e9d8-405c-9714-3ebc7c0b37b8</id>
+      <masked>false</masked>
+      <name>periodNumber</name>
+   </variable>
+</TestCaseEntity>

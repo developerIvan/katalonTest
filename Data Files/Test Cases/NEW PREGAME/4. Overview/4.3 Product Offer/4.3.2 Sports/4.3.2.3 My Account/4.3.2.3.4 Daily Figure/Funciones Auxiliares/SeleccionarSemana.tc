@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este script tendrá la función de seleccionar la semana en Daily Fgiure</description>
+   <name>SeleccionarSemana</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0a8087b5-8719-45c8-87ba-c7af820f63d7</testCaseGuid>
+   <variable>
+      <defaultValue>0</defaultValue>
+      <description>define el numero de la semana donde 0 igual a esta semana, 1 la semanan pasada, 2 hace dos semanas, 3 hace 3 semanas</description>
+      <id>d099647a-c471-4499-bcdc-786cf6753aff</id>
+      <masked>false</masked>
+      <name>weekNumber</name>
+   </variable>
+</TestCaseEntity>

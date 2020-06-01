@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que se muestre la lÃínea correctamente en el betslip cuando la seleccion es Period Spread Favorite negative odds y el wager type sea Straight</description>
+   <name>Betslip refleje Straight Spread Favorite negative odds en cualquier periodo C6491</name>
+   <tag>C6491</tag>
+   <comment></comment>
+   <testCaseGuid>20310e43-a438-43df-b992-e45f0204bd52</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>89b55215-715f-4c7b-ad04-1a96b748ec47</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>b1f7007a-1c8a-4f6d-a497-b84e48e2af4a</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>14f13c06-7f5b-4925-885e-e00d9ec3da54</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Soccer'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>4a8cf4e8-09a4-4fbd-9d52-6b04c8bd8ad1</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Scotland'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>b09cf456-cbaf-4c25-bdc7-91b9ec468eea</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Celtic Glasgow'</defaultValue>
+      <description>Equipo  favorito</description>
+      <id>0597e79f-f05a-4a53-9350-8cf06d6f305e</id>
+      <masked>false</masked>
+      <name>favoriteTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'Premiership'</defaultValue>
+      <description>Torneo o liga del subdeporte</description>
+      <id>6d7f9b19-3100-47a4-8d3b-c063ee2f5ef1</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'0'</defaultValue>
+      <description>Numero o id del peridod</description>
+      <id>4139b5fa-6d28-4544-9030-a1acc8d412df</id>
+      <masked>false</masked>
+      <name>peridodNumber</name>
+   </variable>
+</TestCaseEntity>

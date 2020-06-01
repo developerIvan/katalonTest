@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que el usuario pueda visualizar correctamente el botón &lt;Reportes> cuando selecciona la opción My Account.</description>
+   <name>Boton Reportes sea desplegado correctamente C3860</name>
+   <tag>C3860</tag>
+   <comment></comment>
+   <testCaseGuid>3443eaae-4cee-43c3-8f53-4a30fcd91f15</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>8e8b6420-fe5d-4718-9d8f-853c9ba3740f</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>2be9dae2-a682-4f43-bd19-0c75a59c884d</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>6c390d80-3892-41bd-b23c-2d9009aab904</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

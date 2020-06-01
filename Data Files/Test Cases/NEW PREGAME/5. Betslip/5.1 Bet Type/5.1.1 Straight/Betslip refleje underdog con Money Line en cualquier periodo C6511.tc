@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Betslip refleje underdog con Money Line en cualquier periodo C6511</name>
+   <tag>C6511</tag>
+   <comment></comment>
+   <testCaseGuid>bbb886f0-c7f9-4932-add0-5c53649debc4</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>93dceb22-ba15-43eb-8d68-694d1d2bb93f</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>fc69f62a-6643-4ef9-bf95-5668e5b2de6f</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>ee624475-9403-41fa-8d86-3b77d7893cc1</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'BASKETBALL'</defaultValue>
+      <description>deporte ejemplo Soccer</description>
+      <id>3064348d-39d4-4fef-a73b-7e71b2f6d69c</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'NBA'</defaultValue>
+      <description></description>
+      <id>84a0369d-00cf-43be-b181-1ace480de374</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description>torneo o liga del encuentro. Dejar en blanco o vacio en caso de que el juego este organizado por schedule (Adminsitrador)</description>
+      <id>86e6d780-3a57-43aa-84b5-33b6f42865da</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description>Id o numero de periodo ara el encuentro</description>
+      <id>f6b2b372-9024-469d-a670-cd482f0fd690</id>
+      <masked>false</masked>
+      <name>periodNumber</name>
+   </variable>
+   <variable>
+      <defaultValue>'Philadelphia 76ers'</defaultValue>
+      <description></description>
+      <id>829c692e-9dc7-4fcd-a69f-75e714abb338</id>
+      <masked>false</masked>
+      <name>underdogTeam</name>
+   </variable>
+</TestCaseEntity>

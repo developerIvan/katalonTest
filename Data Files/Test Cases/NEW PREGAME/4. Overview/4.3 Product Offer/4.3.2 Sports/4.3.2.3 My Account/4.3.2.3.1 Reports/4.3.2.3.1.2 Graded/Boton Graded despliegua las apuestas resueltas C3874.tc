@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Boton Graded despliegua las apuestas resueltas C3874</name>
+   <tag>C3874</tag>
+   <comment></comment>
+   <testCaseGuid>0f0c01aa-27ba-4c04-8f3f-1c5ddf544a82</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>488f0490-85f3-418b-9455-32f72c0c3754</id>
+      <masked>false</masked>
+      <name>customerPin</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>02c2c545-b70d-46dd-92e1-96f43350e3d7</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>90c2320d-7760-47ca-a8a7-99ad6f3dc9af</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>30</defaultValue>
+      <description>Define los dias para atras apartir de la fecha actual para buscar apuestas resueltas en Customer maintenance</description>
+      <id>776632cd-fca5-4315-b240-de9081e12028</id>
+      <masked>false</masked>
+      <name>gradedDaysInterval</name>
+   </variable>
+</TestCaseEntity>

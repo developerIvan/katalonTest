@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que Daily Fgiure despliegue la transacióno las transacciones del lunes de hace cuatro semanas.</description>
+   <name>monto total de la semana sea congruente al monto que esta reflejado en el total C3881</name>
+   <tag>C3881</tag>
+   <comment></comment>
+   <testCaseGuid>80d4505d-354a-49e0-abe5-309ff308e9e5</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin del jugador</description>
+      <id>78470f9a-5f3e-4a93-96bf-1845591d4cba</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave del  jugador</description>
+      <id>f5f7c3a4-28b2-4ba4-98fe-87e8ff59a0c4</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>Dirección web de pregame</description>
+      <id>4d28a7af-bb1a-4941-9991-bca8e4d3b3f5</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>'F'</defaultValue>
+      <description>Día del daily figure,
+           donde M es para Monday,
+          K es para Tuesday,
+          W es para Wendesday,
+          T es para Tuesday,
+          F es para Friday, 
+          S es para Saturday y
+          E es para Sunday</description>
+      <id>055f1f6d-fcfb-4d7d-9597-b1d2a5ecfa6e</id>
+      <masked>false</masked>
+      <name>dailyFigureDay</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description>'Define la semana a ser seleccionada, donde 0 igual a This Week, 1 Last Week , 2 : 2 Weeks Ago, 3  weeks ago'</description>
+      <id>bbc03ec6-7837-44b9-8471-9d2c29754cd3</id>
+      <masked>false</masked>
+      <name>dailyFigureWeekNumber</name>
+   </variable>
+</TestCaseEntity>

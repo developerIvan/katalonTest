@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valida que se muestre la lí­nea correctamente en el betslip cuando la seleccion es Period Asian Spread underdog negative odds .75 y el wager type sea Straight.</description>
+   <name>Betslip refleje underdog con spread asian 0.75 con negative odds en cualquier periodo C6501</name>
+   <tag>C6501</tag>
+   <comment></comment>
+   <testCaseGuid>1c94b767-4ac4-4474-8325-e2b2bd50914c</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>8603e3a3-7744-49b3-a2c3-14a9cb10487b</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>1295145d-8648-4b4f-8995-85ffc598d0a7</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>df665794-cd7e-43c8-904b-4b82703fb674</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Soccer\r\n'</defaultValue>
+      <description>deporte ejemplo Soccer</description>
+      <id>4fd32783-9bd8-4d00-bb6d-81e9aade8e50</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'France'</defaultValue>
+      <description>sub deporte ejemplo Argentina</description>
+      <id>5050e4cd-2a78-456f-a193-dcfd4e0f3b91</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Olympique Lyonnais'</defaultValue>
+      <description></description>
+      <id>f07ea9bb-2184-4db0-a2f8-a36ce784968d</id>
+      <masked>false</masked>
+      <name>underdogTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'Coupe de France'</defaultValue>
+      <description></description>
+      <id>11ad3e45-36f7-4032-b8e4-71a8abc58c5b</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'2'</defaultValue>
+      <description>Id o numero de  periodo del juego</description>
+      <id>8efccf93-f102-44f0-bb5c-e24193da37c9</id>
+      <masked>false</masked>
+      <name>periodNumer</name>
+   </variable>
+</TestCaseEntity>

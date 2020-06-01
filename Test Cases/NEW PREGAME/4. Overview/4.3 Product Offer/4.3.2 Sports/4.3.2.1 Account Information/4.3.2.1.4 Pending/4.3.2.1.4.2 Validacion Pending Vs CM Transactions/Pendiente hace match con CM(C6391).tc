@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Pendiente hace match con CM(C6391)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2ad4138c-1503-4275-b7ea-bae65d7cee00</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>direcciónh web de pregame</description>
+      <id>d07ae2ce-ce61-477a-b694-ee84ae88ede8</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>PIN del jugador o cliente</description>
+      <id>d8afea88-af6d-4d2d-b4df-871b01dbf5c5</id>
+      <masked>false</masked>
+      <name>userPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave dle cliente o jugador</description>
+      <id>4b7c6e39-8984-4df3-a890-43d7e4ba13ba</id>
+      <masked>false</masked>
+      <name>userPassword</name>
+   </variable>
+</TestCaseEntity>

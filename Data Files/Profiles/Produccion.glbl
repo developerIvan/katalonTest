@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>Produccion</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description>Siver para definir si los test cases invocan los test cases necesarios de forma separada, ejemplo  Transacciones MenuMiCuenta</description>
+      <initValue>true</initValue>
+      <name>individualTestCase</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de casino</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataCasino.xlsx'</initValue>
+      <name>permisosExcelRutaCasino</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>false</initValue>
+      <name>usuarioLogeado</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\LineasYapuestasTestData.xlsx'</initValue>
+      <name>lineasExcelRuta</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de horses</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataHorses.xlsx'</initValue>
+      <name>permisosExcelRutaHorses</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de live</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\PermisosTestDataLive.xlsx'</initValue>
+      <name>permisosExcelRutaLive</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta absoluta para cargar el excel para el permiso de sportbooks</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\\\PermisosTestDataSportbook.xlsx'</initValue>
+      <name>permisosExcelRutaSportbook</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Carga el pin del jugador para la prueba</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(5, 1)</initValue>
+      <name>customerPIN</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(1, 1)</initValue>
+      <name>pregameUrl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(6, 1)</initValue>
+      <name>customerPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Url para ir al sitio de lobby he ingresar al customer maintenace</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(2, 1)</initValue>
+      <name>lobbyUrl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>usuario para ingresar al lobby</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(3, 1)</initValue>
+      <name>lobbyUser</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Password para ingresar al lobby</description>
+      <initValue>findTestData('Perfiles/DatosDePruebaProduccion').getValue(4, 1)</initValue>
+      <name>lobbyPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Alamcena un pin invalido para las pruebas</description>
+      <initValue>findTestData('TestData/Datos de Entrada/2.1.1.1 Usuario Correcto').getValue(1, 1)</initValue>
+      <name>invalidCustomerPIN</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Alamacena el esperado mensaje de error esperado en caso de que las credenciales sean erroneas</description>
+      <initValue>findTestData('TestData/Datos de Entrada/2.1.1.1 Usuario Correcto').getValue(3, 1)</initValue>
+      <name>mensajeUsuarioInvalido</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define la ruta donde está ubicado el archivo excel para los reportes</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\Reports\\TestResults.xlsx'</initValue>
+      <name>excelReportFileLocation</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Valida si el el navegador ya cargo la página de pregame para que no vuleva a hacerlo en casos de 2 o mas casosd e prueba que requieran de este sitio       </description>
+      <initValue>false</initValue>
+      <name>pregameSiteEsVisible</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Almacena la clave incorrecta de usuario apra la prueba</description>
+      <initValue>findTestData('TestData/Datos de Entrada/2.1.2.1 Permiso Correcto').getValue(1, 1)</initValue>
+      <name>invalidCustomerPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define el directorio para guardar las instantenas</description>
+      <initValue>'C:\\PROYECTOS\\QAPregameNuevo\\Data Files\\TestData\\Screenshots\\'</initValue>
+      <name>screenshotLocation</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Valida si el navegador está abierto, esto con el fin de que katalon esté abriendo y cerrando navegadores web cuando se va por difernetes sitios</description>
+      <initValue>false</initValue>
+      <name>browserIsOpen</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Bandera para que mas de una prueba no vuelva a presionar nuevamente el botón de daily figure ya que ya está presioando</description>
+      <initValue>false</initValue>
+      <name>botonDailyFigureEsPresionado</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Bandera que determina que se se ejecuta una prueba individual se use un archivo de excel para los resultados de las pruebas en lugar de los reportes de katalon </description>
+      <initValue>false</initValue>
+      <name>QaIndividualLog</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Alamcena toda la información relacionada al daily figure (Rubros,Montos, fehca de daily figure etc)</description>
+      <initValue>findTestObject(null)</initValue>
+      <name>dailyFigureContainer</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define si el total de los montos en los rubors es igual al monto reflejado en el día deldaily figure</description>
+      <initValue>false</initValue>
+      <name>precondicionC3878Completa</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define si el rubro total de un día es coherhetne con el rubro total que se despliegua en custoemr maintenanace</description>
+      <initValue>false</initValue>
+      <name>precondicionC6401Completa</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define si para el día seleccionado deDalily Fgiure contiene rubros vpara validar información</description>
+      <initValue>false</initValue>
+      <name>precondicionC6400Completa</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Define si el caso de prueba C6407 se ejecutó correctamente</description>
+      <initValue>false</initValue>
+      <name>precondicionC6407Completa</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

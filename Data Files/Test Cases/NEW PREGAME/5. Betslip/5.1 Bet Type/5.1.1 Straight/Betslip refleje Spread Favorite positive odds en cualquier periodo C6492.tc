@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validar que se muestre la lí­nea correctamente en el betslip cuando la seleccion es Period Spread Favorite positive odds el wager type sea Straight.</description>
+   <name>Betslip refleje Spread Favorite positive odds en cualquier periodo C6492</name>
+   <tag>C6492</tag>
+   <comment></comment>
+   <testCaseGuid>ab6e61ce-1308-4430-a65d-639ef3ad4f9f</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame</description>
+      <id>0a9e6382-1b7b-4adc-aeed-ae3596d5f56f</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>97ec6b36-6c86-42cf-97cb-2e3ddde82b85</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>a5ec2624-3db1-43ca-b173-8689355e213e</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+   <variable>
+      <defaultValue>'Esports'</defaultValue>
+      <description>Cátegoria del deporte: ejemplo:Football, Soccer etc</description>
+      <id>c0fb363b-3a85-4b91-ad4c-488baf1626d3</id>
+      <masked>false</masked>
+      <name>sportId</name>
+   </variable>
+   <variable>
+      <defaultValue>'Count Strike'</defaultValue>
+      <description>Cátegoria del sub deporte: ejemplo:Argentina, NFL etc</description>
+      <id>e3ca6fe8-e344-4b99-b0b8-7fd7cd1c4172</id>
+      <masked>false</masked>
+      <name>subSporId</name>
+   </variable>
+   <variable>
+      <defaultValue>'ICE CHALLENGE'</defaultValue>
+      <description>torneo o competición  de la sub categoria, ejemplo FA Cup</description>
+      <id>a9a77e7f-7712-4bca-ad07-830d62595713</id>
+      <masked>false</masked>
+      <name>tournament</name>
+   </variable>
+   <variable>
+      <defaultValue>'Virtus.pro'</defaultValue>
+      <description></description>
+      <id>6c45e8d9-29a4-4de1-85af-d46f54bdb741</id>
+      <masked>false</masked>
+      <name>favoriteTeam</name>
+   </variable>
+   <variable>
+      <defaultValue>'0'</defaultValue>
+      <description></description>
+      <id>d6f8e2d8-9f57-4146-852d-98d0b6cd37f2</id>
+      <masked>false</masked>
+      <name>peridodNumber</name>
+   </variable>
+</TestCaseEntity>

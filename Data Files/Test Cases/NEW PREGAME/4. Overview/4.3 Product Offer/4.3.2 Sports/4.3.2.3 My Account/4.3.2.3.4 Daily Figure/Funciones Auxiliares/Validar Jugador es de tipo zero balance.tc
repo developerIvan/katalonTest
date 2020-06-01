@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba auxiliar servira para validar que la cuenta del  jugador tenga la configuración de tipo Zero Balance</description>
+   <name>Validar Jugador es de tipo zero balance</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9c3b6b95-aef9-4849-b033-c78aa912caca</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>usuario de customer maintenance</description>
+      <id>296b2aa9-d77f-4c7c-bc35-07db26773c68</id>
+      <masked>false</masked>
+      <name>userId</name>
+   </variable>
+</TestCaseEntity>

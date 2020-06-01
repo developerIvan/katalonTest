@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Al ingresar al sitio de pregame se debe visualizar el botón de &quot;Daily figure&quot; o Balance diario.</description>
+   <name>Boton Daily Figure sea correctamente visible en Pregame C6397</name>
+   <tag>C6397</tag>
+   <comment></comment>
+   <testCaseGuid>c2e60782-dae3-4e01-8393-50583e332af6</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>sitio de pregame </description>
+      <id>53db864f-5c63-4995-9ad1-76a542e156f8</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>pin o id de jugador</description>
+      <id>54542ff6-6107-4a27-8689-15f85cf3ebc7</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>clave valida del usuario</description>
+      <id>76f7447c-5be5-4d69-a0b9-938969c60aab</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

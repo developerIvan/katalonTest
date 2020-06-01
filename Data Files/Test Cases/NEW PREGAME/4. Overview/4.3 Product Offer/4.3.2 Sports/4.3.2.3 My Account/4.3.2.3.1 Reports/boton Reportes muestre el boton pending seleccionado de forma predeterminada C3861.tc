@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Este caso de prueba valida que cuando el usuario presiona sobre el botón &lt;Reportes>, el sistema despliega correctamente las apuestas pendientes de forma predeterminada</description>
+   <name>boton Reportes muestre el boton pending seleccionado de forma predeterminada C3861</name>
+   <tag>C3861</tag>
+   <comment></comment>
+   <testCaseGuid>3d8ec2fa-1243-4a7a-93a7-993be2c5548f</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description></description>
+      <id>e5c980ec-eaaa-4e2f-8c9c-ad3a85596d43</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description></description>
+      <id>299b25d5-87a2-4a5b-8a63-d82f08d9bd8f</id>
+      <masked>false</masked>
+      <name>customerPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description></description>
+      <id>ecc69b0c-30b9-42af-a53c-0edcfebdaf8f</id>
+      <masked>false</masked>
+      <name>customerPass</name>
+   </variable>
+</TestCaseEntity>

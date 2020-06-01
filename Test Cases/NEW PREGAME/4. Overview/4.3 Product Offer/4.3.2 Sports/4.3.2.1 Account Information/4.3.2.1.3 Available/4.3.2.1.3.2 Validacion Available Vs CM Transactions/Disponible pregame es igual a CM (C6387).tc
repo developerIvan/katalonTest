@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Disponible pregame es igual a CM (C6387)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fdf1ddd0-370d-4cb6-ba15-d910bef5d7d5</testCaseGuid>
+   <variable>
+      <defaultValue>GlobalVariable.pregameUrl</defaultValue>
+      <description>direcciónh web de pregame</description>
+      <id>ccaf515c-b635-4981-b2f7-97443718ad2e</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPIN</defaultValue>
+      <description>PIN del jugador o cliente</description>
+      <id>c870b682-4569-42b4-beac-81fbbc5e42d4</id>
+      <masked>false</masked>
+      <name>userPIN</name>
+   </variable>
+   <variable>
+      <defaultValue>GlobalVariable.customerPassword</defaultValue>
+      <description>Clave dle cliente o jugador</description>
+      <id>3756b4d2-312d-459e-a0ec-4efb7724ab2c</id>
+      <masked>false</masked>
+      <name>userPassword</name>
+   </variable>
+</TestCaseEntity>
